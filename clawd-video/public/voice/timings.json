@@ -1,0 +1,888 @@
+{
+  "voice": "21m00Tcm4TlvDq8ikWAM",
+  "segments": [
+    {
+      "audio": "voice/seg-0.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "text": "Claude",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "text": "Code,",
+          "start": 0.372,
+          "end": 0.766
+        },
+        {
+          "text": "c'est",
+          "start": 0.836,
+          "end": 1.033
+        },
+        {
+          "text": "quoi",
+          "start": 1.057,
+          "end": 1.277
+        },
+        {
+          "text": "?",
+          "start": 1.347,
+          "end": 1.625
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-1.mp3",
+      "duration": 3.056327,
+      "words": [
+        {
+          "text": "Une",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "text": "IA",
+          "start": 0.279,
+          "end": 0.604
+        },
+        {
+          "text": "qui",
+          "start": 0.697,
+          "end": 0.789
+        },
+        {
+          "text": "répond",
+          "start": 0.836,
+          "end": 1.08
+        },
+        {
+          "text": "juste",
+          "start": 1.115,
+          "end": 1.335
+        },
+        {
+          "text": "à",
+          "start": 1.358,
+          "end": 1.382
+        },
+        {
+          "text": "tes",
+          "start": 1.416,
+          "end": 1.509
+        },
+        {
+          "text": "questions",
+          "start": 1.533,
+          "end": 1.985
+        },
+        {
+          "text": "?",
+          "start": 2.009,
+          "end": 2.078
+        },
+        {
+          "text": "Non.",
+          "start": 2.519,
+          "end": 3.019
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-2.mp3",
+      "duration": 4.127347,
+      "words": [
+        {
+          "text": "Claude",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "text": "Code,",
+          "start": 0.36,
+          "end": 0.731
+        },
+        {
+          "text": "lui,",
+          "start": 0.848,
+          "end": 1.219
+        },
+        {
+          "text": "il",
+          "start": 1.265,
+          "end": 1.416
+        },
+        {
+          "text": "agit.",
+          "start": 1.474,
+          "end": 1.892
+        },
+        {
+          "text": "Directement",
+          "start": 2.171,
+          "end": 2.821
+        },
+        {
+          "text": "dans",
+          "start": 2.844,
+          "end": 2.961
+        },
+        {
+          "text": "ton",
+          "start": 2.984,
+          "end": 3.1
+        },
+        {
+          "text": "ordinateur.",
+          "start": 3.146,
+          "end": 4.087
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-3.mp3",
+      "duration": 2.45551,
+      "words": [
+        {
+          "text": "Tu",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "text": "lui",
+          "start": 0.209,
+          "end": 0.313
+        },
+        {
+          "text": "donnes",
+          "start": 0.372,
+          "end": 0.58
+        },
+        {
+          "text": "une",
+          "start": 0.627,
+          "end": 0.766
+        },
+        {
+          "text": "mission,",
+          "start": 0.801,
+          "end": 1.3
+        },
+        {
+          "text": "en",
+          "start": 1.509,
+          "end": 1.625
+        },
+        {
+          "text": "français.",
+          "start": 1.672,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-4.mp3",
+      "duration": 1.802449,
+      "words": [
+        {
+          "text": "D'abord,",
+          "start": 0,
+          "end": 0.557
+        },
+        {
+          "text": "il",
+          "start": 0.604,
+          "end": 0.731
+        },
+        {
+          "text": "prépare",
+          "start": 0.789,
+          "end": 1.091
+        },
+        {
+          "text": "un",
+          "start": 1.115,
+          "end": 1.161
+        },
+        {
+          "text": "plan.",
+          "start": 1.196,
+          "end": 1.765
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-5.mp3",
+      "duration": 2.690612,
+      "words": [
+        {
+          "text": "Il",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "lit",
+          "start": 0.232,
+          "end": 0.372
+        },
+        {
+          "text": "tout",
+          "start": 0.418,
+          "end": 0.615
+        },
+        {
+          "text": "ton",
+          "start": 0.639,
+          "end": 0.755
+        },
+        {
+          "text": "projet",
+          "start": 0.801,
+          "end": 1.196
+        },
+        {
+          "text": "pour",
+          "start": 1.254,
+          "end": 1.382
+        },
+        {
+          "text": "comprendre",
+          "start": 1.44,
+          "end": 1.858
+        },
+        {
+          "text": "le",
+          "start": 1.892,
+          "end": 1.962
+        },
+        {
+          "text": "code.",
+          "start": 2.009,
+          "end": 2.647
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-6.mp3",
+      "duration": 2.220408,
+      "words": [
+        {
+          "text": "Il",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "cherche",
+          "start": 0.186,
+          "end": 0.476
+        },
+        {
+          "text": "même",
+          "start": 0.511,
+          "end": 0.685
+        },
+        {
+          "text": "sur",
+          "start": 0.708,
+          "end": 0.848
+        },
+        {
+          "text": "internet",
+          "start": 0.894,
+          "end": 1.277
+        },
+        {
+          "text": "si",
+          "start": 1.347,
+          "end": 1.44
+        },
+        {
+          "text": "besoin.",
+          "start": 1.498,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-7.mp3",
+      "duration": 2.403265,
+      "words": [
+        {
+          "text": "Puis",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "text": "il",
+          "start": 0.36,
+          "end": 0.511
+        },
+        {
+          "text": "écrit",
+          "start": 0.569,
+          "end": 0.813
+        },
+        {
+          "text": "les",
+          "start": 0.836,
+          "end": 0.917
+        },
+        {
+          "text": "modifications",
+          "start": 0.94,
+          "end": 1.637
+        },
+        {
+          "text": "lui-même.",
+          "start": 1.66,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-8.mp3",
+      "duration": 1.48898,
+      "words": [
+        {
+          "text": "Il",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "text": "lance",
+          "start": 0.267,
+          "end": 0.499
+        },
+        {
+          "text": "les",
+          "start": 0.534,
+          "end": 0.627
+        },
+        {
+          "text": "tests…",
+          "start": 0.685,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-9.mp3",
+      "duration": 2.821224,
+      "words": [
+        {
+          "text": "Une",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "text": "erreur",
+          "start": 0.279,
+          "end": 0.685
+        },
+        {
+          "text": "?",
+          "start": 0.801,
+          "end": 0.882
+        },
+        {
+          "text": "Il",
+          "start": 1.265,
+          "end": 1.428
+        },
+        {
+          "text": "la",
+          "start": 1.486,
+          "end": 1.567
+        },
+        {
+          "text": "corrige",
+          "start": 1.637,
+          "end": 1.962
+        },
+        {
+          "text": "tout",
+          "start": 1.997,
+          "end": 2.125
+        },
+        {
+          "text": "seul.",
+          "start": 2.159,
+          "end": 2.786
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-10.mp3",
+      "duration": 3.056327,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "quand",
+          "start": 0.197,
+          "end": 0.383
+        },
+        {
+          "text": "tout",
+          "start": 0.43,
+          "end": 0.58
+        },
+        {
+          "text": "marche,",
+          "start": 0.627,
+          "end": 1.091
+        },
+        {
+          "text": "il",
+          "start": 1.242,
+          "end": 1.393
+        },
+        {
+          "text": "sauvegarde",
+          "start": 1.509,
+          "end": 2.055
+        },
+        {
+          "text": "ton",
+          "start": 2.101,
+          "end": 2.218
+        },
+        {
+          "text": "travail.",
+          "start": 2.264,
+          "end": 3.019
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-11.mp3",
+      "duration": 4.179592,
+      "words": [
+        {
+          "text": "Un",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "text": "gros",
+          "start": 0.186,
+          "end": 0.372
+        },
+        {
+          "text": "projet",
+          "start": 0.406,
+          "end": 0.789
+        },
+        {
+          "text": "?",
+          "start": 0.906,
+          "end": 0.94
+        },
+        {
+          "text": "Il",
+          "start": 1.324,
+          "end": 1.474
+        },
+        {
+          "text": "peut",
+          "start": 1.544,
+          "end": 1.66
+        },
+        {
+          "text": "faire",
+          "start": 1.683,
+          "end": 1.858
+        },
+        {
+          "text": "travailler",
+          "start": 1.881,
+          "end": 2.287
+        },
+        {
+          "text": "plusieurs",
+          "start": 2.345,
+          "end": 2.763
+        },
+        {
+          "text": "agents",
+          "start": 2.821,
+          "end": 3.193
+        },
+        {
+          "text": "en",
+          "start": 3.228,
+          "end": 3.32
+        },
+        {
+          "text": "même",
+          "start": 3.367,
+          "end": 3.553
+        },
+        {
+          "text": "temps.",
+          "start": 3.599,
+          "end": 4.133
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-12.mp3",
+      "duration": 2.638367,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "text": "toi,",
+          "start": 0.197,
+          "end": 0.488
+        },
+        {
+          "text": "pendant",
+          "start": 0.522,
+          "end": 0.766
+        },
+        {
+          "text": "ce",
+          "start": 0.789,
+          "end": 0.871
+        },
+        {
+          "text": "temps",
+          "start": 0.929,
+          "end": 1.126
+        },
+        {
+          "text": "?",
+          "start": 1.161,
+          "end": 1.219
+        },
+        {
+          "text": "Tu",
+          "start": 1.393,
+          "end": 1.533
+        },
+        {
+          "text": "prends",
+          "start": 1.579,
+          "end": 1.753
+        },
+        {
+          "text": "un",
+          "start": 1.811,
+          "end": 1.858
+        },
+        {
+          "text": "café.",
+          "start": 1.892,
+          "end": 2.601
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-13.mp3",
+      "duration": 4.127347,
+      "words": [
+        {
+          "text": "Attention",
+          "start": 0,
+          "end": 0.557
+        },
+        {
+          "text": "quand",
+          "start": 0.615,
+          "end": 0.755
+        },
+        {
+          "text": "même",
+          "start": 0.789,
+          "end": 1.091
+        },
+        {
+          "text": ":",
+          "start": 1.126,
+          "end": 1.196
+        },
+        {
+          "text": "comme",
+          "start": 1.521,
+          "end": 1.753
+        },
+        {
+          "text": "toute",
+          "start": 1.8,
+          "end": 2.078
+        },
+        {
+          "text": "IA,",
+          "start": 2.125,
+          "end": 2.67
+        },
+        {
+          "text": "il",
+          "start": 2.879,
+          "end": 3.042
+        },
+        {
+          "text": "peut",
+          "start": 3.111,
+          "end": 3.239
+        },
+        {
+          "text": "se",
+          "start": 3.262,
+          "end": 3.344
+        },
+        {
+          "text": "tromper.",
+          "start": 3.39,
+          "end": 4.087
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-14.mp3",
+      "duration": 3.761633,
+      "words": [
+        {
+          "text": "C'est",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "text": "pour",
+          "start": 0.221,
+          "end": 0.348
+        },
+        {
+          "text": "ça",
+          "start": 0.406,
+          "end": 0.499
+        },
+        {
+          "text": "qu'il",
+          "start": 0.557,
+          "end": 0.685
+        },
+        {
+          "text": "te",
+          "start": 0.743,
+          "end": 0.813
+        },
+        {
+          "text": "demande",
+          "start": 0.871,
+          "end": 1.138
+        },
+        {
+          "text": "la",
+          "start": 1.161,
+          "end": 1.219
+        },
+        {
+          "text": "permission",
+          "start": 1.277,
+          "end": 1.881
+        },
+        {
+          "text": "avant",
+          "start": 1.962,
+          "end": 2.218
+        },
+        {
+          "text": "les",
+          "start": 2.241,
+          "end": 2.334
+        },
+        {
+          "text": "actions",
+          "start": 2.403,
+          "end": 2.728
+        },
+        {
+          "text": "importantes.",
+          "start": 2.775,
+          "end": 3.715
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-15.mp3",
+      "duration": 4.414694,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "ça",
+          "start": 0.209,
+          "end": 0.313
+        },
+        {
+          "text": "marche",
+          "start": 0.383,
+          "end": 0.685
+        },
+        {
+          "text": "aussi",
+          "start": 0.708,
+          "end": 1.161
+        },
+        {
+          "text": "depuis",
+          "start": 1.312,
+          "end": 1.614
+        },
+        {
+          "text": "ton",
+          "start": 1.637,
+          "end": 1.741
+        },
+        {
+          "text": "téléphone,",
+          "start": 1.788,
+          "end": 2.438
+        },
+        {
+          "text": "même",
+          "start": 2.612,
+          "end": 2.891
+        },
+        {
+          "text": "quand",
+          "start": 2.914,
+          "end": 3.053
+        },
+        {
+          "text": "ton",
+          "start": 3.077,
+          "end": 3.216
+        },
+        {
+          "text": "ordi",
+          "start": 3.286,
+          "end": 3.541
+        },
+        {
+          "text": "est",
+          "start": 3.587,
+          "end": 3.669
+        },
+        {
+          "text": "éteint.",
+          "start": 3.75,
+          "end": 4.365
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-16.mp3",
+      "duration": 3.422041,
+      "words": [
+        {
+          "text": "Le",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "meilleur",
+          "start": 0.197,
+          "end": 0.557
+        },
+        {
+          "text": "?",
+          "start": 0.673,
+          "end": 0.731
+        },
+        {
+          "text": "Pas",
+          "start": 1.173,
+          "end": 1.324
+        },
+        {
+          "text": "besoin",
+          "start": 1.358,
+          "end": 1.602
+        },
+        {
+          "text": "d'être",
+          "start": 1.637,
+          "end": 1.834
+        },
+        {
+          "text": "un",
+          "start": 1.858,
+          "end": 1.904
+        },
+        {
+          "text": "expert",
+          "start": 1.962,
+          "end": 2.357
+        },
+        {
+          "text": "pour",
+          "start": 2.38,
+          "end": 2.496
+        },
+        {
+          "text": "commencer.",
+          "start": 2.543,
+          "end": 3.39
+        }
+      ]
+    },
+    {
+      "audio": "voice/seg-17.mp3",
+      "duration": 2.533878,
+      "words": [
+        {
+          "text": "Abonne-toi",
+          "start": 0,
+          "end": 0.65
+        },
+        {
+          "text": "pour",
+          "start": 0.743,
+          "end": 0.929
+        },
+        {
+          "text": "tout",
+          "start": 0.998,
+          "end": 1.138
+        },
+        {
+          "text": "savoir",
+          "start": 1.161,
+          "end": 1.579
+        },
+        {
+          "text": "sur",
+          "start": 1.637,
+          "end": 1.765
+        },
+        {
+          "text": "les",
+          "start": 1.8,
+          "end": 1.904
+        },
+        {
+          "text": "IA",
+          "start": 1.974,
+          "end": 2.136
+        },
+        {
+          "text": "!",
+          "start": 2.183,
+          "end": 2.508
+        }
+      ]
+    }
+  ]
+}
