@@ -1,3 +1,5 @@
-pieces/*/frames
-pieces/*/renders/frames
-pieces/*/review/*.jpg
+*/frames/
+*/review/*.jpg
+*/renders/*.wav
+*/renders/final.mp4
+*/renders/final-captions.mp4
