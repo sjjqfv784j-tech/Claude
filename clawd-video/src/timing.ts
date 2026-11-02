@@ -1,5 +1,4 @@
 import { staticFile } from 'remotion';
-import { SEGMENTS } from './script';
 
 export const FPS = 30;
 // petite respiration entre deux phrases quand il y a une voix off
@@ -17,6 +16,7 @@ export type VideoProps = { timeline: TimedSegment[] };
 type VoiceFile = {
   segments: { audio: string; duration: number; words: Word[] }[];
 };
+type BaseSegment = { text: string; duration: number };
 
 // Sans voix off : on répartit les mots sur la durée selon leur longueur.
 const estimateWords = (text: string, duration: number): Word[] => {
@@ -33,11 +33,11 @@ const estimateWords = (text: string, duration: number): Word[] => {
   });
 };
 
-export const buildTimeline = (voice: VoiceFile | null): TimedSegment[] => {
+export const buildTimeline = (segments: BaseSegment[], voice: VoiceFile | null, gap = GAP): TimedSegment[] => {
   let start = 0;
-  return SEGMENTS.map((seg, i) => {
+  return segments.map((seg, i) => {
     const v = voice?.segments[i];
-    const duration = v ? v.duration + GAP : seg.duration;
+    const duration = v ? v.duration + gap : seg.duration;
     const item: TimedSegment = {
       start,
       duration,
@@ -49,12 +49,13 @@ export const buildTimeline = (voice: VoiceFile | null): TimedSegment[] => {
   });
 };
 
-export const loadVoice = async (): Promise<VoiceFile | null> => {
+// dir = dossier dans public/ qui contient timings.json (ex. 'voice' ou 'voice/story')
+export const loadVoice = async (dir: string, count: number): Promise<VoiceFile | null> => {
   try {
-    const res = await fetch(staticFile('voice/timings.json'));
+    const res = await fetch(staticFile(`${dir}/timings.json`));
     if (!res.ok) return null;
     const data = (await res.json()) as VoiceFile;
-    return data.segments?.length === SEGMENTS.length ? data : null;
+    return data.segments?.length === count ? data : null;
   } catch {
     return null;
   }

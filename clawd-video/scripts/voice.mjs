@@ -1,6 +1,7 @@
 // Génère la voix off avec ElevenLabs + le minutage de chaque mot.
-// Usage : ELEVENLABS_API_KEY=... [ELEVENLABS_VOICE_ID=...] npm run voice
-// Écrit public/voice/seg-N.mp3 et public/voice/timings.json (lu automatiquement par la vidéo).
+// Usage : ELEVENLABS_API_KEY=... npm run voice            -> vidéo « Claude Code » (public/voice/)
+//         ELEVENLABS_API_KEY=... npm run voice restaurant -> histoire src/stories/restaurant.json (public/voice/restaurant/)
+// Écrit les mp3 + timings.json, lus automatiquement par la vidéo.
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 
@@ -12,12 +13,22 @@ if (!KEY) {
   process.exit(1);
 }
 
-// on relit les phrases directement dans src/script.ts
-const src = readFileSync(new URL('../src/script.ts', import.meta.url), 'utf8');
-const texts = [...src.matchAll(/^\s+text:\s*(['"])(.*)\1,\s*$/gm)].map((m) => m[2].replace(/\\'/g, "'"));
-if (!texts.length) throw new Error('Aucun texte trouvé dans src/script.ts');
+const story = process.argv[2];
+let lines; // [{ text, voice }]
+let sub = 'voice';
+if (story) {
+  const data = JSON.parse(readFileSync(new URL(`../src/stories/${story}.json`, import.meta.url), 'utf8'));
+  lines = data.segments.map((s) => ({ text: s.text, voice: data.voices[s.speaker] || VOICE }));
+  sub = `voice/${story}`;
+} else {
+  // vidéo « Claude Code » : on relit les phrases directement dans src/script.ts
+  const src = readFileSync(new URL('../src/script.ts', import.meta.url), 'utf8');
+  lines = [...src.matchAll(/^\s+text:\s*(['"])(.*)\1,\s*$/gm)].map((m) => ({ text: m[2].replace(/\\'/g, "'"), voice: VOICE }));
+}
+if (!lines.length) throw new Error('Aucun texte trouvé');
+const texts = lines.map((l) => l.text);
 
-const outDir = new URL('../public/voice/', import.meta.url);
+const outDir = new URL(`../public/${sub}/`, import.meta.url);
 mkdirSync(outDir, { recursive: true });
 
 const toWords = (text, a) => {
@@ -41,7 +52,7 @@ const segments = [];
 for (const [i, text] of texts.entries()) {
   process.stdout.write(`Segment ${i + 1}/${texts.length} : ${text}\n`);
   const res = await fetch(
-    `https://api.elevenlabs.io/v1/text-to-speech/${VOICE}/with-timestamps?output_format=mp3_44100_128`,
+    `https://api.elevenlabs.io/v1/text-to-speech/${lines[i].voice}/with-timestamps?output_format=mp3_44100_128`,
     {
       method: 'POST',
       headers: { 'xi-api-key': KEY, 'Content-Type': 'application/json' },
@@ -54,7 +65,7 @@ for (const [i, text] of texts.entries()) {
   );
   if (!res.ok) throw new Error(`ElevenLabs ${res.status} : ${await res.text()}`);
   const data = await res.json();
-  const file = `voice/seg-${i}.mp3`;
+  const file = `${sub}/seg-${i}.mp3`;
   const path = new URL(`../public/${file}`, import.meta.url);
   writeFileSync(path, Buffer.from(data.audio_base64, 'base64'));
   const duration = Number(
@@ -65,5 +76,5 @@ for (const [i, text] of texts.entries()) {
   segments.push({ audio: file, duration, words: toWords(text, data.alignment) });
 }
 
-writeFileSync(new URL('timings.json', outDir), JSON.stringify({ voice: VOICE, segments }, null, 2));
-console.log('Voix off prête : public/voice/timings.json');
+writeFileSync(new URL('timings.json', outDir), JSON.stringify({ segments }, null, 2));
+console.log(`Voix off prête : public/${sub}/timings.json`);

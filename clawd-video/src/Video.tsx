@@ -175,7 +175,7 @@ const chunk = (words: Word[]) => {
   return out;
 };
 
-const Captions: React.FC<{ words: Word[]; highlight: string[] }> = ({ words, highlight }) => {
+export const Captions: React.FC<{ words: Word[]; highlight: string[] }> = ({ words, highlight }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;

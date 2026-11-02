@@ -1,0 +1,25 @@
+{
+  "title": "Le resto de Sam",
+  "voices": {
+    "clawd": "21m00Tcm4TlvDq8ikWAM",
+    "sam": "v1h0NNLdounNbzpD72Wt"
+  },
+  "segments": [
+    { "speaker": "clawd", "text": "Sam ? Il est presque minuit… Pourquoi t'es encore là ?", "highlight": ["minuit…"], "clawd": "thinking-fluid", "holo": "clock", "mood": "tired", "duration": 3.6 },
+    { "speaker": "sam", "text": "Mon resto marche trop bien. Et moi, je coule.", "highlight": ["coule."], "clawd": "idle-fluid", "holo": "revenue", "mood": "tired", "duration": 3.2 },
+    { "speaker": "clawd", "text": "Trop bien ? Explique-moi.", "highlight": [], "clawd": "thinking-fluid", "holo": "revenue", "mood": "tired", "duration": 2.0 },
+    { "speaker": "sam", "text": "Deux fois plus de réservations. Deux fois plus d'avis en ligne. Et les commandes fournisseurs, je les fais le soir.", "highlight": ["réservations.", "avis", "soir."], "clawd": "idle-fluid", "holo": "overload", "mood": "tired", "duration": 6.0 },
+    { "speaker": "clawd", "text": "Et tu fais tout ça tout seul ?", "highlight": ["seul"], "clawd": "waiting-for-you-fluid", "holo": "alone", "mood": "tired", "duration": 2.4 },
+    { "speaker": "sam", "text": "Ben oui. Qui d'autre ?", "highlight": [], "clawd": "idle-fluid", "holo": "alone", "mood": "tired", "duration": 2.0 },
+    { "speaker": "clawd", "text": "Moi. Enfin… mes agents.", "highlight": ["agents."], "clawd": "directing-helpers-fluid", "holo": "agents0", "mood": "surprised", "duration": 2.6 },
+    { "speaker": "clawd", "text": "Le premier gère les réservations : il répond, il confirme, il rappelle la veille.", "highlight": ["réservations"], "clawd": "running-commands-fluid", "holo": "agents1", "mood": "surprised", "duration": 4.6 },
+    { "speaker": "clawd", "text": "Le deuxième prépare une réponse à chaque avis. Toi, tu valides.", "highlight": ["avis.", "valides."], "clawd": "writing-fluid", "holo": "agents2", "mood": "neutral", "duration": 4.0 },
+    { "speaker": "clawd", "text": "Le troisième surveille les stocks et prépare les commandes.", "highlight": ["stocks"], "clawd": "searching-code-fluid", "holo": "agents3", "mood": "neutral", "duration": 3.6 },
+    { "speaker": "sam", "text": "Et moi, je fais quoi, alors ?", "highlight": [], "clawd": "idle-fluid", "holo": "agents3", "mood": "surprised", "duration": 2.2 },
+    { "speaker": "clawd", "text": "Ce qui t'a fait réussir : la cuisine.", "highlight": ["cuisine."], "clawd": "greeting-fluid", "holo": "cuisine", "mood": "happy", "duration": 2.8 },
+    { "speaker": "clawd", "text": "Aujourd'hui, c'est seize heures de boulot par jour.", "highlight": ["seize"], "clawd": "error-fluid", "holo": "before", "mood": "neutral", "duration": 3.2 },
+    { "speaker": "clawd", "text": "Demain, dix heures. Et de vraies nuits de sommeil.", "highlight": ["dix", "sommeil."], "clawd": "done-fluid", "holo": "after", "mood": "happy", "duration": 3.4 },
+    { "speaker": "sam", "text": "OK… On commence quand ?", "highlight": [], "clawd": "idle-fluid", "holo": "after", "mood": "happy", "duration": 2.0 },
+    { "speaker": "clawd", "text": "Tout de suite. Et toi, abonne-toi pour la suite !", "highlight": ["abonne-toi"], "clawd": "greeting-fluid", "holo": "follow", "mood": "happy", "duration": 3.2 }
+  ]
+}
