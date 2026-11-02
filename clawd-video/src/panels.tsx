@@ -424,8 +424,298 @@ const FollowPanel = () => {
   );
 };
 
+
+const Bubble: React.FC<{ me?: boolean; children: React.ReactNode; delay: number }> = ({ me, children, delay }) => {
+  const p = usePop(delay);
+  return (
+    <div style={{ display: 'flex', justifyContent: me ? 'flex-end' : 'flex-start', marginBottom: 22 }}>
+      <div
+        style={{
+          transform: `scale(${p})`,
+          transformOrigin: me ? '100% 100%' : '0% 100%',
+          maxWidth: '78%',
+          background: me ? C.orange : C.creamDark,
+          color: me ? '#fff' : C.ink,
+          borderRadius: 30,
+          padding: '20px 30px',
+          fontFamily: sans,
+          fontWeight: 700,
+          fontSize: 38,
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const ChatPanel = () => {
+  const frame = useCurrentFrame();
+  const crossAt = 62;
+  const p = usePop(crossAt);
+  return (
+    <div style={{ padding: 40, position: 'relative', height: '100%', boxSizing: 'border-box' }}>
+      <Bubble me delay={4}>Comment ajouter un bouton ?</Bubble>
+      <Bubble delay={20}>Voici le code, copie-le dans ton fichier…</Bubble>
+      <Bubble me delay={40}>Euh… et je le mets où ? 😅</Bubble>
+      {frame >= crossAt ? (
+        <svg
+          viewBox="0 0 100 100"
+          style={{ position: 'absolute', inset: 60, width: 'calc(100% - 120px)', height: 'calc(100% - 120px)', opacity: 0.9 }}
+        >
+          <path d={`M10 10 L${10 + 80 * p} ${10 + 80 * p}`} stroke={C.red} strokeWidth="9" strokeLinecap="round" />
+          <path d={`M90 10 L${90 - 80 * p} ${10 + 80 * p}`} stroke={C.red} strokeWidth="9" strokeLinecap="round" />
+        </svg>
+      ) : null}
+    </div>
+  );
+};
+
+const PLAN = ['Lire le projet', 'Ajouter le bouton', 'Lancer les tests', 'Sauvegarder'];
+const PlanPanel = () => {
+  const frame = useCurrentFrame();
+  return (
+    <div style={{ padding: 44 }}>
+      <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 48, color: C.ink, marginBottom: 30 }}>📋 Le plan</div>
+      {PLAN.map((t, i) => {
+        const at = 6 + i * 10;
+        const o = interpolate(frame, [at, at + 8], [0, 1], clamp);
+        return (
+          <div
+            key={t}
+            style={{
+              opacity: o,
+              transform: `translateX(${(1 - o) * -40}px)`,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 26,
+              fontFamily: sans,
+              fontWeight: 700,
+              fontSize: 42,
+              color: C.ink,
+              marginBottom: 26,
+            }}
+          >
+            <div
+              style={{
+                width: 60,
+                height: 60,
+                borderRadius: 16,
+                background: C.orange,
+                color: '#fff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 800,
+              }}
+            >
+              {i + 1}
+            </div>
+            {t}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const WebPanel = () => {
+  const frame = useCurrentFrame();
+  const results = ['Guide : bouton de connexion', 'Exemple de code HTML', 'Bonnes pratiques'];
+  return (
+    <div style={{ padding: 40 }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 18,
+          border: `4px solid ${C.ink}`,
+          borderRadius: 999,
+          padding: '16px 30px',
+          fontFamily: sans,
+          fontWeight: 700,
+          fontSize: 38,
+          color: C.ink,
+          marginBottom: 34,
+        }}
+      >
+        🔍 <Typed text="bouton connexion html" from={2} cps={24} />
+      </div>
+      {results.map((r, i) => {
+        const at = 32 + i * 8;
+        const o = interpolate(frame, [at, at + 8], [0, 1], clamp);
+        return (
+          <div key={r} style={{ opacity: o, marginBottom: 22, padding: '18px 24px', background: C.creamDark, borderRadius: 18 }}>
+            <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 36, color: '#3B6FD8' }}>{r}</div>
+            <div style={{ height: 14, width: `${70 - i * 12}%`, background: '#DDD2C2', borderRadius: 8, marginTop: 12 }} />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const AGENTS = [
+  { name: 'Agent 1', task: 'Design', speed: 1.3 },
+  { name: 'Agent 2', task: 'Code', speed: 1.0 },
+  { name: 'Agent 3', task: 'Tests', speed: 0.8 },
+];
+const AgentsPanel = () => {
+  const frame = useCurrentFrame();
+  return (
+    <div style={{ padding: 40 }}>
+      <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 48, color: C.ink, marginBottom: 30 }}>👥 En parallèle</div>
+      {AGENTS.map((a, i) => {
+        const pct = Math.min(100, Math.max(0, (frame - 6 - i * 4) * a.speed * 1.4));
+        const done = pct >= 100;
+        return (
+          <div key={a.name} style={{ marginBottom: 30 }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                fontFamily: sans,
+                fontWeight: 700,
+                fontSize: 38,
+                color: C.ink,
+                marginBottom: 12,
+              }}
+            >
+              <span>
+                <span style={{ color: C.orange }}>✻</span> {a.name} · {a.task}
+              </span>
+              {done ? <Check size={42} /> : <Spinner size={42} />}
+            </div>
+            <div style={{ height: 30, background: C.creamDark, borderRadius: 20, overflow: 'hidden' }}>
+              <div style={{ width: `${pct}%`, height: '100%', background: done ? C.green : C.orange }} />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const WarnPanel = () => {
+  const frame = useCurrentFrame();
+  const p = usePop(4);
+  const wobble = Math.sin(frame / 4) * 4;
+  return (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30 }}>
+      <svg width="260" height="230" viewBox="0 0 100 88" style={{ transform: `scale(${p}) rotate(${wobble}deg)` }}>
+        <path d="M50 4 L96 84 H4 Z" fill="#E8B04A" stroke={C.ink} strokeWidth="5" strokeLinejoin="round" />
+        <rect x="45" y="30" width="10" height="30" rx="4" fill={C.ink} />
+        <circle cx="50" cy="71" r="6" fill={C.ink} />
+      </svg>
+      <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 56, color: C.ink, textAlign: 'center', lineHeight: 1.15 }}>
+        L’IA peut
+        <br />
+        <span style={{ color: C.red }}>se tromper</span>
+      </div>
+    </div>
+  );
+};
+
+const ValidatePanel = () => {
+  const frame = useCurrentFrame();
+  const clickAt = 70;
+  const clicked = frame >= clickAt;
+  const cx = interpolate(frame, [20, clickAt - 4], [720, 250], clamp);
+  const cy = interpolate(frame, [20, clickAt - 4], [560, 420], clamp);
+  const p = usePop(clickAt);
+  return (
+    <div style={{ position: 'relative', height: '100%', padding: 40, boxSizing: 'border-box' }}>
+      <div style={{ background: C.term, color: C.termText, fontFamily: mono, fontSize: 34, borderRadius: 18, padding: '24px 30px', lineHeight: 1.5 }}>
+        <span style={{ color: C.orange }}>✻</span> Claude veut :
+        <div style={{ color: '#fff', fontWeight: 700 }}>supprimer old-site/</div>
+      </div>
+      <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 52, color: C.ink, textAlign: 'center', margin: '40px 0 30px' }}>
+        Tu valides ?
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 40 }}>
+        {[
+          { l: 'OUI', c: C.green },
+          { l: 'NON', c: C.red },
+        ].map((b, i) => (
+          <div
+            key={b.l}
+            style={{
+              background: b.c,
+              color: '#fff',
+              fontFamily: sans,
+              fontWeight: 800,
+              fontSize: 48,
+              padding: '20px 60px',
+              borderRadius: 999,
+              transform: `scale(${i === 0 && clicked ? 1 + 0.12 * p : 1})`,
+              boxShadow: i === 0 && clicked ? `0 0 0 ${10 * p}px rgba(63,166,107,0.3)` : 'none',
+            }}
+          >
+            {b.l}
+          </div>
+        ))}
+      </div>
+      {frame >= 20 ? (
+        <svg width="70" height="70" viewBox="0 0 24 24" style={{ position: 'absolute', left: cx, top: cy }}>
+          <path d="M4 2l15 9-6.5 1.5L16 20l-3 1.5-3.5-7.5L4 18z" fill={C.ink} stroke="#fff" strokeWidth="1.2" />
+        </svg>
+      ) : null}
+    </div>
+  );
+};
+
+const PhonePanel = () => {
+  const frame = useCurrentFrame();
+  const p = usePop(2);
+  const off = frame > 40;
+  return (
+    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 50 }}>
+      <div style={{ transform: `scale(${p})`, width: 270, height: 500, borderRadius: 44, background: C.ink, padding: 16, boxSizing: 'border-box' }}>
+        <div style={{ width: '100%', height: '100%', borderRadius: 32, background: C.term, padding: 20, boxSizing: 'border-box', fontFamily: mono, fontSize: 24, color: C.termText, lineHeight: 1.6 }}>
+          <div style={{ color: C.orange }}>✻ Claude</div>
+          <Typed text="Mission en cours…" from={8} cps={18} />
+          {frame > 46 ? <div style={{ color: C.green, marginTop: 10 }}>✓ Terminé</div> : null}
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, opacity: interpolate(frame, [10, 20], [0, 1], clamp) }}>
+        <div style={{ width: 280, height: 180, borderRadius: 20, border: `10px solid ${C.ink}`, background: off ? '#111' : '#9EC5F5', boxSizing: 'border-box' }} />
+        <div style={{ width: 340, height: 18, borderRadius: 9, background: C.ink }} />
+        <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 34, color: off ? C.muted : C.ink }}>{off ? 'Ordi éteint 💤' : 'Ordi allumé'}</div>
+      </div>
+    </div>
+  );
+};
+
+const EasyPanel = () => {
+  const p = usePop(4);
+  const q = usePop(26);
+  return (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30 }}>
+      <div style={{ transform: `scale(${p})`, fontFamily: sans, fontWeight: 800, fontSize: 64, color: C.ink, textAlign: 'center', lineHeight: 1.15 }}>
+        Tu parles
+        <br />
+        <span style={{ color: C.orange }}>français</span>
+      </div>
+      <div style={{ transform: `scale(${q})`, fontFamily: sans, fontWeight: 800, fontSize: 64, color: C.ink, textAlign: 'center', lineHeight: 1.15 }}>
+        Il écrit
+        <br />
+        <span style={{ color: C.green }}>le code</span>
+      </div>
+    </div>
+  );
+};
+
 export const PANELS: Record<PanelKind, React.FC> = {
   title: TitlePanel,
+  chat: ChatPanel,
+  plan: PlanPanel,
+  web: WebPanel,
+  agents: AgentsPanel,
+  warn: WarnPanel,
+  validate: ValidatePanel,
+  phone: PhonePanel,
+  easy: EasyPanel,
   terminal: TerminalPanel,
   prompt: PromptPanel,
   files: FilesPanel,
