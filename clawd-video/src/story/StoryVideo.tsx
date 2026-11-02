@@ -8,6 +8,7 @@ import { Captions } from '../Video';
 import { C, sans } from '../theme';
 import { Sam, type Mood } from './Sam';
 import { Holo, N, type HoloKind } from './Holo';
+import { Scene3D } from '../three/Scene3D';
 
 type StorySegment = {
   speaker: 'clawd' | 'sam';
@@ -189,8 +190,8 @@ const HoloGroup: React.FC<{ kinds: HoloKind[]; starts: number[]; dur: number }> 
   const exit = interpolate(frame, [dur - 6, dur], [1, 0], clamp);
   const flicker = frame < 8 && frame % 3 === 0 ? 0.6 : 1;
   return (
-    <div style={{ position: 'absolute', left: 0, right: 0, top: 170, height: 640, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ opacity: Math.min(enter, exit) * flicker, transform: `translateY(${(1 - enter) * 40}px)` }}>
+    <div style={{ position: 'absolute', left: 0, right: 0, top: 110, height: 560, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ opacity: Math.min(enter, exit) * flicker, transform: `translateY(${(1 - enter) * 40}px) scale(0.85)` }}>
         <Holo kind={kinds[0]} kinds={kinds} starts={starts} />
       </div>
     </div>
@@ -199,7 +200,7 @@ const HoloGroup: React.FC<{ kinds: HoloKind[]; starts: number[]; dur: number }> 
 
 /* ---------- composition ---------- */
 
-export const StoryVideo: React.FC<VideoProps> = ({ timeline }) => {
+export const StoryVideo: React.FC<VideoProps & { three?: boolean }> = ({ timeline, three = false }) => {
   const groups: { from: number; dur: number; kinds: HoloKind[]; starts: number[] }[] = [];
   timeline.forEach((s: TimedSegment, i) => {
     const kind = SEGS[i].holo;
@@ -218,13 +219,13 @@ export const StoryVideo: React.FC<VideoProps> = ({ timeline }) => {
 
   return (
     <AbsoluteFill style={{ background: '#0A1430' }}>
-      <City />
+      {three ? <Scene3D timeline={timeline} segs={SEGS} /> : <City />}
       {groups.map((g, i) => (
         <Sequence key={i} from={g.from} durationInFrames={g.dur + (i === groups.length - 1 ? FPS : 0)}>
           <HoloGroup kinds={g.kinds} starts={g.starts} dur={g.dur + (i === groups.length - 1 ? FPS : 0)} />
         </Sequence>
       ))}
-      {timeline.map((s, i) => {
+      {!three && timeline.map((s, i) => {
         const from = Math.round(s.start * FPS);
         const dur = Math.round(s.duration * FPS) + (i === lastIdx ? FPS : 0);
         const seg = SEGS[i];
@@ -234,14 +235,14 @@ export const StoryVideo: React.FC<VideoProps> = ({ timeline }) => {
           </Sequence>
         );
       })}
-      <Counter />
+      {three ? null : <Counter />}
       {timeline.map((s, i) => {
         const from = Math.round(s.start * FPS);
         const dur = Math.round(s.duration * FPS) + (i === lastIdx ? FPS : 0);
         const seg = SEGS[i];
         return (
           <Sequence key={i} from={from} durationInFrames={dur}>
-            <ClawdOnCounter name={seg.clawd} speaking={seg.speaker === 'clawd'} />
+            {three ? null : <ClawdOnCounter name={seg.clawd} speaking={seg.speaker === 'clawd'} />}
             <NameTag speaker={seg.speaker} />
             <Captions words={s.words} highlight={seg.highlight} />
             {s.audio ? <Audio src={staticFile(s.audio)} /> : null}

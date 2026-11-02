@@ -1,8 +1,8 @@
 {
   "title": "Le resto de Sam",
   "voices": {
-    "clawd": "21m00Tcm4TlvDq8ikWAM",
-    "sam": "v1h0NNLdounNbzpD72Wt"
+    "clawd": "O31r762Gb3WFygrEOGh0",
+    "sam": "YV28ox2c5Cuh5rim0LrW"
   },
   "segments": [
     { "speaker": "clawd", "text": "Sam ? Il est presque minuit… Pourquoi t'es encore là ?", "highlight": ["minuit…"], "clawd": "thinking-fluid", "holo": "clock", "mood": "tired", "duration": 3.6 },
