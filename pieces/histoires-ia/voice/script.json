@@ -1,0 +1,60 @@
+{
+  "lead": 0.7,
+  "tail": 2.4,
+  "lines": [
+    {
+      "id": "l1",
+      "text": "Tu entends parler d'IA partout. Elle va tout changer, dit-on. Mais personne ne te l'explique avec des histoires.",
+      "file": "l1.mp3",
+      "after": 0.9
+    },
+    {
+      "id": "l2",
+      "text": "Moi, c'est Histoires d'IA. Ici, je transforme chaque idée compliquée en une petite histoire animée, dessinée à la main.",
+      "file": "l2.mp3",
+      "after": 0.7
+    },
+    {
+      "id": "l2b",
+      "text": "Pas de cours barbant, pas de blabla : un point d'encre, un dessin, et une idée par épisode.",
+      "file": "l2b.mp3",
+      "after": 0.9
+    },
+    {
+      "id": "l3",
+      "text": "Un : tu comprends vraiment ce que fait l'IA, sans jargon et sans te sentir perdu.",
+      "file": "l3.mp3",
+      "after": 0.9
+    },
+    {
+      "id": "l4",
+      "text": "Deux : tu découvres des astuces concrètes, à utiliser dès ce soir.",
+      "file": "l4.mp3",
+      "after": 0.9
+    },
+    {
+      "id": "l5",
+      "text": "Trois : une histoire par vidéo, en une minute, et parfois une série en plusieurs parties.",
+      "file": "l5.mp3",
+      "after": 0.9
+    },
+    {
+      "id": "l5b",
+      "text": "Chaque histoire t'apprend quelque chose, mais surtout, elle reste en tête.",
+      "file": "l5b.mp3",
+      "after": 3.4
+    },
+    {
+      "id": "l6",
+      "text": "Et tout ça commence maintenant.",
+      "file": "l6.mp3",
+      "after": 1.2
+    },
+    {
+      "id": "l7",
+      "text": "Abonne-toi, et active la cloche : la prochaine histoire arrive demain.",
+      "file": "l7.mp3",
+      "after": 0.3
+    }
+  ]
+}

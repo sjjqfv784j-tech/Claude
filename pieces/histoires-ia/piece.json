@@ -1,0 +1,9 @@
+{
+  "name": "histoires-ia",
+  "title": "Histoires d'IA : présentation de la chaîne",
+  "format": { "width": 1080, "height": 1920, "fps": 24, "bpm": 120, "duration": 52, "frames": 1248 },
+  "storyFormat": "F5 fixed-hero journey (voice-led, hard cuts on sentence ends)",
+  "style": "crosshatch",
+  "voice": { "file": "voice/voice.wav", "music": -12 },
+  "review": { "safe": { "top": 240, "bottom": 420, "right": 140 }, "refs": {} }
+}
