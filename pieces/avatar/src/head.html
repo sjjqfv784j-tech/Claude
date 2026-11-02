@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Photo de profil</title>
+<style>html,body{margin:0;height:100%;background:#2a2118}body{display:flex;align-items:center;justify-content:center}canvas{height:min(100vh,100vw);aspect-ratio:1/1;display:block}</style></head>
+<body><canvas id="c" width="1080" height="1080"></canvas>
+<script>
+"use strict";
+const FPS = 24, W = 1080, H = 1080;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = 1.0, NFRAMES = 24, LOOP_T = 1.0;
+const SAFE = { top: 0, bottom: 0, right: 0 };
+const HAND = '"Ink Free", "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", "Comic Neue", cursive';
+const CX = 540;
+const ERA_LIST = [[0, 1, () => sceneAvatar()]];
+const TIMELINE = { width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE, format: 'still',
+  shots: [{ id: 1, key: 'avatar', era: 0, t0: 0, t1: 1, title: 'photo de profil' }], cuts: [], morphs: [], cues: {}, acts: [], board: [{ t: 0.5, title: 'photo de profil', sound: '', next: '' }], narration: [] };
+window.TIMELINE = TIMELINE;

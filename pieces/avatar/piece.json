@@ -1,0 +1,1 @@
+{ "name": "avatar", "title": "Photo de profil", "format": { "width": 1080, "height": 1080, "fps": 24, "bpm": 120, "duration": 1.0, "frames": 24 }, "style": "crosshatch", "review": { "safe": { "top": 0, "bottom": 0, "right": 0 }, "refs": {} } }
