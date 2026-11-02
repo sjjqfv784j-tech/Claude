@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniRoute en 1 minute</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #e6e6ea; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  OMNIROUTE EN 1 MINUTE — 9:16, 60 s @ 24 fps, isométrique clair. Format F4 (mission) piloté par la voix :
+//  le développeur perd son IA (quota atteint) -> le petit robot-passerelle branche tout sur une adresse ->
+//  4 étapes (installer, fournisseur, clé, client) -> silence -> une panne, le trafic bascule tout seul.
+//  Couleur : l'accent sombre = la requête (le curseur / le jeton). Une seule chose sombre par image.
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = 60.0;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const CX = 500;
+
+// début de chaque scène (secondes) — recalé sur la voix quand elle existe
+const SC = [0, 6, 12, 20, 27, 34, 42, 48, 55, 60];
+const sceneFns = [() => sceneQuota(), () => sceneGateway(), () => sceneInstall(), () => sceneProviders(),
+                  () => sceneKey(), () => sceneClient(), () => sceneSilence(), () => sceneFallback(), () => sceneEnd()];
+const ERA_LIST = sceneFns.map((fn, i) => [SC[i], SC[i + 1], fn]);
+const SHOTS = [
+  ['quota',     0, 0, 6,  "l'IA atteint sa limite : un fournisseur devient gris"],
+  ['gateway',   1, 0, 6,  'le robot branche tous les fournisseurs sur une seule prise'],
+  ['install',   2, 0, 8,  'un terminal tape npm i -g omniroute'],
+  ['providers', 3, 0, 7,  'le tableau de bord : on ajoute un fournisseur'],
+  ['key',       4, 0, 7,  'une clé tombe sur la plaque Endpoints'],
+  ['client',    5, 0, 8,  "trois champs : adresse, clé, modèle auto"],
+  ['silence',   6, 0, 6,  'silence : un fournisseur s’éteint'],
+  ['fallback',  7, 0, 7,  'la requête bascule sur les 4 niveaux de repli'],
+  ['end',       8, 0, 5,  'retour au début : le curseur n’a pas été interrompu'],
+].map(([key, era, , , title], i) => ({ id: i + 1, key, era, t0: SC[i], t1: SC[i + 1], title }));
+
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'F4',
+  shots: SHOTS,
+  cuts: SC.slice(1, -1),
+  morphs: [],
+  cues: {},
+  acts: [
+    { name: '1 Problème',   role: 'build',   t0: 0,  t1: 12 },
+    { name: '2 Les étapes', role: 'journey', t0: 12, t1: 42 },
+    { name: '3 Silence',    role: 'silence', t0: 42, t1: 48 },
+    { name: '4 Bascule',    role: 'gift',    t0: 48, t1: 55 },
+    { name: '5 Retour',     role: 'goodbye', t0: 55, t1: 60 },
+  ],
+  board: [
+    { t: 4.2,  title: 'quota atteint',            sound: 'nappe douce, un clic',          next: 'le robot arrive' },
+    { t: 9.5,  title: 'une seule prise',          sound: 'câbles qui se branchent',        next: 'npm install' },
+    { t: 16.0, title: 'npm i -g omniroute',       sound: 'touches du clavier',             next: 'le tableau de bord' },
+    { t: 24.0, title: 'ajouter un fournisseur',   sound: 'bip de validation',              next: 'la clé' },
+    { t: 31.0, title: 'la clé Endpoints',         sound: 'la clé tombe, tintement',        next: 'le client' },
+    { t: 39.0, title: 'adresse + clé + auto',     sound: 'trois bips montants',            next: 'silence' },
+    { t: 45.0, title: 'un fournisseur s’éteint',  sound: 'silence',                        next: 'bascule' },
+    { t: 51.0, title: 'la bascule',               sound: 'accord fort, le plus fort',      next: 'retour' },
+    { t: 58.0, title: 'une adresse, tous les modèles', sound: 'nappe qui se pose',        next: 'boucle' },
+  ],
+  narration: [],
+};
+window.TIMELINE = TIMELINE;
