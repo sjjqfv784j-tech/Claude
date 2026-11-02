@@ -1,8 +1,26 @@
 {
   "name": "omniroute",
   "title": "OmniRoute en 1 minute",
-  "format": { "width": 1080, "height": 1920, "fps": 24, "bpm": 120, "duration": 60.0, "frames": 1440 },
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "bpm": 120,
+    "duration": 53.4,
+    "frames": 1283
+  },
   "storyFormat": "F4 mission (voice-led, hard cuts on sentence ends)",
   "style": "isometric",
-  "review": { "safe": { "top": 240, "bottom": 420, "right": 140 }, "refs": {} }
+  "review": {
+    "safe": {
+      "top": 240,
+      "bottom": 420,
+      "right": 140
+    },
+    "refs": {}
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -12
+  }
 }

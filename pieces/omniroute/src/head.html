@@ -22,54 +22,43 @@
 // =====================================================================
 const FPS = 24, W = 1080, H = 1920;
 const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
-const DURATION = 60.0;
+const DURATION = Math.ceil(VOICE.duration * FPS) / FPS;
 const NFRAMES = Math.round(DURATION * FPS);
 const LOOP_T = NFRAMES / FPS;
 const SAFE = { top: 240, bottom: 420, right: 140 };
 const CX = 500;
 
-// début de chaque scène (secondes) — recalé sur la voix quand elle existe
-const SC = [0, 6, 12, 20, 27, 34, 42, 48, 55, 60];
-const sceneFns = [() => sceneQuota(), () => sceneGateway(), () => sceneInstall(), () => sceneProviders(),
-                  () => sceneKey(), () => sceneClient(), () => sceneSilence(), () => sceneFallback(), () => sceneEnd()];
+// la voix est l'horloge : chaque scène démarre 0,3 s avant sa phrase ; le coup de la bascule tombe dans le silence avant « OmniRoute bascule »
+const VL = (id) => VOICE.lines.find((l) => l.id === id);
+const LINE_OF_SCENE = ['l1', 'l2', 'l3', 'l4', 'l5', 'l6', 'l6b', 'l7'];
+const HIT_T = VL('l8').t0 - 0.6;
+const SC = [0, ...LINE_OF_SCENE.slice(1).map((id) => +(VL(id).t0 - 0.3).toFixed(3)), +HIT_T.toFixed(3), +(VL('l9').t0 - 0.3).toFixed(3), DURATION];
+const sceneFns = [() => sceneQuota(), () => sceneGateway(), () => sceneInstall(), () => sceneProviders(), () => sceneKey(),
+                  () => sceneClient(), () => sceneClaude(), () => sceneSilence(), () => sceneFallback(), () => sceneEnd()];
 const ERA_LIST = sceneFns.map((fn, i) => [SC[i], SC[i + 1], fn]);
-const SHOTS = [
-  ['quota',     0, 0, 6,  "l'IA atteint sa limite : un fournisseur devient gris"],
-  ['gateway',   1, 0, 6,  'le robot branche tous les fournisseurs sur une seule prise'],
-  ['install',   2, 0, 8,  'un terminal tape npm i -g omniroute'],
-  ['providers', 3, 0, 7,  'le tableau de bord : on ajoute un fournisseur'],
-  ['key',       4, 0, 7,  'une clé tombe sur la plaque Endpoints'],
-  ['client',    5, 0, 8,  "trois champs : adresse, clé, modèle auto"],
-  ['silence',   6, 0, 6,  'silence : un fournisseur s’éteint'],
-  ['fallback',  7, 0, 7,  'la requête bascule sur les 4 niveaux de repli'],
-  ['end',       8, 0, 5,  'retour au début : le curseur n’a pas été interrompu'],
-].map(([key, era, , , title], i) => ({ id: i + 1, key, era, t0: SC[i], t1: SC[i + 1], title }));
+const SHOT_TITLES = [
+  "l'IA atteint sa limite : un fournisseur devient gris", 'le robot branche tous les fournisseurs sur une seule prise',
+  'un terminal tape npm i -g omniroute', 'le tableau de bord : on ajoute un fournisseur', 'une clé tombe sur la plaque Endpoints',
+  'trois champs : adresse, clé, modèle auto', 'omniroute configure claude', 'silence : un fournisseur s’éteint',
+  'la requête bascule sur les 4 niveaux de repli', 'retour au début : le curseur n’a pas été interrompu'];
+const SHOT_KEYS = ['quota', 'gateway', 'install', 'providers', 'key', 'client', 'claude', 'silence', 'fallback', 'end'];
+const SHOTS = SHOT_KEYS.map((key, i) => ({ id: i + 1, key, era: i, t0: SC[i], t1: SC[i + 1], title: SHOT_TITLES[i] }));
 
 const TIMELINE = {
   width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
-  format: 'F4',
+  format: 'voice-led',
   shots: SHOTS,
   cuts: SC.slice(1, -1),
   morphs: [],
-  cues: {},
+  cues: { hit: HIT_T },
   acts: [
-    { name: '1 Problème',   role: 'build',   t0: 0,  t1: 12 },
-    { name: '2 Les étapes', role: 'journey', t0: 12, t1: 42 },
-    { name: '3 Silence',    role: 'silence', t0: 42, t1: 48 },
-    { name: '4 Bascule',    role: 'gift',    t0: 48, t1: 55 },
-    { name: '5 Retour',     role: 'goodbye', t0: 55, t1: 60 },
+    { name: '1 Problème',   role: 'build',   t0: SC[0], t1: SC[2] },
+    { name: '2 Les étapes', role: 'journey', t0: SC[2], t1: SC[7] },
+    { name: '3 Silence',    role: 'silence', t0: SC[7], t1: SC[8] },
+    { name: '4 Bascule',    role: 'gift',    t0: SC[8], t1: SC[9] },
+    { name: '5 Retour',     role: 'goodbye', t0: SC[9], t1: DURATION },
   ],
-  board: [
-    { t: 4.2,  title: 'quota atteint',            sound: 'nappe douce, un clic',          next: 'le robot arrive' },
-    { t: 9.5,  title: 'une seule prise',          sound: 'câbles qui se branchent',        next: 'npm install' },
-    { t: 16.0, title: 'npm i -g omniroute',       sound: 'touches du clavier',             next: 'le tableau de bord' },
-    { t: 24.0, title: 'ajouter un fournisseur',   sound: 'bip de validation',              next: 'la clé' },
-    { t: 31.0, title: 'la clé Endpoints',         sound: 'la clé tombe, tintement',        next: 'le client' },
-    { t: 39.0, title: 'adresse + clé + auto',     sound: 'trois bips montants',            next: 'silence' },
-    { t: 45.0, title: 'un fournisseur s’éteint',  sound: 'silence',                        next: 'bascule' },
-    { t: 51.0, title: 'la bascule',               sound: 'accord fort, le plus fort',      next: 'retour' },
-    { t: 58.0, title: 'une adresse, tous les modèles', sound: 'nappe qui se pose',        next: 'boucle' },
-  ],
-  narration: [],
+  board: SHOT_KEYS.map((k, i) => ({ t: +(SC[i] + (SC[i + 1] - SC[i]) * 0.8).toFixed(2), title: SHOT_TITLES[i], sound: i === 8 ? 'le coup le plus fort' : i === 7 ? 'silence' : 'nappe douce, petits clics', next: SHOT_KEYS[i + 1] || 'boucle' })),
+  narration: VOICE.lines.map((l) => ({ id: l.id, t0: l.t0, t1: l.t1, text: l.text })),
 };
 window.TIMELINE = TIMELINE;

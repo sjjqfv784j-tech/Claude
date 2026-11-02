@@ -1,0 +1,66 @@
+{
+  "lead": 0.7,
+  "tail": 2.2,
+  "lines": [
+    {
+      "id": "l1",
+      "text": "Ça t'est déjà arrivé ? Ton IA atteint sa limite… et s'arrête net, en plein travail.",
+      "file": "l1.mp3",
+      "after": 0.8
+    },
+    {
+      "id": "l2",
+      "text": "Voici OmniRoute : une passerelle gratuite et open source. Une seule adresse pour tous tes modèles d'IA.",
+      "file": "l2.mp3",
+      "after": 0.8
+    },
+    {
+      "id": "l3",
+      "text": "Un : installe-la avec npm install tiret g omniroute, puis lance omniroute.",
+      "file": "l3.mp3",
+      "after": 0.8
+    },
+    {
+      "id": "l4",
+      "text": "Deux : ouvre localhost deux zéro un deux huit, et ajoute un fournisseur.",
+      "file": "l4.mp3",
+      "after": 0.8
+    },
+    {
+      "id": "l5",
+      "text": "Trois : dans Endpoints, crée ta clé OmniRoute.",
+      "file": "l5.mp3",
+      "after": 0.8
+    },
+    {
+      "id": "l6",
+      "text": "Quatre : dans ton outil, mets l'adresse, ta clé, et le modèle auto.",
+      "file": "l6.mp3",
+      "after": 0.8
+    },
+    {
+      "id": "l6b",
+      "text": "Avec Claude Code, c'est une seule commande : omniroute configure claude.",
+      "file": "l6b.mp3",
+      "after": 0.9
+    },
+    {
+      "id": "l7",
+      "text": "Et si un fournisseur plante ?",
+      "file": "l7.mp3",
+      "after": 3.2
+    },
+    {
+      "id": "l8",
+      "text": "OmniRoute bascule tout seul : abonnement, clé API, pas cher, puis gratuit.",
+      "file": "l8.mp3",
+      "after": 1.0
+    },
+    {
+      "id": "l9",
+      "text": "Une adresse, tous tes modèles. Abonne-toi pour la suite !",
+      "file": "l9.mp3",
+      "after": 0.3
+    }
+  ]
+}

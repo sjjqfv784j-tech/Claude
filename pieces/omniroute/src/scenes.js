@@ -7,6 +7,8 @@ const OMNI_ISO = { ox: 500, oy: 1000, u: 1.1 };
 const lt = () => TT - E0;
 const sp = (t0, o = { k: 140, damp: 0.7 }) => spring(lt(), t0, o);   // ressort local
 const drop = (t0, h = 220) => (1 - spring(lt(), t0, { k: 160, damp: 0.6 })) * h;
+// instant absolu du dernier saut déjà passé parmi les instants locaux donnés
+const hopAt = (...ts) => { let h = null; ts.forEach((t) => { if (lt() >= t) h = t; }); return h === null ? 1e9 : E0 + h; };
 const typedN = (s, t0, cps = 22) => Math.floor(clamp((lt() - t0) * cps, 0, s.length));
 
 // ---- éléments communs --------------------------------------------------
@@ -87,7 +89,7 @@ function sceneGateway() {
   const front = faceOf([HUB.x, HUB.y + HUB.d, 26], [1, 0, 0], [0, 0, -1]);
   isoText(front, 'localhost:20128', 40, 18, 22, { color: PAL.text, count: typedN('localhost:20128', 2.6, 20) });
   const hy = hz + (1 - spring(lt(), 0.3, { k: 170, damp: 0.5 })) * 240;
-  cubeBot(-6, 0, hy, 78, { key: 'hero', hop: 1.2, look: 0 });
+  cubeBot(-6, 0, hy, 78, { key: 'hero', hop: hopAt(1.2, 3.6, 5.6), look: 0 });
   isoTag('02', 'OmniRoute');
   isoCaption('une seule adresse');
 }
@@ -98,13 +100,13 @@ function sceneInstall() {
   isoPlates(-260, -240, 0, 500, 450, [{ h: 14, r: 52 }]);
   const fp = terminal(-200, -150, 14, 400, 300, 0.05);
   const l1 = '$ npm i -g omniroute', l2 = '$ omniroute', l3 = '✓ localhost:20128';
-  isoText(fp, l1, 26, 74, 26, { color: PAL.text, count: typedN(l1, 0.9, 20) });
-  isoText(fp, l2, 26, 124, 26, { color: PAL.text, count: typedN(l2, 3.4, 20) });
-  const s = sp(5.2, { k: 200, damp: 0.7 });
+  isoText(fp, l1, 26, 74, 26, { color: PAL.text, count: typedN(l1, 0.8, 14) });
+  isoText(fp, l2, 26, 124, 26, { color: PAL.text, count: typedN(l2, 3.0, 16) });
+  const s = sp(4.2, { k: 200, damp: 0.7 });
   if (s > 0.02) isoText(fp, l3, 26, 176, 24, { color: PAL.textD, count: Math.floor(l3.length * clamp(s)) });
-  const cur = lt() < 5.2 ? (lt() < 3.4 ? 26 + 24 * 0.62 * typedN(l1, 0.9, 20) + 4 : 26 + 24 * 0.62 * typedN(l2, 3.4, 20) + 4) : 0;
-  if (cur && blinkOn(lt(), 0.5)) faceSlab(fp, cur, lt() < 3.4 ? 54 : 104, 12, 24, 3, { r: 2, fill: PAL.accent, edge: PAL.accent, creaseC: PAL.accent });
-  cubeBot(150, 110, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: 5.2, look: -0.5 });
+  const cur = lt() < 4.2 ? (lt() < 3.0 ? 26 + 24 * 0.62 * typedN(l1, 0.8, 14) + 4 : 26 + 24 * 0.62 * typedN(l2, 3.0, 16) + 4) : 0;
+  if (cur && blinkOn(lt(), 0.5)) faceSlab(fp, cur, lt() < 3.0 ? 54 : 104, 12, 24, 3, { r: 2, fill: PAL.accent, edge: PAL.accent, creaseC: PAL.accent });
+  cubeBot(150, 110, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: hopAt(1.2, 2.8, 4.2), look: -0.5 });
   isoTag('03', 'installer');
   isoCaption('npm i -g omniroute');
 }
@@ -128,7 +130,7 @@ function sceneProviders() {
     faceSlab(fp, 164, y, 230 * s, 38, 3, { edge: PAL.edge, creaseC: PAL.inner });
     if (s > 0.8) { lamp(fp, 184, y + 19, 5, i === 0 || blinkOn(lt(), 1.0, i * 0.3)); isoText(fp, n, 200, y + 25, 19, { color: PAL.text }); }
   });
-  cubeBot(170, 120, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: 1.9, look: -0.5 });
+  cubeBot(170, 120, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: hopAt(1.0, 1.9, 3.6), look: -0.5 });
   isoTag('04', 'fournisseur');
   isoCaption('ajoute un fournisseur');
 }
@@ -143,13 +145,13 @@ function sceneKey() {
   const l = 'sk-omni-••••••••••••';
   isoText(fp, 'Ta clé OmniRoute', 164, 76, 20, { color: PAL.textD });
   faceRR(fp, 164, 96, 232, 44, 10);
-  isoText(fp, l, 176, 126, 20, { color: PAL.text, count: typedN(l, 2.2, 16) });
+  isoText(fp, l, 176, 126, 20, { color: PAL.text, count: typedN(l, 1.5, 20) });
   // la clé tombe du ciel et se pose devant la dalle
   const kz = 36 + drop(0.7, 360);
   isoCyl(-20, 190, kz, 26, 10, {});
   isoBox(-4, 182, kz, 120, 16, 10, { r: 5, seg: 3 });
   isoBox(70, 182, kz + 10, 14, 16, 18, { r: 3, seg: 2 });
-  cubeBot(170, 120, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: 3.2, look: -0.5 });
+  cubeBot(170, 120, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: hopAt(1.4, 2.6), look: -0.5 });
   isoTag('05', 'la clé');
   isoCaption('crée ta clé');
 }
@@ -158,19 +160,19 @@ function sceneKey() {
 function sceneClient() {
   setIso(OMNI_ISO);
   isoPlates(-260, -240, 0, 500, 450, [{ h: 14, r: 52 }]);
-  const fp = terminal(-230, -190, 14, 460, 360, 0.05);
+  const fp = terminal(-210, -180, 14, 420, 340, 0.05);
   const rows = [['URL', 'localhost:20128/v1'], ['CLÉ', 'sk-omni-••••••'], ['MODÈLE', 'auto']];
   rows.forEach(([k, v], i) => {
-    const t0 = 1.0 + i * 1.9;
+    const t0 = 0.8 + i * 1.3;
     const s = sp(t0, { k: 200, damp: 0.7 });
     if (s <= 0.02) return;
     const y = 56 + i * 80;
     isoText(fp, k, 24, y + 4, 18, { color: PAL.textD });
-    faceRR(fp, 24, y + 12, 412 * clamp(s), 44, 10);
+    faceRR(fp, 24, y + 12, 372 * clamp(s), 44, 10);
     if (s > 0.8) isoText(fp, v, 38, y + 42, 24, { color: PAL.text, count: typedN(v, t0 + 0.4, 18) });
   });
-  if (lt() > 6.8) { const s = sp(6.8, { k: 200, damp: 0.6 }); faceSlab(fp, 24, 300, 180 * s, 36, 3, { fill: PAL.accent, edge: PAL.accent, creaseC: PAL.accent }); if (s > 0.8) isoText(fp, '✓ connecté', 40, 324, 20, { color: PAL.paper }); }
-  cubeBot(190, 140, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: 6.8, look: -0.5 });
+  if (lt() > 4.5) { const s = sp(4.5, { k: 200, damp: 0.6 }); faceSlab(fp, 24, 300, 180 * s, 36, 3, { fill: PAL.accent, edge: PAL.accent, creaseC: PAL.accent }); if (s > 0.8) isoText(fp, '✓ connecté', 40, 324, 20, { color: PAL.paper }); }
+  cubeBot(190, 140, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: hopAt(1.2, 2.6, 4.5), look: -0.5 });
   isoTag('06', 'ton outil');
   isoCaption('adresse, clé, auto');
 }
@@ -187,8 +189,8 @@ function sceneSilence() {
   PROV.forEach((p, i) => cableTo(p, hz, 1));
   const front = faceOf([HUB.x, HUB.y + HUB.d, 26], [1, 0, 0], [0, 0, -1]);
   isoText(front, 'localhost:20128', 40, 18, 22, { color: PAL.text });
-  cubeBot(-6, 0, hz, 78, { key: 'hero', hop: 99, look: 0 });
-  isoTag('07', 'et si…');
+  cubeBot(-6, 0, hz, 78, { key: 'hero', hop: 1e9, look: 0 });
+  isoTag('08', 'et si…');
   isoCaption('et si ça tombe ?');
 }
 
@@ -209,13 +211,13 @@ function sceneFallback() {
   const q = [src[0] + (dst[0] - src[0]) * k, src[1] + (dst[1] - src[1]) * k, src[2] + (dst[2] - src[2]) * k + Math.sin(f * Math.PI) * 90];
   const s2 = isoP(q);
   ctx.fillStyle = PAL.accent; ctx.beginPath(); ctx.arc(s2[0], s2[1], 11, 0, Math.PI * 2); ctx.fill();
-  cubeBot(-6, 0, hz, 78, { key: 'hero', hop: 0.6, look: 0.5 });
+  cubeBot(-6, 0, hz, 78, { key: 'hero', hop: hopAt(0.6, 2.4, 4.4), look: 0.5 });
   // les 4 niveaux s'allument un par un sur le devant du hub
   const front = faceOf([HUB.x, HUB.y + HUB.d, 26], [1, 0, 0], [0, 0, -1]);
   TIERS.forEach((n, i) => { lamp(front, 30 + i * 66, 16, 5, lt() > 2.0 + i * 0.6); });
   const tier = clamp(Math.floor((lt() - 2.0) / 0.6), 0, 3);
   if (lt() > 2.0) isoText(faceOf([HUB.x, HUB.y, 26], [1, 0, 0], [0, 1, 0]), TIERS[tier], 170, 170, 22, { color: PAL.text });
-  isoTag('08', 'la bascule');
+  isoTag('09', 'la bascule');
   isoCaption('ça bascule tout seul');
 }
 
@@ -229,7 +231,28 @@ function sceneEnd() {
   [150, 110, 190].forEach((L, i) => faceSlab(fp, 24, 92 + i * 18, L, 10, 3, { edge: PAL.edge, creaseC: PAL.inner }));
   if (blinkOn(lt(), 0.5) || true) faceSlab(fp, 24, 150, 12, 20, 3, { r: 2, fill: PAL.accent, edge: PAL.accent, creaseC: PAL.accent });
   const hz = 14;
-  cubeBot(200, 120, hz + (1 - spring(lt(), 0.2, { k: 170, damp: 0.5 })) * 200, 74, { key: 'hero', hop: 1.4, look: -0.5 });
-  isoTag('09', 'OmniRoute');
+  cubeBot(200, 120, hz + (1 - spring(lt(), 0.2, { k: 170, damp: 0.5 })) * 200, 74, { key: 'hero', hop: hopAt(1.0, 2.6, 4.0), look: -0.5 });
+  isoTag('10', 'OmniRoute');
   isoCaption('une adresse. tous tes modèles.');
+}
+
+// ---- 6b. Claude Code : une seule commande -----------------------------------
+function sceneClaude() {
+  setIso(OMNI_ISO);
+  isoPlates(-260, -240, 0, 500, 450, [{ h: 14, r: 52 }]);
+  const fp = terminal(-200, -150, 14, 400, 300, 0.05);
+  const l1 = '$ omniroute configure claude', l2 = '? connexion : OmniRoute', l3 = '✓ Claude Code est prêt';
+  isoText(fp, l1, 22, 74, 22, { color: PAL.text, count: typedN(l1, 0.9, 15) });
+  const s2 = sp(3.0, { k: 200, damp: 0.7 });
+  if (s2 > 0.02) isoText(fp, l2, 22, 124, 22, { color: PAL.textD, count: Math.floor(l2.length * clamp(s2)) });
+  const s3 = sp(3.9, { k: 200, damp: 0.7 });
+  if (s3 > 0.02) isoText(fp, l3, 22, 174, 22, { color: PAL.text, count: Math.floor(l3.length * clamp(s3)) });
+  if (lt() < 3.9 && blinkOn(lt(), 0.5)) faceSlab(fp, 22 + 22 * 0.62 * typedN(l1, 0.9, 15) + 4, 54, 12, 22, 3, { r: 2, fill: PAL.accent, edge: PAL.accent, creaseC: PAL.accent });
+  // une pastille « Claude Code » sur le devant de la dalle
+  const front = faceOf([-200, 150, 36], [1, 0, 0], [0, 0, -1]);
+  const pop = sp(3.9, { k: 200, damp: 0.6 });
+  if (pop > 0.02) { faceRR(front, 20, 0, 150 * clamp(pop), 26, 8); if (pop > 0.8) isoText(front, 'Claude Code', 32, 19, 16, { color: PAL.text }); }
+  cubeBot(160, 130, 36 + (1 - spring(lt(), 0.25, { k: 170, damp: 0.5 })) * 220, 70, { key: 'hero', hop: hopAt(1.6, 2.6, 3.9), look: -0.5 });
+  isoTag('07', 'Claude Code');
+  isoCaption('omniroute configure claude');
 }

@@ -1,0 +1,39 @@
+1
+00:00:00,700 --> 00:00:05,466
+Ça t'est déjà arrivé ? Ton IA atteint sa limite… et s'arrête net, en plein travail.
+
+2
+00:00:06,266 --> 00:00:12,848
+Voici OmniRoute : une passerelle gratuite et open source. Une seule adresse pour tous tes modèles d'IA.
+
+3
+00:00:13,648 --> 00:00:18,006
+Un : installe-la avec npm install tiret g omniroute, puis lance omniroute.
+
+4
+00:00:18,806 --> 00:00:23,071
+Deux : ouvre localhost deux zéro un deux huit, et ajoute un fournisseur.
+
+5
+00:00:23,871 --> 00:00:26,567
+Trois : dans Endpoints, crée ta clé OmniRoute.
+
+6
+00:00:27,367 --> 00:00:31,815
+Quatre : dans ton outil, mets l'adresse, ta clé, et le modèle auto.
+
+7
+00:00:32,615 --> 00:00:36,673
+Avec Claude Code, c'est une seule commande : omniroute configure claude.
+
+8
+00:00:37,573 --> 00:00:39,001
+Et si un fournisseur plante ?
+
+9
+00:00:42,201 --> 00:00:46,990
+OmniRoute bascule tout seul : abonnement, clé API, pas cher, puis gratuit.
+
+10
+00:00:47,990 --> 00:00:50,906
+Une adresse, tous tes modèles. Abonne-toi pour la suite !

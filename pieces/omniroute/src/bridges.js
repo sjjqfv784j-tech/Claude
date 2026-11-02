@@ -3,9 +3,8 @@
 // =====================================================================
 const ERA_BG = ERA_LIST.map(() => PAL.paper);
 function pieceCam(era, t) {
-  const l = t - SC[era];
-  if (era === 1) return push(t, SC[1] + 0.2, SC[2], { z: 1.05, p: [500, 960], to: [500, 960] });
-  if (era === 5) return push(t, SC[5] + 0.5, SC[6], { z: 1.04, p: [470, 940], to: [470, 940] });
-  return null;
+  const P = [[500, 960], [500, 940], [500, 980], [500, 960], [500, 960], [500, 960], [500, 980], [500, 940], [500, 940], [500, 960]];
+  if (era === 7) return null;   // le silence : image tenue, pas de mouvement
+  return push(t, SC[era], SC[era + 1], { z: 1.09, p: P[era], to: P[era] });
 }
 const BRIDGES = [];
