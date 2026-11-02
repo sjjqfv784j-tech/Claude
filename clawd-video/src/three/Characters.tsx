@@ -14,36 +14,71 @@ const Box: React.FC<{
   </mesh>
 );
 
-/* ---------- Clawd en voxels ---------- */
+/* ---------- Pixel : mascotte originale (robot rond turquoise) ---------- */
 
-const ORANGE = '#D97757';
-const ORANGE_DARK = '#B95F42';
+const TEAL = '#3FC1B0';
+const TEAL_DARK = '#1F8F80';
 
 export type ClawdPose = { bob: number; squash: number; turn: number; armL: number; armR: number; blink: number; tilt: number; jump: number };
 
-// Clawd posé sur le comptoir : l'origine du groupe = sous ses pattes
+// posé sur le comptoir : l'origine du groupe = sous ses pieds
 export const Clawd3D: React.FC<{ pose: ClawdPose; position: [number, number, number] }> = ({ pose, position }) => {
   const sy = 1 - pose.squash;
   const sx = 1 + pose.squash * 0.6;
   return (
     <group position={[position[0], position[1] + pose.jump, position[2]]} rotation={[0, pose.turn, pose.tilt]}>
-      {/* pattes */}
-      {[-0.22, -0.08, 0.08, 0.22].map((x) => (
-        <Box key={x} size={[0.07, 0.14, 0.14]} position={[x, 0.07, 0]} color={ORANGE_DARK} />
+      {/* pieds */}
+      {[-0.17, 0.17].map((x) => (
+        <mesh key={x} position={[x, 0.04, 0.02]} scale={[1, 0.4, 1.2]}>
+          <sphereGeometry args={[0.12, 14, 10]} />
+          <meshStandardMaterial color={TEAL_DARK} roughness={0.6} />
+        </mesh>
       ))}
-      <group position={[0, 0.14 + pose.bob, 0]} scale={[sx, sy, sx]}>
+      <group position={[0, 0.1 + pose.bob, 0]} scale={[sx, sy, sx]}>
         {/* corps */}
-        <Box size={[0.64, 0.42, 0.42]} position={[0, 0.21, 0]} color={ORANGE} />
-        {/* bras / pinces */}
-        <group position={[-0.32, 0.2, 0]} rotation={[0, 0, pose.armL]}>
-          <Box size={[0.16, 0.12, 0.2]} position={[-0.08, 0, 0]} color={ORANGE} />
+        <mesh position={[0, 0.3, 0]} scale={[1, 0.95, 0.9]}>
+          <sphereGeometry args={[0.36, 24, 18]} />
+          <meshStandardMaterial color={TEAL} roughness={0.45} />
+        </mesh>
+        {/* visage */}
+        <mesh position={[0, 0.36, 0.25]} scale={[1, 0.62, 0.35]}>
+          <sphereGeometry args={[0.26, 20, 14]} />
+          <meshStandardMaterial color="#10242B" roughness={0.3} />
+        </mesh>
+        <mesh position={[-0.09, 0.37, 0.34]} scale={[1, pose.blink, 0.4]}>
+          <sphereGeometry args={[0.04, 12, 10]} />
+          <meshStandardMaterial color="#8CF3E3" emissive="#8CF3E3" emissiveIntensity={0.9} />
+        </mesh>
+        <mesh position={[0.09, 0.37, 0.34]} scale={[1, pose.blink, 0.4]}>
+          <sphereGeometry args={[0.04, 12, 10]} />
+          <meshStandardMaterial color="#8CF3E3" emissive="#8CF3E3" emissiveIntensity={0.9} />
+        </mesh>
+        <mesh position={[0, 0.29, 0.34]} scale={[1, 0.5 + pose.squash * 6, 0.4]}>
+          <sphereGeometry args={[0.045, 12, 8]} />
+          <meshStandardMaterial color="#8CF3E3" emissive="#8CF3E3" emissiveIntensity={0.7} />
+        </mesh>
+        {/* bras */}
+        <group position={[-0.34, 0.28, 0]} rotation={[0, 0, pose.armL]}>
+          <mesh position={[-0.1, 0, 0]} scale={[1.5, 0.8, 0.8]}>
+            <sphereGeometry args={[0.07, 12, 10]} />
+            <meshStandardMaterial color={TEAL_DARK} roughness={0.6} />
+          </mesh>
         </group>
-        <group position={[0.32, 0.2, 0]} rotation={[0, 0, -pose.armR]}>
-          <Box size={[0.16, 0.12, 0.2]} position={[0.08, 0, 0]} color={ORANGE} />
+        <group position={[0.34, 0.28, 0]} rotation={[0, 0, -pose.armR]}>
+          <mesh position={[0.1, 0, 0]} scale={[1.5, 0.8, 0.8]}>
+            <sphereGeometry args={[0.07, 12, 10]} />
+            <meshStandardMaterial color={TEAL_DARK} roughness={0.6} />
+          </mesh>
         </group>
-        {/* yeux */}
-        <Box size={[0.07, 0.1 * pose.blink, 0.02]} position={[-0.14, 0.27, 0.215]} color="#141018" />
-        <Box size={[0.07, 0.1 * pose.blink, 0.02]} position={[0.14, 0.27, 0.215]} color="#141018" />
+        {/* antenne */}
+        <mesh position={[0, 0.69, 0]}>
+          <cylinderGeometry args={[0.012, 0.012, 0.12, 6]} />
+          <meshStandardMaterial color={TEAL_DARK} />
+        </mesh>
+        <mesh position={[0, 0.77, 0]}>
+          <sphereGeometry args={[0.04, 12, 10]} />
+          <meshStandardMaterial color="#FFB347" emissive="#FFB347" emissiveIntensity={0.8} />
+        </mesh>
       </group>
     </group>
   );

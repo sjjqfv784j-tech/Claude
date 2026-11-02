@@ -67,18 +67,18 @@ const Count: React.FC<{ from: number; to: number; start: number; end: number; su
 // Petit Clawd en pixels (pour les agents), dessiné à la main en rectangles
 export const PixelCrab: React.FC<{ color: string; size: number }> = ({ color, size }) => {
   const frame = useCurrentFrame();
-  const bob = Math.round(Math.sin(frame / 6) * 1);
+  const bob = Math.sin(frame / 6) * 2;
   return (
-    <svg width={size} height={(size * 9) / 12} viewBox="0 0 12 9" shapeRendering="crispEdges">
-      <g transform={`translate(0 ${bob * 0.3})`}>
-        <rect x="2" y="0" width="8" height="5" fill={color} />
-        <rect x="0" y="2" width="2" height="2" fill={color} />
-        <rect x="10" y="2" width="2" height="2" fill={color} />
-        <rect x="3.5" y="1.5" width="1" height="1.2" fill="#111" />
-        <rect x="7.5" y="1.5" width="1" height="1.2" fill="#111" />
-        {[2.5, 4.5, 6.5, 8.5].map((x) => (
-          <rect key={x} x={x} y="5" width="1" height="2" fill={color} />
-        ))}
+    <svg width={size} height={size} viewBox="0 0 100 100">
+      <g transform={`translate(0 ${bob})`}>
+        <line x1="50" y1="14" x2="50" y2="4" stroke={color} strokeWidth="4" strokeLinecap="round" />
+        <circle cx="50" cy="4" r="4" fill={color} />
+        <rect x="14" y="14" width="72" height="70" rx="30" fill={color} />
+        <rect x="26" y="34" width="48" height="28" rx="12" fill="#0B1426" />
+        <circle cx="39" cy="48" r="5" fill="#EAF6FF" />
+        <circle cx="61" cy="48" r="5" fill="#EAF6FF" />
+        <rect x="26" y="84" width="16" height="8" rx="4" fill={color} opacity="0.8" />
+        <rect x="58" y="84" width="16" height="8" rx="4" fill={color} opacity="0.8" />
       </g>
     </svg>
   );
@@ -170,8 +170,8 @@ const AgentsHolo: React.FC<{ appearAt: number[] }> = ({ appearAt }) => {
           return <line key={a.label} x1="450" y1="170" x2={x2} y2={y2} stroke={a.color} strokeWidth="6" strokeDasharray="14 10" opacity="0.9" />;
         })}
       </svg>
-      <div style={{ position: 'absolute', left: 450 - 110, top: 0, filter: 'drop-shadow(0 0 18px #D97757)' }}>
-        <PixelCrab color="#D97757" size={220} />
+      <div style={{ position: 'absolute', left: 450 - 110, top: 0, filter: 'drop-shadow(0 0 18px #3FC1B0)' }}>
+        <PixelCrab color="#3FC1B0" size={220} />
       </div>
       {AGENTS.map((a, i) =>
         frame >= appearAt[i] ? (

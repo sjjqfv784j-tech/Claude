@@ -143,7 +143,7 @@ type Shot = { pos: [number, number, number]; look: [number, number, number] };
 const SHOTS: Record<'wide' | 'sam' | 'clawd', Shot> = {
   // le comptoir reste vers le bas de l'image, le haut est laissé aux hologrammes
   wide: { pos: [0, 2.05, 6.6], look: [0, 2.2, 0] },
-  sam: { pos: [-0.45, 1.95, 5.4], look: [-0.45, 2.02, 0] },
+  sam: { pos: [-0.25, 1.95, 5.6], look: [-0.25, 2.02, 0] },
   clawd: { pos: [0.45, 1.95, 5.4], look: [0.45, 2.02, 0] },
 };
 

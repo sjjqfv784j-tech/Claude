@@ -7,6 +7,7 @@ import { FPS, type TimedSegment, type VideoProps } from '../timing';
 import { Captions } from '../Video';
 import { C, sans } from '../theme';
 import { Sam, type Mood } from './Sam';
+import { Mascot } from './Mascot';
 import { Holo, N, type HoloKind } from './Holo';
 import { Scene3D } from '../three/Scene3D';
 
@@ -137,26 +138,29 @@ const SamSpeaking: React.FC<{ audio: string | null; mood: Mood; offset: number; 
   return <SamAt mood={mood} talk={talk} frame={frame + offset} />;
 };
 
-const ClawdOnCounter: React.FC<{ name: string; speaking: boolean }> = ({ name, speaking }) => {
+const ClawdOnCounter: React.FC<{ name: string; speaking: boolean; audio: string | null; offset: number }> = ({ name, speaking, audio, offset }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = spring({ frame, fps, config: { damping: 12, stiffness: 180 } });
-  const w = 660;
-  const h = (w * 440) / 480;
-  const bounce = speaking ? Math.abs(Math.sin(frame / 4)) * 0.035 : 0;
+  const data = useAudioData(staticFile(audio ?? 'voice/restaurant/seg-0.mp3'));
+  let talk = 0;
+  if (speaking && audio && data) {
+    const v = visualizeAudio({ fps, frame, audioData: data, numberOfSamples: 16 });
+    talk = Math.min(1, (v.slice(0, 6).reduce((a, b) => a + b, 0) / 6) * 6);
+  }
+  const w = 520;
+  const bounce = talk * 0.05;
   return (
     <div
       style={{
         position: 'absolute',
-        left: 1080 - w + 60,
-        top: COUNTER_TOP + 8 - h,
-        width: w,
-        height: h,
+        left: 1080 - w - 20,
+        top: COUNTER_TOP + 14 - w * 0.95,
         transform: `scale(${(0.9 + 0.1 * p) * (1 + bounce)}, ${(0.9 + 0.1 * p) * (1 - bounce)})`,
         transformOrigin: '50% 96%',
       }}
     >
-      <Gif src={staticFile(`clawd/${name}.gif`)} width={w} height={h} fit="contain" style={{ imageRendering: 'pixelated' }} />
+      <Mascot width={w} talk={talk} frame={frame + offset} action={name} />
     </div>
   );
 };
@@ -175,7 +179,7 @@ const NameTag: React.FC<{ speaker: 'clawd' | 'sam' }> = ({ speaker }) => (
         letterSpacing: 2,
       }}
     >
-      {speaker === 'clawd' ? 'CLAWD' : 'SAM'}
+      {speaker === 'clawd' ? 'PIXEL' : 'SAM'}
     </div>
   </div>
 );
@@ -242,7 +246,7 @@ export const StoryVideo: React.FC<VideoProps & { three?: boolean }> = ({ timelin
         const seg = SEGS[i];
         return (
           <Sequence key={i} from={from} durationInFrames={dur}>
-            {three ? null : <ClawdOnCounter name={seg.clawd} speaking={seg.speaker === 'clawd'} />}
+            {three ? null : <ClawdOnCounter name={seg.clawd} speaking={seg.speaker === 'clawd'} audio={s.audio} offset={from} />}
             <NameTag speaker={seg.speaker} />
             <Captions words={s.words} highlight={seg.highlight} />
             {s.audio ? <Audio src={staticFile(s.audio)} /> : null}
