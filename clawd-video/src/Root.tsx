@@ -2,6 +2,7 @@ import React from 'react';
 import { Composition } from 'remotion';
 import { ClawdVideo } from './Video';
 import { StoryVideo, STORY } from './story/StoryVideo';
+import { EtSiVideo, buildEtSi, etsiFrames } from './etsi/EtSiVideo';
 
 const StoryVideo3D: React.FC<VideoProps> = (p) => <StoryVideo {...p} three />;
 import { SEGMENTS } from './script';
@@ -48,6 +49,20 @@ export const Root: React.FC = () => (
         // dialogue : un peu plus de silence entre les répliques
         const timeline = buildTimeline(STORY.segments, await loadVoice('voice/restaurant', STORY.segments.length), 0.25);
         return { durationInFrames: totalFrames(timeline), props: { timeline } };
+      }}
+    />
+    <Composition
+      id="EtSi"
+      component={EtSiVideo}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={300}
+      defaultProps={{ timeline: buildEtSi(null) }}
+      calculateMetadata={async () => {
+        const voice = await loadVoice('voice/etsi', 7);
+        const timeline = buildEtSi(voice as never);
+        return { durationInFrames: etsiFrames(timeline), props: { timeline } };
       }}
     />
   </>

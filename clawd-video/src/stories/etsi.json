@@ -1,0 +1,13 @@
+{
+  "title": "Et si une IA te montrait ta vie dans 10 ans ?",
+  "voices": { "n": "YV28ox2c5Cuh5rim0LrW" },
+  "segments": [
+    { "speaker": "n", "scene": "bedNight", "text": "Et si, ce soir, une IA te montrait ta vie dans dix ans ? Tu ouvres l'appli. Elle te demande : tu veux vraiment savoir ? Tu appuies sur oui.", "highlight": ["IA", "dix", "ans", "oui."], "duration": 11 },
+    { "speaker": "n", "scene": "bedMorning", "text": "Premier matin. Tu te réveilles sans stress. La lumière entre par la fenêtre, et tu as envie de commencer ta journée.", "highlight": ["matin.", "sans", "stress.", "envie"], "duration": 8 },
+    { "speaker": "n", "scene": "office", "text": "Ensuite, un bureau. Tu présentes ton projet à ton équipe. L'IA t'a aidé à le préparer, mais c'est toi qui as eu l'idée. Et tout le monde applaudit.", "highlight": ["projet", "toi", "idée.", "applaudit."], "duration": 11 },
+    { "speaker": "n", "scene": "home", "text": "Le soir, tu rentres chez toi. Tu montres à ton enfant comment utiliser l'IA sans se faire piéger. Et ça marche : un grand sourire.", "highlight": ["enfant", "sans", "piéger.", "sourire."], "duration": 9 },
+    { "speaker": "n", "scene": "phone", "text": "Puis l'appli affiche une dernière phrase : cette vie dépend de ce que tu apprends maintenant.", "highlight": ["dépend", "apprends", "maintenant."], "duration": 7 },
+    { "speaker": "n", "scene": "bedEnd", "text": "Alors, commence aujourd'hui. Une idée par jour suffit.", "highlight": ["aujourd'hui.", "jour", "suffit."], "duration": 4 },
+    { "speaker": "n", "scene": "cta", "text": "Abonne-toi : une nouvelle histoire d'IA chaque jour.", "highlight": ["Abonne-toi", "histoire", "chaque", "jour."], "duration": 4 }
+  ]
+}
