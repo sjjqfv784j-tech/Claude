@@ -2,7 +2,7 @@ import React from 'react';
 import { Composition } from 'remotion';
 import { ClawdVideo } from './Video';
 import { StoryVideo, STORY } from './story/StoryVideo';
-import { EtSiVideo, buildEtSi, etsiFrames } from './etsi/EtSiVideo';
+import { EtSiVideo, buildEtSi, etsiFrames } from './etsi/EtSiVideoV2';
 
 const StoryVideo3D: React.FC<VideoProps> = (p) => <StoryVideo {...p} three />;
 import { SEGMENTS } from './script';
@@ -60,7 +60,7 @@ export const Root: React.FC = () => (
       durationInFrames={300}
       defaultProps={{ timeline: buildEtSi(null) }}
       calculateMetadata={async () => {
-        const voice = await loadVoice('voice/etsi', 7);
+        const voice = await loadVoice('voice/etsi', 15);
         const timeline = buildEtSi(voice as never);
         return { durationInFrames: etsiFrames(timeline), props: { timeline } };
       }}

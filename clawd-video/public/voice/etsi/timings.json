@@ -2,7 +2,7 @@
   "segments": [
     {
       "audio": "voice/etsi/seg-0.mp3",
-      "duration": 8.620408,
+      "duration": 3.239184,
       "words": [
         {
           "text": "Et",
@@ -12,16 +12,16 @@
         {
           "text": "si,",
           "start": 0.186,
-          "end": 0.418
+          "end": 0.406
         },
         {
           "text": "ce",
-          "start": 0.441,
-          "end": 0.569
+          "start": 0.43,
+          "end": 0.546
         },
         {
           "text": "soir,",
-          "start": 0.627,
+          "start": 0.604,
           "end": 0.917
         },
         {
@@ -31,134 +31,146 @@
         },
         {
           "text": "IA",
-          "start": 1.149,
-          "end": 1.3
+          "start": 1.161,
+          "end": 1.358
         },
         {
           "text": "te",
-          "start": 1.358,
-          "end": 1.44
+          "start": 1.405,
+          "end": 1.498
         },
         {
           "text": "montrait",
-          "start": 1.498,
-          "end": 1.811
-        },
-        {
-          "text": "ta",
-          "start": 1.834,
+          "start": 1.567,
           "end": 1.927
         },
         {
+          "text": "ta",
+          "start": 1.95,
+          "end": 2.043
+        },
+        {
           "text": "vie",
-          "start": 1.997,
-          "end": 2.148
+          "start": 2.113,
+          "end": 2.287
         },
         {
           "text": "dans",
-          "start": 2.171,
-          "end": 2.31
+          "start": 2.322,
+          "end": 2.473
         },
         {
           "text": "dix",
-          "start": 2.334,
-          "end": 2.531
+          "start": 2.496,
+          "end": 2.67
         },
         {
           "text": "ans",
-          "start": 2.647,
-          "end": 2.833
+          "start": 2.786,
+          "end": 2.891
         },
         {
           "text": "?",
-          "start": 2.868,
-          "end": 2.902
-        },
-        {
-          "text": "Tu",
-          "start": 3.228,
-          "end": 3.413
-        },
-        {
-          "text": "ouvres",
-          "start": 3.448,
-          "end": 3.727
-        },
-        {
-          "text": "l'appli.",
-          "start": 3.75,
-          "end": 4.284
-        },
-        {
-          "text": "Elle",
-          "start": 4.528,
-          "end": 4.725
-        },
-        {
-          "text": "te",
-          "start": 4.772,
-          "end": 4.888
-        },
-        {
-          "text": "demande",
-          "start": 4.957,
-          "end": 5.55
-        },
-        {
-          "text": ":",
-          "start": 5.631,
-          "end": 5.654
-        },
-        {
-          "text": "tu",
-          "start": 5.828,
-          "end": 5.979
-        },
-        {
-          "text": "veux",
-          "start": 6.049,
-          "end": 6.177
-        },
-        {
-          "text": "vraiment",
-          "start": 6.211,
-          "end": 6.513
-        },
-        {
-          "text": "savoir",
-          "start": 6.548,
-          "end": 7.001
-        },
-        {
-          "text": "?",
-          "start": 7.117,
-          "end": 7.187
-        },
-        {
-          "text": "Tu",
-          "start": 7.396,
-          "end": 7.558
-        },
-        {
-          "text": "appuies",
-          "start": 7.616,
-          "end": 7.906
-        },
-        {
-          "text": "sur",
-          "start": 7.941,
-          "end": 8.15
-        },
-        {
-          "text": "oui.",
-          "start": 8.185,
-          "end": 8.591
+          "start": 2.926,
+          "end": 3.204
         }
       ]
     },
     {
       "audio": "voice/etsi/seg-1.mp3",
-      "duration": 7.053061,
+      "duration": 3.94449,
+      "words": [
+        {
+          "text": "Tu",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "text": "ouvres",
+          "start": 0.279,
+          "end": 0.557
+        },
+        {
+          "text": "l'appli.",
+          "start": 0.58,
+          "end": 1.045
+        },
+        {
+          "text": "Elle",
+          "start": 1.37,
+          "end": 1.544
+        },
+        {
+          "text": "te",
+          "start": 1.567,
+          "end": 1.66
+        },
+        {
+          "text": "demande",
+          "start": 1.718,
+          "end": 2.125
+        },
+        {
+          "text": ":",
+          "start": 2.206,
+          "end": 2.241
+        },
+        {
+          "text": "tu",
+          "start": 2.415,
+          "end": 2.543
+        },
+        {
+          "text": "veux",
+          "start": 2.601,
+          "end": 2.717
+        },
+        {
+          "text": "vraiment",
+          "start": 2.763,
+          "end": 3.077
+        },
+        {
+          "text": "savoir",
+          "start": 3.111,
+          "end": 3.553
+        },
+        {
+          "text": "?",
+          "start": 3.634,
+          "end": 3.901
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-2.mp3",
+      "duration": 1.436735,
+      "words": [
+        {
+          "text": "Tu",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "text": "appuies",
+          "start": 0.244,
+          "end": 0.534
+        },
+        {
+          "text": "sur",
+          "start": 0.58,
+          "end": 0.778
+        },
+        {
+          "text": "oui.",
+          "start": 0.813,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-3.mp3",
+      "duration": 2.821224,
       "words": [
         {
           "text": "Premier",
@@ -172,250 +184,274 @@
         },
         {
           "text": "Tu",
-          "start": 1.254,
-          "end": 1.382
+          "start": 1.149,
+          "end": 1.289
         },
         {
           "text": "te",
-          "start": 1.44,
-          "end": 1.509
+          "start": 1.324,
+          "end": 1.37
         },
         {
           "text": "réveilles",
-          "start": 1.567,
-          "end": 1.939
+          "start": 1.405,
+          "end": 1.753
         },
         {
           "text": "sans",
-          "start": 1.962,
-          "end": 2.125
+          "start": 1.811,
+          "end": 2.009
         },
         {
           "text": "stress.",
-          "start": 2.148,
+          "start": 2.032,
           "end": 2.786
-        },
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-4.mp3",
+      "duration": 3.657143,
+      "words": [
         {
           "text": "La",
-          "start": 3.17,
-          "end": 3.274
+          "start": 0,
+          "end": 0.163
         },
         {
           "text": "lumière",
-          "start": 3.32,
-          "end": 3.704
+          "start": 0.209,
+          "end": 0.627
         },
         {
-          "text": "entre",
-          "start": 3.727,
-          "end": 3.936
-        },
-        {
-          "text": "par",
-          "start": 3.971,
-          "end": 4.098
-        },
-        {
-          "text": "la",
-          "start": 4.122,
-          "end": 4.191
-        },
-        {
-          "text": "fenêtre,",
-          "start": 4.261,
-          "end": 4.795
+          "text": "entre,",
+          "start": 0.662,
+          "end": 1.126
         },
         {
           "text": "et",
-          "start": 4.969,
-          "end": 5.097
+          "start": 1.37,
+          "end": 1.486
         },
         {
           "text": "tu",
-          "start": 5.12,
-          "end": 5.213
+          "start": 1.509,
+          "end": 1.614
         },
         {
           "text": "as",
-          "start": 5.259,
-          "end": 5.317
+          "start": 1.66,
+          "end": 1.73
         },
         {
           "text": "envie",
-          "start": 5.375,
-          "end": 5.573
+          "start": 1.788,
+          "end": 1.997
         },
         {
           "text": "de",
-          "start": 5.596,
-          "end": 5.666
+          "start": 2.032,
+          "end": 2.113
         },
         {
           "text": "commencer",
-          "start": 5.724,
-          "end": 6.153
+          "start": 2.171,
+          "end": 2.705
         },
         {
           "text": "ta",
-          "start": 6.188,
-          "end": 6.269
+          "start": 2.74,
+          "end": 2.844
         },
         {
           "text": "journée.",
-          "start": 6.339,
-          "end": 7.012
+          "start": 2.914,
+          "end": 3.622
         }
       ]
     },
     {
-      "audio": "voice/etsi/seg-2.mp3",
-      "duration": 8.202449,
+      "audio": "voice/etsi/seg-5.mp3",
+      "duration": 2.272653,
       "words": [
         {
-          "text": "Ensuite,",
+          "text": "Tu",
           "start": 0,
-          "end": 0.43
+          "end": 0.163
         },
         {
-          "text": "un",
-          "start": 0.453,
-          "end": 0.511
+          "text": "vas",
+          "start": 0.209,
+          "end": 0.325
         },
         {
-          "text": "bureau.",
-          "start": 0.569,
-          "end": 0.987
+          "text": "travailler",
+          "start": 0.348,
+          "end": 0.801
         },
+        {
+          "text": "à",
+          "start": 0.848,
+          "end": 0.882
+        },
+        {
+          "text": "pied,",
+          "start": 0.94,
+          "end": 1.289
+        },
+        {
+          "text": "tranquille.",
+          "start": 1.382,
+          "end": 2.229
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-6.mp3",
+      "duration": 2.168163,
+      "words": [
         {
           "text": "Tu",
-          "start": 1.115,
-          "end": 1.254
+          "start": 0,
+          "end": 0.174
         },
         {
           "text": "présentes",
-          "start": 1.3,
-          "end": 1.672
+          "start": 0.221,
+          "end": 0.604
         },
         {
           "text": "ton",
-          "start": 1.695,
-          "end": 1.811
+          "start": 0.627,
+          "end": 0.72
         },
         {
           "text": "projet",
-          "start": 1.869,
-          "end": 2.206
+          "start": 0.778,
+          "end": 1.126
         },
         {
           "text": "à",
-          "start": 2.241,
-          "end": 2.264
+          "start": 1.161,
+          "end": 1.184
         },
         {
           "text": "ton",
-          "start": 2.31,
-          "end": 2.438
+          "start": 1.231,
+          "end": 1.37
         },
         {
           "text": "équipe.",
-          "start": 2.519,
-          "end": 2.949
-        },
-        {
-          "text": "L'IA",
-          "start": 3.39,
-          "end": 3.692
-        },
-        {
-          "text": "t'a",
-          "start": 3.738,
-          "end": 3.843
-        },
-        {
-          "text": "aidé",
-          "start": 3.866,
-          "end": 4.11
-        },
-        {
-          "text": "à",
-          "start": 4.156,
-          "end": 4.18
-        },
-        {
-          "text": "le",
-          "start": 4.214,
-          "end": 4.284
-        },
-        {
-          "text": "préparer,",
-          "start": 4.331,
-          "end": 4.899
-        },
-        {
-          "text": "mais",
-          "start": 5.108,
-          "end": 5.248
-        },
-        {
-          "text": "c'est",
-          "start": 5.271,
-          "end": 5.41
-        },
-        {
-          "text": "toi",
-          "start": 5.433,
-          "end": 5.654
-        },
-        {
-          "text": "qui",
-          "start": 5.712,
-          "end": 5.851
-        },
-        {
-          "text": "as",
-          "start": 5.909,
-          "end": 5.956
-        },
-        {
-          "text": "eu",
-          "start": 5.991,
-          "end": 6.084
-        },
-        {
-          "text": "l'idée.",
-          "start": 6.142,
-          "end": 6.594
-        },
-        {
-          "text": "Et",
-          "start": 6.769,
-          "end": 6.908
-        },
-        {
-          "text": "tout",
-          "start": 6.954,
-          "end": 7.07
-        },
-        {
-          "text": "le",
-          "start": 7.094,
-          "end": 7.152
-        },
-        {
-          "text": "monde",
-          "start": 7.198,
-          "end": 7.407
-        },
-        {
-          "text": "applaudit.",
-          "start": 7.43,
-          "end": 8.173
+          "start": 1.451,
+          "end": 2.136
         }
       ]
     },
     {
-      "audio": "voice/etsi/seg-3.mp3",
-      "duration": 9.325714,
+      "audio": "voice/etsi/seg-7.mp3",
+      "duration": 3.422041,
+      "words": [
+        {
+          "text": "L'IA",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "text": "t'a",
+          "start": 0.372,
+          "end": 0.511
+        },
+        {
+          "text": "aidé",
+          "start": 0.534,
+          "end": 0.848
+        },
+        {
+          "text": "à",
+          "start": 0.906,
+          "end": 0.929
+        },
+        {
+          "text": "le",
+          "start": 0.964,
+          "end": 1.022
+        },
+        {
+          "text": "préparer,",
+          "start": 1.068,
+          "end": 1.66
+        },
+        {
+          "text": "mais",
+          "start": 1.788,
+          "end": 1.904
+        },
+        {
+          "text": "c'est",
+          "start": 1.927,
+          "end": 2.078
+        },
+        {
+          "text": "toi",
+          "start": 2.101,
+          "end": 2.322
+        },
+        {
+          "text": "qui",
+          "start": 2.368,
+          "end": 2.485
+        },
+        {
+          "text": "as",
+          "start": 2.531,
+          "end": 2.612
+        },
+        {
+          "text": "eu",
+          "start": 2.682,
+          "end": 2.728
+        },
+        {
+          "text": "l'idée.",
+          "start": 2.763,
+          "end": 3.39
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-8.mp3",
+      "duration": 1.515102,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "tout",
+          "start": 0.186,
+          "end": 0.313
+        },
+        {
+          "text": "le",
+          "start": 0.337,
+          "end": 0.406
+        },
+        {
+          "text": "monde",
+          "start": 0.453,
+          "end": 0.65
+        },
+        {
+          "text": "applaudit.",
+          "start": 0.673,
+          "end": 1.486
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-9.mp3",
+      "duration": 1.854694,
       "words": [
         {
           "text": "Le",
@@ -424,301 +460,313 @@
         },
         {
           "text": "soir,",
-          "start": 0.221,
-          "end": 0.522
+          "start": 0.244,
+          "end": 0.546
         },
         {
           "text": "tu",
-          "start": 0.557,
-          "end": 0.673
+          "start": 0.569,
+          "end": 0.685
         },
         {
           "text": "rentres",
-          "start": 0.731,
-          "end": 1.033
+          "start": 0.743,
+          "end": 1.057
         },
         {
           "text": "chez",
-          "start": 1.057,
-          "end": 1.207
+          "start": 1.08,
+          "end": 1.219
         },
         {
           "text": "toi.",
-          "start": 1.242,
-          "end": 1.579
-        },
-        {
-          "text": "Tu",
-          "start": 2.09,
-          "end": 2.229
-        },
-        {
-          "text": "montres",
-          "start": 2.287,
-          "end": 2.589
-        },
-        {
-          "text": "à",
-          "start": 2.612,
-          "end": 2.647
-        },
-        {
-          "text": "ton",
-          "start": 2.705,
-          "end": 2.856
-        },
-        {
-          "text": "enfant",
-          "start": 2.937,
-          "end": 3.286
-        },
-        {
-          "text": "comment",
-          "start": 3.344,
-          "end": 3.68
-        },
-        {
-          "text": "utiliser",
-          "start": 3.704,
-          "end": 4.238
-        },
-        {
-          "text": "l'IA",
-          "start": 4.284,
-          "end": 4.656
-        },
-        {
-          "text": "sans",
-          "start": 4.748,
-          "end": 4.934
-        },
-        {
-          "text": "se",
-          "start": 4.957,
-          "end": 5.05
-        },
-        {
-          "text": "faire",
-          "start": 5.108,
-          "end": 5.294
-        },
-        {
-          "text": "piéger.",
-          "start": 5.317,
-          "end": 5.875
-        },
-        {
-          "text": "Et",
-          "start": 6.385,
-          "end": 6.56
-        },
-        {
-          "text": "ça",
-          "start": 6.629,
-          "end": 6.792
-        },
-        {
-          "text": "marche",
-          "start": 6.873,
-          "end": 7.303
-        },
-        {
-          "text": ":",
-          "start": 7.419,
-          "end": 7.465
-        },
-        {
-          "text": "un",
-          "start": 7.79,
-          "end": 7.918
-        },
-        {
-          "text": "grand",
-          "start": 7.999,
-          "end": 8.313
-        },
-        {
-          "text": "sourire.",
-          "start": 8.382,
-          "end": 9.288
+          "start": 1.254,
+          "end": 1.811
         }
       ]
     },
     {
-      "audio": "voice/etsi/seg-4.mp3",
-      "duration": 5.146122,
+      "audio": "voice/etsi/seg-10.mp3",
+      "duration": 3.709388,
+      "words": [
+        {
+          "text": "Tu",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "text": "montres",
+          "start": 0.232,
+          "end": 0.522
+        },
+        {
+          "text": "à",
+          "start": 0.546,
+          "end": 0.569
+        },
+        {
+          "text": "ton",
+          "start": 0.615,
+          "end": 0.766
+        },
+        {
+          "text": "enfant",
+          "start": 0.836,
+          "end": 1.173
+        },
+        {
+          "text": "comment",
+          "start": 1.231,
+          "end": 1.498
+        },
+        {
+          "text": "utiliser",
+          "start": 1.521,
+          "end": 2.009
+        },
+        {
+          "text": "l'IA",
+          "start": 2.043,
+          "end": 2.345
+        },
+        {
+          "text": "sans",
+          "start": 2.426,
+          "end": 2.612
+        },
+        {
+          "text": "se",
+          "start": 2.635,
+          "end": 2.717
+        },
+        {
+          "text": "faire",
+          "start": 2.775,
+          "end": 2.949
+        },
+        {
+          "text": "piéger.",
+          "start": 2.972,
+          "end": 3.669
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-11.mp3",
+      "duration": 2.45551,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "text": "ça",
+          "start": 0.174,
+          "end": 0.302
+        },
+        {
+          "text": "marche",
+          "start": 0.36,
+          "end": 0.766
+        },
+        {
+          "text": ":",
+          "start": 0.824,
+          "end": 0.859
+        },
+        {
+          "text": "un",
+          "start": 1.068,
+          "end": 1.196
+        },
+        {
+          "text": "grand",
+          "start": 1.265,
+          "end": 1.556
+        },
+        {
+          "text": "sourire.",
+          "start": 1.614,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "audio": "voice/etsi/seg-12.mp3",
+      "duration": 5.433469,
       "words": [
         {
           "text": "Puis",
           "start": 0,
-          "end": 0.197
+          "end": 0.232
         },
         {
           "text": "l'appli",
-          "start": 0.221,
-          "end": 0.522
+          "start": 0.255,
+          "end": 0.569
         },
         {
           "text": "affiche",
-          "start": 0.569,
-          "end": 0.906
+          "start": 0.615,
+          "end": 0.975
         },
         {
           "text": "une",
-          "start": 0.929,
-          "end": 1.01
+          "start": 0.998,
+          "end": 1.08
         },
         {
           "text": "dernière",
-          "start": 1.033,
-          "end": 1.405
+          "start": 1.103,
+          "end": 1.44
         },
         {
           "text": "phrase",
-          "start": 1.428,
-          "end": 1.916
+          "start": 1.463,
+          "end": 1.985
         },
         {
           "text": ":",
-          "start": 1.985,
-          "end": 2.032
+          "start": 2.078,
+          "end": 2.148
         },
         {
           "text": "cette",
-          "start": 2.415,
-          "end": 2.659
+          "start": 2.659,
+          "end": 2.937
         },
         {
           "text": "vie",
-          "start": 2.694,
-          "end": 2.868
+          "start": 3.007,
+          "end": 3.193
         },
         {
           "text": "dépend",
-          "start": 2.902,
-          "end": 3.251
+          "start": 3.228,
+          "end": 3.587
         },
         {
           "text": "de",
-          "start": 3.286,
-          "end": 3.367
+          "start": 3.611,
+          "end": 3.68
         },
         {
           "text": "ce",
-          "start": 3.413,
-          "end": 3.518
-        },
-        {
-          "text": "que",
-          "start": 3.576,
-          "end": 3.657
-        },
-        {
-          "text": "tu",
-          "start": 3.704,
+          "start": 3.715,
           "end": 3.82
         },
         {
-          "text": "apprends",
+          "text": "que",
           "start": 3.866,
-          "end": 4.226
+          "end": 3.947
+        },
+        {
+          "text": "tu",
+          "start": 3.994,
+          "end": 4.087
+        },
+        {
+          "text": "apprends",
+          "start": 4.133,
+          "end": 4.458
         },
         {
           "text": "maintenant.",
-          "start": 4.261,
-          "end": 5.108
+          "start": 4.481,
+          "end": 5.387
         }
       ]
     },
     {
-      "audio": "voice/etsi/seg-5.mp3",
-      "duration": 3.239184,
+      "audio": "voice/etsi/seg-13.mp3",
+      "duration": 3.604898,
       "words": [
         {
           "text": "Alors,",
           "start": 0,
-          "end": 0.441
+          "end": 0.395
         },
         {
           "text": "commence",
-          "start": 0.511,
-          "end": 0.906
+          "start": 0.464,
+          "end": 0.894
         },
         {
           "text": "aujourd'hui.",
-          "start": 0.929,
-          "end": 1.474
+          "start": 0.917,
+          "end": 1.486
         },
         {
           "text": "Une",
-          "start": 1.544,
-          "end": 1.753
+          "start": 1.695,
+          "end": 1.927
         },
         {
           "text": "idée",
-          "start": 1.776,
-          "end": 1.997
+          "start": 1.95,
+          "end": 2.194
         },
         {
           "text": "par",
-          "start": 2.02,
-          "end": 2.159
+          "start": 2.218,
+          "end": 2.368
         },
         {
           "text": "jour",
-          "start": 2.229,
-          "end": 2.403
+          "start": 2.461,
+          "end": 2.717
         },
         {
           "text": "suffit.",
-          "start": 2.461,
-          "end": 3.204
+          "start": 2.798,
+          "end": 3.576
         }
       ]
     },
     {
-      "audio": "voice/etsi/seg-6.mp3",
-      "duration": 3.422041,
+      "audio": "voice/etsi/seg-14.mp3",
+      "duration": 3.474286,
       "words": [
         {
           "text": "Abonne-toi",
           "start": 0,
-          "end": 0.639
+          "end": 0.685
         },
         {
           "text": ":",
-          "start": 0.697,
-          "end": 0.755
+          "start": 0.731,
+          "end": 0.789
         },
         {
           "text": "une",
           "start": 1.033,
-          "end": 1.184
+          "end": 1.173
         },
         {
           "text": "nouvelle",
-          "start": 1.207,
+          "start": 1.196,
           "end": 1.521
         },
         {
           "text": "histoire",
           "start": 1.544,
-          "end": 2.009
+          "end": 2.043
         },
         {
           "text": "d'IA",
-          "start": 2.032,
-          "end": 2.299
+          "start": 2.067,
+          "end": 2.334
         },
         {
           "text": "chaque",
-          "start": 2.38,
-          "end": 2.682
+          "start": 2.403,
+          "end": 2.694
         },
         {
           "text": "jour.",
-          "start": 2.705,
-          "end": 3.39
+          "start": 2.728,
+          "end": 3.437
         }
       ]
     }

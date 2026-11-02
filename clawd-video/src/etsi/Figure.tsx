@@ -2,7 +2,7 @@ import React from 'react';
 
 // Un personnage filiforme original : tête ronde couleur chair, sweat de couleur, jambes fines, baskets blanches.
 // Origine = sous les pieds. Hauteur d'environ 440 unités. Angles des bras : 0 = le long du corps, 90 = à l'horizontale, 180 = levé.
-export type Pose = { armL: number; armR: number; sit?: boolean; talk?: number; look?: number; happy?: boolean; blink?: boolean; tilt?: number };
+export type Pose = { armL: number; armR: number; walk?: number; sit?: boolean | 'edge'; talk?: number; look?: number; happy?: boolean; blink?: boolean; tilt?: number };
 
 const ARM = 132;
 const handOf = (side: 1 | -1, a: number, y0: number) => {
@@ -34,12 +34,33 @@ export const Figure: React.FC<{
   return (
     <g transform={`translate(${x} ${y}) scale(${flip ? -s : s} ${s})`}>
       {/* jambes */}
-      {pose.sit ? (
+      {pose.sit === 'edge' ? (
+        <g stroke={pants} strokeWidth="15" strokeLinecap="round" fill="none">
+          <path d="M -18 -128 L -44 -70 L -34 -16" />
+          <path d="M 18 -128 L 46 -70 L 36 -16" />
+          <ellipse cx="-24" cy="-8" rx="28" ry="12" fill="#fff" stroke="none" />
+          <ellipse cx="50" cy="-8" rx="28" ry="12" fill="#fff" stroke="none" />
+        </g>
+      ) : pose.sit ? (
         <g stroke={pants} strokeWidth="15" strokeLinecap="round" fill="none">
           <path d="M -14 -126 L 104 -126 L 110 -16" />
           <path d="M 12 -126 L 130 -126 L 136 -16" opacity="0.85" />
           <ellipse cx="118" cy="-8" rx="28" ry="12" fill="#fff" stroke="none" />
           <ellipse cx="144" cy="-8" rx="28" ry="12" fill="#fff" stroke="none" />
+        </g>
+      ) : pose.walk !== undefined ? (
+        <g stroke={pants} strokeWidth="15" strokeLinecap="round" fill="none">
+          {[1, -1].map((sg) => {
+            const sw = Math.sin(pose.walk! + (sg === 1 ? 0 : Math.PI));
+            const lift = Math.max(0, Math.cos(pose.walk! + (sg === 1 ? 0 : Math.PI))) * 26;
+            const fx = sg * 18 + sw * 52;
+            return (
+              <g key={sg}>
+                <path d={`M ${sg * 16} -200 L ${fx} ${-18 - lift}`} />
+                <ellipse cx={fx + 8} cy={-8 - lift} rx="28" ry="12" fill="#fff" stroke="none" />
+              </g>
+            );
+          })}
         </g>
       ) : (
         <g stroke={pants} strokeWidth="15" strokeLinecap="round" fill="none">
