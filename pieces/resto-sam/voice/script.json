@@ -1,0 +1,118 @@
+{
+  "lead": 0.7,
+  "tail": 2.4,
+  "lines": [
+    {
+      "id": "s1",
+      "text": "Sam ? Il est presque minuit… Pourquoi t'es encore là ?",
+      "file": "s1.mp3",
+      "after": 0.7,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s2",
+      "text": "Mon resto marche trop bien. Et moi, je coule.",
+      "file": "s2.mp3",
+      "after": 0.45,
+      "speaker": "sam"
+    },
+    {
+      "id": "s3",
+      "text": "Trop bien ? Explique-moi.",
+      "file": "s3.mp3",
+      "after": 0.7,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s4",
+      "text": "Deux fois plus de réservations. Deux fois plus d'avis en ligne. Et les commandes fournisseurs, je les fais le soir.",
+      "file": "s4.mp3",
+      "after": 0.7,
+      "speaker": "sam"
+    },
+    {
+      "id": "s5",
+      "text": "Et tu fais tout ça tout seul ?",
+      "file": "s5.mp3",
+      "after": 0.45,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s6",
+      "text": "Ben oui. Qui d'autre ?",
+      "file": "s6.mp3",
+      "after": 0.7,
+      "speaker": "sam"
+    },
+    {
+      "id": "s7",
+      "text": "Moi. Enfin… mes agents.",
+      "file": "s7.mp3",
+      "after": 0.45,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s8",
+      "text": "Le premier gère les réservations : il répond, il confirme, il rappelle la veille.",
+      "file": "s8.mp3",
+      "after": 0.45,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s9",
+      "text": "Le deuxième prépare une réponse à chaque avis. Toi, tu valides.",
+      "file": "s9.mp3",
+      "after": 0.45,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s10",
+      "text": "Le troisième surveille les stocks et prépare les commandes.",
+      "file": "s10.mp3",
+      "after": 0.45,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s11",
+      "text": "Et moi, je fais quoi, alors ?",
+      "file": "s11.mp3",
+      "after": 0.7,
+      "speaker": "sam"
+    },
+    {
+      "id": "s12",
+      "text": "Ce qui t'a fait réussir : la cuisine.",
+      "file": "s12.mp3",
+      "after": 0.7,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s13",
+      "text": "Aujourd'hui, c'est seize heures de boulot par jour.",
+      "file": "s13.mp3",
+      "after": 1.8,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s14",
+      "text": "Demain, dix heures. Et de vraies nuits de sommeil.",
+      "file": "s14.mp3",
+      "after": 0.45,
+      "speaker": "clawd"
+    },
+    {
+      "id": "s15",
+      "text": "OK… On commence quand ?",
+      "file": "s15.mp3",
+      "after": 0.45,
+      "speaker": "sam"
+    },
+    {
+      "id": "s16",
+      "text": "Tout de suite. Et toi, abonne-toi pour la suite !",
+      "file": "s16.mp3",
+      "after": 0.3,
+      "speaker": "clawd"
+    }
+  ]
+}

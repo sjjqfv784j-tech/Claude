@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Le resto de Sam (crosshatch)</title>
+<style>html,body{margin:0;height:100%;background:#2a2118;overflow:hidden}body{display:flex;align-items:center;justify-content:center}canvas{height:min(100vh,calc(100vw*16/9));width:auto;aspect-ratio:9/16;display:block;cursor:pointer}</style></head>
+<body><canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  LE RESTO DE SAM — version crosshatch (encre hachurée) de l'histoire déjà faite avec Remotion.
+//  Même texte, mêmes voix (Marcel = Sam, Victoria = Pixel). 9:16, voix off pilotée, nuit au resto.
+//  Couleur : terracotta = Pixel (le héros) ; rouge = trop / épuisé ; vert = ce qui s'améliore.
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = Math.ceil(VOICE.duration * FPS) / FPS;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Ink Free", "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", "Comic Neue", cursive';
+const CX = 470;
+
+const VL = (id) => VOICE.lines.find((l) => l.id === id);
+const SPK = { s1: 'p', s2: 's', s3: 'p', s4: 's', s5: 'p', s6: 's', s7: 'p', s8: 'p', s9: 'p', s10: 'p', s11: 's', s12: 'p', s13: 'p', s14: 'p', s15: 's', s16: 'p' };
+const HIT_T = +(VL('s14').t0 - 0.6).toFixed(3);
+const SC = [0, ...['s2', 's4', 's5', 's7', 's12', 's13'].map((id) => +(VL(id).t0 - 0.3).toFixed(3)), HIT_T, +(VL('s16').t0 - 0.3).toFixed(3), DURATION];
+const sceneFns = [() => sceneClock(), () => sceneRevenue(), () => sceneOverload(), () => sceneAlone(), () => sceneAgents(), () => sceneCuisine(), () => sceneBefore(), () => sceneAfter(), () => sceneFollow()];
+const ERA_LIST = sceneFns.map((fn, i) => [SC[i], SC[i + 1], fn]);
+const SHOT_KEYS = ['clock', 'revenue', 'overload', 'alone', 'agents', 'cuisine', 'before', 'after', 'follow'];
+const SHOT_TITLES = ['minuit passé : Sam est encore là', 'les réservations doublent', 'réservations, avis, commandes : tout le soir',
+  'un seul Sam pour tout', 'trois agents : réservations, avis, stocks', 'toi : la cuisine', '16 h de travail par jour', '10 h et de vraies nuits', 'abonne-toi'];
+const SHOTS = SHOT_KEYS.map((key, i) => ({ id: i + 1, key, era: i, t0: SC[i], t1: SC[i + 1], title: SHOT_TITLES[i] }));
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'voice-led', shots: SHOTS, cuts: SC.slice(1, -1), morphs: [], cues: { hit: HIT_T },
+  acts: [
+    { name: '1 Le problème', role: 'build', t0: SC[0], t1: SC[4] },
+    { name: '2 Les agents', role: 'journey', t0: SC[4], t1: SC[6] },
+    { name: '3 Silence', role: 'silence', t0: SC[6], t1: SC[7] },
+    { name: '4 Demain', role: 'gift', t0: SC[7], t1: SC[8] },
+    { name: '5 Abonne-toi', role: 'goodbye', t0: SC[8], t1: DURATION },
+  ],
+  board: SHOT_KEYS.map((k, i) => ({ t: +(SC[i] + (SC[i + 1] - SC[i]) * 0.8).toFixed(2), title: SHOT_TITLES[i], sound: i === 7 ? 'le coup le plus fort' : i === 6 ? 'silence' : 'nappe douce', next: SHOT_KEYS[i + 1] || 'boucle' })),
+  narration: VOICE.lines.map((l) => ({ id: l.id, t0: l.t0, t1: l.t1, text: l.text })),
+};
+window.TIMELINE = TIMELINE;
