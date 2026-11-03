@@ -1,0 +1,77 @@
+{
+  "lead": 0.3,
+  "tail": 0.9,
+  "lines": [
+    {
+      "id": "l1a",
+      "text": "Pixel, c'est quoi la différence entre Claude et Claude Code ?",
+      "file": "l1a.mp3",
+      "after": 0.5,
+      "voice": "YV28ox2c5Cuh5rim0LrW",
+      "speed": 0.9
+    },
+    {
+      "id": "l1",
+      "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais.",
+      "file": "l1.mp3",
+      "after": 0.5,
+      "speed": 0.78
+    },
+    {
+      "id": "l2",
+      "text": "Claude, c'est une conversation. Tu poses une question, il te répond. Ensuite, c'est toi qui fais le travail.",
+      "file": "l2.mp3",
+      "after": 0.6,
+      "speed": 0.78
+    },
+    {
+      "id": "l3",
+      "text": "Claude Code, lui, entre dans ton projet. Il lit tes fichiers, les modifie, et lance des commandes.",
+      "file": "l3.mp3",
+      "after": 0.8,
+      "speed": 0.78
+    },
+    {
+      "id": "l3b",
+      "text": "Il marche dans le terminal, ton éditeur de code, l'application de bureau, et le navigateur.",
+      "file": "l3b.mp3",
+      "after": 0.5,
+      "speed": 0.78
+    },
+    {
+      "id": "l3c",
+      "text": "Exemple : une faute dans ton site. Claude t'explique quoi corriger. Claude Code ouvre le fichier, et la corrige.",
+      "file": "l3c.mp3",
+      "after": 0.9,
+      "speed": 0.78
+    },
+    {
+      "id": "l4",
+      "text": "Claude, c'est un ami qui te conseille au téléphone. Claude Code, c'est le même ami, qui vient travailler sur ton ordinateur.",
+      "file": "l4.mp3",
+      "after": 1.4,
+      "speed": 0.78
+    },
+    {
+      "id": "l5",
+      "text": "Une idée, un texte, une question : Claude. Un projet à modifier : Claude Code. Tu peux aussi utiliser les deux.",
+      "file": "l5.mp3",
+      "after": 1.0,
+      "speed": 0.78
+    },
+    {
+      "id": "l6",
+      "text": "Attention : Claude Code demande en général un abonnement payant, ou un compte Console.",
+      "file": "l6.mp3",
+      "after": 0.8,
+      "speed": 0.78
+    },
+    {
+      "id": "l7",
+      "text": "Et toi, tu es plutôt téléphone, ou ordinateur ? A, ou B ?",
+      "file": "l7.mp3",
+      "after": 0,
+      "speed": 0.78
+    }
+  ]
+}
