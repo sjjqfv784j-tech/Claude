@@ -1,0 +1,579 @@
+{
+  "segments": [
+    {
+      "audio": "voice/sam-pixel-1/seg-0.mp3",
+      "duration": 5.32898,
+      "words": [
+        {
+          "text": "J'ai",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "text": "laissé",
+          "start": 0.221,
+          "end": 0.453
+        },
+        {
+          "text": "Pixel",
+          "start": 0.511,
+          "end": 0.906
+        },
+        {
+          "text": "répondre",
+          "start": 0.975,
+          "end": 1.37
+        },
+        {
+          "text": "à",
+          "start": 1.393,
+          "end": 1.416
+        },
+        {
+          "text": "mes",
+          "start": 1.474,
+          "end": 1.602
+        },
+        {
+          "text": "clients.",
+          "start": 1.637,
+          "end": 2.101
+        },
+        {
+          "text": "Il",
+          "start": 2.485,
+          "end": 2.612
+        },
+        {
+          "text": "vient",
+          "start": 2.635,
+          "end": 2.821
+        },
+        {
+          "text": "de",
+          "start": 2.844,
+          "end": 2.902
+        },
+        {
+          "text": "promettre",
+          "start": 2.949,
+          "end": 3.402
+        },
+        {
+          "text": "douze",
+          "start": 3.448,
+          "end": 3.669
+        },
+        {
+          "text": "mille",
+          "start": 3.692,
+          "end": 3.889
+        },
+        {
+          "text": "euros",
+          "start": 3.913,
+          "end": 4.191
+        },
+        {
+          "text": "de",
+          "start": 4.226,
+          "end": 4.296
+        },
+        {
+          "text": "remboursements.",
+          "start": 4.354,
+          "end": 5.294
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-1.mp3",
+      "duration": 1.436735,
+      "words": [
+        {
+          "text": "Je",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "text": "voulais",
+          "start": 0.221,
+          "end": 0.464
+        },
+        {
+          "text": "être",
+          "start": 0.522,
+          "end": 0.708
+        },
+        {
+          "text": "gentil.",
+          "start": 0.755,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-2.mp3",
+      "duration": 4.310204,
+      "words": [
+        {
+          "text": "Gentil",
+          "start": 0,
+          "end": 0.546
+        },
+        {
+          "text": "?",
+          "start": 0.604,
+          "end": 0.65
+        },
+        {
+          "text": "Tu",
+          "start": 0.859,
+          "end": 1.033
+        },
+        {
+          "text": "as",
+          "start": 1.103,
+          "end": 1.184
+        },
+        {
+          "text": "écrit",
+          "start": 1.3,
+          "end": 1.66
+        },
+        {
+          "text": ":",
+          "start": 1.73,
+          "end": 1.753
+        },
+        {
+          "text": "remboursement",
+          "start": 2.078,
+          "end": 2.868
+        },
+        {
+          "text": "garanti",
+          "start": 2.937,
+          "end": 3.518
+        },
+        {
+          "text": "à",
+          "start": 3.587,
+          "end": 3.611
+        },
+        {
+          "text": "vie",
+          "start": 3.692,
+          "end": 3.913
+        },
+        {
+          "text": "!",
+          "start": 3.947,
+          "end": 4.272
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-3.mp3",
+      "duration": 2.037551,
+      "words": [
+        {
+          "text": "Un",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "client",
+          "start": 0.186,
+          "end": 0.488
+        },
+        {
+          "text": "trouvait",
+          "start": 0.511,
+          "end": 0.801
+        },
+        {
+          "text": "le",
+          "start": 0.824,
+          "end": 0.882
+        },
+        {
+          "text": "bouton",
+          "start": 0.917,
+          "end": 1.184
+        },
+        {
+          "text": "trop",
+          "start": 1.231,
+          "end": 1.44
+        },
+        {
+          "text": "bleu.",
+          "start": 1.463,
+          "end": 1.997
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-4.mp3",
+      "duration": 3.108571,
+      "words": [
+        {
+          "text": "Un",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "text": "autre",
+          "start": 0.255,
+          "end": 0.464
+        },
+        {
+          "text": "voulait",
+          "start": 0.522,
+          "end": 0.778
+        },
+        {
+          "text": "un",
+          "start": 0.836,
+          "end": 0.894
+        },
+        {
+          "text": "petit",
+          "start": 0.917,
+          "end": 1.115
+        },
+        {
+          "text": "geste.",
+          "start": 1.149,
+          "end": 1.602
+        },
+        {
+          "text": "Je",
+          "start": 1.776,
+          "end": 1.869
+        },
+        {
+          "text": "lui",
+          "start": 1.904,
+          "end": 2.009
+        },
+        {
+          "text": "ai",
+          "start": 2.032,
+          "end": 2.078
+        },
+        {
+          "text": "offert",
+          "start": 2.113,
+          "end": 2.426
+        },
+        {
+          "text": "un",
+          "start": 2.45,
+          "end": 2.531
+        },
+        {
+          "text": "an.",
+          "start": 2.601,
+          "end": 3.065
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-5.mp3",
+      "duration": 2.925714,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.128
+        },
+        {
+          "text": "maintenant,",
+          "start": 0.163,
+          "end": 0.627
+        },
+        {
+          "text": "quarante",
+          "start": 0.906,
+          "end": 1.277
+        },
+        {
+          "text": "clients",
+          "start": 1.312,
+          "end": 1.718
+        },
+        {
+          "text": "te",
+          "start": 1.741,
+          "end": 1.823
+        },
+        {
+          "text": "disent",
+          "start": 1.869,
+          "end": 2.136
+        },
+        {
+          "text": "merci",
+          "start": 2.159,
+          "end": 2.566
+        },
+        {
+          "text": "!",
+          "start": 2.624,
+          "end": 2.879
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-6.mp3",
+      "duration": 2.925714,
+      "words": [
+        {
+          "text": "Quarante",
+          "start": 0,
+          "end": 0.453
+        },
+        {
+          "text": "fois",
+          "start": 0.499,
+          "end": 0.72
+        },
+        {
+          "text": "trois",
+          "start": 0.755,
+          "end": 1.01
+        },
+        {
+          "text": "cents",
+          "start": 1.045,
+          "end": 1.265
+        },
+        {
+          "text": "euros.",
+          "start": 1.324,
+          "end": 1.66
+        },
+        {
+          "text": "Fais",
+          "start": 1.869,
+          "end": 2.009
+        },
+        {
+          "text": "le",
+          "start": 2.032,
+          "end": 2.09
+        },
+        {
+          "text": "calcul.",
+          "start": 2.125,
+          "end": 2.879
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-7.mp3",
+      "duration": 4.963265,
+      "words": [
+        {
+          "text": "Douze",
+          "start": 0,
+          "end": 0.418
+        },
+        {
+          "text": "mille",
+          "start": 0.488,
+          "end": 0.708
+        },
+        {
+          "text": "euros.",
+          "start": 0.731,
+          "end": 1.138
+        },
+        {
+          "text": "Mais",
+          "start": 1.741,
+          "end": 1.892
+        },
+        {
+          "text": "la",
+          "start": 1.916,
+          "end": 1.974
+        },
+        {
+          "text": "note",
+          "start": 2.043,
+          "end": 2.206
+        },
+        {
+          "text": "moyenne",
+          "start": 2.241,
+          "end": 2.694
+        },
+        {
+          "text": "est",
+          "start": 2.786,
+          "end": 2.902
+        },
+        {
+          "text": "de",
+          "start": 2.937,
+          "end": 3.019
+        },
+        {
+          "text": "quatre",
+          "start": 3.111,
+          "end": 3.425
+        },
+        {
+          "text": "virgule",
+          "start": 3.471,
+          "end": 3.831
+        },
+        {
+          "text": "neuf",
+          "start": 3.866,
+          "end": 4.029
+        },
+        {
+          "text": "sur",
+          "start": 4.087,
+          "end": 4.226
+        },
+        {
+          "text": "cinq.",
+          "start": 4.272,
+          "end": 4.923
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-8.mp3",
+      "duration": 2.76898,
+      "words": [
+        {
+          "text": "Pixel…",
+          "start": 0,
+          "end": 0.778
+        },
+        {
+          "text": "Je",
+          "start": 0.987,
+          "end": 1.091
+        },
+        {
+          "text": "voulais",
+          "start": 1.138,
+          "end": 1.347
+        },
+        {
+          "text": "juste",
+          "start": 1.382,
+          "end": 1.602
+        },
+        {
+          "text": "un",
+          "start": 1.625,
+          "end": 1.672
+        },
+        {
+          "text": "service",
+          "start": 1.718,
+          "end": 2.067
+        },
+        {
+          "text": "client.",
+          "start": 2.09,
+          "end": 2.74
+        }
+      ]
+    },
+    {
+      "audio": "voice/sam-pixel-1/seg-9.mp3",
+      "duration": 4.91102,
+      "words": [
+        {
+          "text": "Épisode",
+          "start": 0,
+          "end": 0.511
+        },
+        {
+          "text": "deux",
+          "start": 0.546,
+          "end": 0.697
+        },
+        {
+          "text": "demain.",
+          "start": 0.743,
+          "end": 1.149
+        },
+        {
+          "text": "Tu",
+          "start": 1.533,
+          "end": 1.672
+        },
+        {
+          "text": "laisserais",
+          "start": 1.73,
+          "end": 2.078
+        },
+        {
+          "text": "une",
+          "start": 2.101,
+          "end": 2.218
+        },
+        {
+          "text": "IA",
+          "start": 2.241,
+          "end": 2.473
+        },
+        {
+          "text": "répondre",
+          "start": 2.531,
+          "end": 2.926
+        },
+        {
+          "text": "à",
+          "start": 2.949,
+          "end": 2.972
+        },
+        {
+          "text": "tes",
+          "start": 3.019,
+          "end": 3.135
+        },
+        {
+          "text": "clients",
+          "start": 3.158,
+          "end": 3.576
+        },
+        {
+          "text": "?",
+          "start": 3.599,
+          "end": 3.669
+        },
+        {
+          "text": "Oui,",
+          "start": 3.913,
+          "end": 4.18
+        },
+        {
+          "text": "ou",
+          "start": 4.203,
+          "end": 4.284
+        },
+        {
+          "text": "non",
+          "start": 4.354,
+          "end": 4.493
+        },
+        {
+          "text": "?",
+          "start": 4.574,
+          "end": 4.876
+        }
+      ]
+    }
+  ]
+}

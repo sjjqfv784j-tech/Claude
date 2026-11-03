@@ -9,6 +9,7 @@ import { ClaudeVideo, buildClaude, claudeFrames } from './claude/ClaudeVideo';
 const StoryVideo3D: React.FC<VideoProps> = (p) => <StoryVideo {...p} three />;
 import { SEGMENTS } from './script';
 import { FPS, buildTimeline, loadVoice, totalFrames, type VideoProps } from './timing';
+import { SamPixel1Video, buildSamPixel1, samPixel1Frames } from './sam-pixel-1/SamPixel1Video';
 
 export const Root: React.FC = () => (
   <>
@@ -93,6 +94,20 @@ export const Root: React.FC = () => (
         const voice = await loadVoice('voice/claude1', 10);
         const timeline = buildClaude(voice as never);
         return { durationInFrames: claudeFrames(timeline), props: { timeline } };
+      }}
+    />
+    <Composition
+      id="SamPixel1"
+      component={SamPixel1Video}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={300}
+      defaultProps={{ timeline: buildSamPixel1(null) }}
+      calculateMetadata={async () => {
+        const voice = await loadVoice('voice/sam-pixel-1', 5);
+        const timeline = buildSamPixel1(voice as never);
+        return { durationInFrames: samPixel1Frames(timeline), props: { timeline } };
       }}
     />
   </>

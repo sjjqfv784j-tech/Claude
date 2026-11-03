@@ -10,7 +10,7 @@ type Seg = { speaker: string; scene: SceneId; text: string; highlight: string[];
 export const CLAUDE1 = story as unknown as { title: string; segments: Seg[] };
 // la dernière scène (sans voix) reboucle sur la première image : le spectateur ne voit pas la fin
 // réglages de l'épisode, lus dans le JSON de l'histoire : { "timing": { "lead": 0.05, "gaps": [...], "loop": 0.7, "captions": "outline" | "box" } }
-const TIMING = ((story as unknown as { timing?: { lead?: number; gaps?: number[]; loop?: number; captions?: 'outline' | 'box' } }).timing) ?? {};
+const TIMING = ((story as unknown as { timing?: { lead?: number; gaps?: number[]; loop?: number; captions?: 'outline' | 'box'; captionY?: number } }).timing) ?? {};
 const CAPTIONS: 'outline' | 'box' = TIMING.captions ?? 'outline';
 const LOOP: Seg = { speaker: 'n', scene: 'loop', text: '', highlight: [], duration: TIMING.loop ?? 0.7 };
 export const ALL: Seg[] = [...CLAUDE1.segments, LOOP];
@@ -29,7 +29,7 @@ export const buildClaude = (voice: { segments: { audio: string; duration: number
     t += duration + GAPS[i];
     return item;
   });
-  out.push({ start: t, duration: LOOP.duration, audio: null, words: out[0].words.slice(0, 3).map((w, i) => ({ ...w, start: i === 0 ? 0 : 99, end: 99 })) });
+  out.push({ start: t, duration: LOOP.duration, audio: null, words: [] });
   return out;
 };
 export const claudeFrames = (tl: ClaudeTimed[]) => { const l = tl[tl.length - 1]; return Math.ceil((l.start + l.duration) * FPS); };
@@ -68,7 +68,7 @@ const Captions: React.FC<{ words: Word[]; highlight: string[] }> = ({ words, hig
   if (CAPTIONS === 'box') {
     // style « sous-titres de série » : texte blanc en bas (au-dessus de la zone cachée par TikTok), mots-clés dans une pastille orange
     return (
-      <div style={{ position: 'absolute', top: 1380, left: 60, right: 60, display: 'flex', justifyContent: 'center', transform: `scale(${0.9 + 0.1 * p})` }}>
+      <div style={{ position: 'absolute', top: TIMING.captionY ?? 1380, left: 60, right: 60, display: 'flex', justifyContent: 'center', transform: `scale(${0.9 + 0.1 * p})` }}>
         <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 62, textAlign: 'center', lineHeight: 1.35, color: '#fff', textShadow: '0 4px 0 rgba(0,0,0,0.6), 0 0 14px rgba(0,0,0,0.55)' }}>
           {g.map((w, i) => {
             const key = hl.has(norm(w.text));

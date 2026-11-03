@@ -1,0 +1,220 @@
+{
+  "title": "Pixel promet un remboursement à tous les clients de Sam 💸 | Sam & Pixel #1",
+  "voices": {
+    "s": "YV28ox2c5Cuh5rim0LrW",
+    "c": "O31r762Gb3WFygrEOGh0"
+  },
+  "timing": {
+    "lead": 0.05,
+    "gaps": [
+      0.12,
+      0.1,
+      0.12,
+      0.12,
+      0.12,
+      0.12,
+      0.12,
+      0.15,
+      0.15,
+      0.3,
+      0
+    ],
+    "loop": 0.7,
+    "captions": "box",
+    "captionY": 930,
+    "music_duck": [
+      8
+    ]
+  },
+  "segments": [
+    {
+      "speaker": "s",
+      "scene": "hook",
+      "text": "J'ai laissé Pixel répondre à mes clients. Il vient de promettre douze mille euros de remboursements.",
+      "highlight": [
+        "Pixel",
+        "douze",
+        "mille",
+        "remboursements."
+      ],
+      "duration": 5,
+      "sfx": [
+        {
+          "t": 0.02,
+          "type": "thump"
+        },
+        {
+          "t": 2.2,
+          "type": "ding"
+        }
+      ]
+    },
+    {
+      "speaker": "c",
+      "scene": "mail",
+      "text": "Je voulais être gentil.",
+      "highlight": [
+        "gentil."
+      ],
+      "duration": 2,
+      "sfx": [
+        {
+          "t": 0.1,
+          "type": "pop"
+        }
+      ]
+    },
+    {
+      "speaker": "s",
+      "scene": "mail2",
+      "text": "Gentil ? Tu as écrit : remboursement garanti à vie !",
+      "highlight": [
+        "garanti",
+        "vie"
+      ],
+      "duration": 3,
+      "sfx": [
+        {
+          "t": 0.4,
+          "type": "tick",
+          "n": 26
+        }
+      ]
+    },
+    {
+      "speaker": "c",
+      "scene": "button",
+      "text": "Un client trouvait le bouton trop bleu.",
+      "highlight": [
+        "bouton",
+        "bleu."
+      ],
+      "duration": 3,
+      "sfx": [
+        {
+          "t": 0.15,
+          "type": "pop"
+        }
+      ]
+    },
+    {
+      "speaker": "c",
+      "scene": "gesture",
+      "text": "Un autre voulait un petit geste. Je lui ai offert un an.",
+      "highlight": [
+        "geste.",
+        "offert",
+        "an."
+      ],
+      "duration": 4,
+      "sfx": [
+        {
+          "t": 0.3,
+          "type": "ding"
+        },
+        {
+          "t": 1.8,
+          "type": "tick",
+          "n": 10
+        }
+      ]
+    },
+    {
+      "speaker": "s",
+      "scene": "thanks",
+      "text": "Et maintenant, quarante clients te disent merci !",
+      "highlight": [
+        "quarante",
+        "merci"
+      ],
+      "duration": 3,
+      "sfx": [
+        {
+          "t": 0.3,
+          "type": "tick",
+          "n": 14
+        },
+        {
+          "t": 2.0,
+          "type": "chime"
+        }
+      ]
+    },
+    {
+      "speaker": "s",
+      "scene": "calc",
+      "text": "Quarante fois trois cents euros. Fais le calcul.",
+      "highlight": [
+        "Quarante",
+        "trois",
+        "cents",
+        "euros."
+      ],
+      "duration": 3,
+      "sfx": [
+        {
+          "t": 0.2,
+          "type": "tick",
+          "n": 12
+        },
+        {
+          "t": 2.4,
+          "type": "boom"
+        }
+      ]
+    },
+    {
+      "speaker": "c",
+      "scene": "cold",
+      "text": "Douze mille euros. Mais la note moyenne est de quatre virgule neuf sur cinq.",
+      "highlight": [
+        "Douze",
+        "mille",
+        "quatre",
+        "neuf"
+      ],
+      "duration": 5,
+      "sfx": [
+        {
+          "t": 0.4,
+          "type": "chime"
+        }
+      ]
+    },
+    {
+      "speaker": "s",
+      "scene": "sigh",
+      "text": "Pixel… Je voulais juste un service client.",
+      "highlight": [
+        "Pixel…",
+        "service",
+        "client."
+      ],
+      "duration": 3,
+      "sfx": [
+        {
+          "t": 0.2,
+          "type": "pop"
+        }
+      ]
+    },
+    {
+      "speaker": "s",
+      "scene": "question",
+      "text": "Épisode deux demain. Tu laisserais une IA répondre à tes clients ? Oui, ou non ?",
+      "highlight": [
+        "Épisode",
+        "demain.",
+        "Oui,",
+        "non"
+      ],
+      "duration": 5,
+      "sfx": [
+        {
+          "t": 0.15,
+          "type": "chime"
+        }
+      ]
+    }
+  ]
+}
