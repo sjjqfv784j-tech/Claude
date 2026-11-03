@@ -4,6 +4,7 @@ import { ClawdVideo } from './Video';
 import { StoryVideo, STORY } from './story/StoryVideo';
 import { EtSiVideo, buildEtSi, etsiFrames } from './etsi/EtSiVideoV2';
 import { MentiVideo, buildMenti, mentiFrames } from './menti/MentiVideo';
+import { ClaudeVideo, buildClaude, claudeFrames } from './claude/ClaudeVideo';
 
 const StoryVideo3D: React.FC<VideoProps> = (p) => <StoryVideo {...p} three />;
 import { SEGMENTS } from './script';
@@ -78,6 +79,20 @@ export const Root: React.FC = () => (
         const voice = await loadVoice('voice/menti1', 9);
         const timeline = buildMenti(voice as never);
         return { durationInFrames: mentiFrames(timeline), props: { timeline } };
+      }}
+    />
+    <Composition
+      id="ClaudeSam1"
+      component={ClaudeVideo}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={300}
+      defaultProps={{ timeline: buildClaude(null) }}
+      calculateMetadata={async () => {
+        const voice = await loadVoice('voice/claude1', 10);
+        const timeline = buildClaude(voice as never);
+        return { durationInFrames: claudeFrames(timeline), props: { timeline } };
       }}
     />
   </>
