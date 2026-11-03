@@ -1,51 +1,51 @@
 1
-00:00:00,400 --> 00:00:02,630
+00:00:00,400 --> 00:00:02,619
 Tout le monde parle de Grok Bot. C'est quoi exactement ?
 
 2
-00:00:02,880 --> 00:00:05,386
+00:00:02,869 --> 00:00:05,795
 Un collègue IA. Tu lui donnes une tâche, il la fait.
 
 3
-00:00:05,586 --> 00:00:06,792
+00:00:05,995 --> 00:00:07,188
 Comme n'importe quelle IA, non ?
 
 4
-00:00:06,992 --> 00:00:10,954
+00:00:07,388 --> 00:00:11,646
 Non. Une IA classique répond. Lui agit : il se connecte à tes outils.
 
 5
-00:00:11,154 --> 00:00:12,029
+00:00:11,846 --> 00:00:12,721
 Et il tourne où ?
 
 6
-00:00:12,229 --> 00:00:16,701
+00:00:12,921 --> 00:00:18,581
 Sur son propre ordinateur, dans le cloud. Il peut donc travailler même quand le tien est éteint.
 
 7
-00:00:16,901 --> 00:00:17,797
+00:00:18,782 --> 00:00:19,677
 Et il sait faire quoi ?
 
 8
-00:00:17,997 --> 00:00:22,474
+00:00:19,877 --> 00:00:24,760
 Support client, gestion de comptes. Tu lui montres une fois, il apprend et le refait tout seul.
 
 9
-00:00:22,674 --> 00:00:26,237
+00:00:24,960 --> 00:00:28,497
 Tu peux même créer une équipe de plusieurs bots qui tournent en parallèle.
 
 10
-00:00:26,487 --> 00:00:27,969
+00:00:28,747 --> 00:00:30,218
 Et si je le laisse tourner la nuit ?
 
 11
-00:00:28,169 --> 00:00:30,248
+00:00:30,418 --> 00:00:33,147
 Il te demande ton accord quand c'est nécessaire.
 
 12
-00:00:30,498 --> 00:00:31,576
+00:00:33,397 --> 00:00:34,474
 Donc plus besoin de moi ?
 
 13
-00:00:31,776 --> 00:00:33,683
+00:00:34,674 --> 00:00:36,675
 Si, pour valider. Enregistre la vidéo.
