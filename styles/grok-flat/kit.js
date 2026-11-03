@@ -32,7 +32,7 @@ const gfBlink = (key = 0) => (B + key * 11) % 38 < 2;
 // ---------------------------------------------------------------------
 //  the room: night wall, floor, string lights, window with moon, curtain, shelf, plant, book stack
 // ---------------------------------------------------------------------
-const GF_DY = 110;
+const GF_DY = 150;
 function gfLights() {
   // string lights
   ctx.save(); ctx.beginPath(); for (let i = 0; i <= 10; i++) { const x = 40 + i * 100, y = 82 + Math.sin(i * 0.9) * 8; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.lineWidth = 4; ctx.strokeStyle = '#2f2a55'; ctx.stroke(); ctx.restore();
@@ -145,11 +145,11 @@ function gfPointer(from, to, k = 1) {
 //  whiteboard on legs, with its lamp pole. The cream sheet is board-local x 108..972, y 330..830
 // ---------------------------------------------------------------------
 const GFB = { x: 108, y: 330, w: 864, h: 500 };
-const GFS = { k: 0.78, tx: 222, ty: 188 };                        // board-local -> world: x*k+tx, y*k+ty
+const GFS = { k: 0.72, tx: 227, ty: 232 };                        // board-local -> world: x*k+tx, y*k+ty
 const gfBW = (x, y) => [x * GFS.k + GFS.tx, y * GFS.k + GFS.ty];
 function gfBoard() {
   const [x0, y0] = gfBW(GFB.x, GFB.y), w = GFB.w * GFS.k, h = GFB.h * GFS.k;
-  gfRR(x0 + 40, y0 + h, 14, 1390 - (y0 + h), 4, GF.woodD); gfRR(x0 + w - 56, y0 + h, 14, 1390 - (y0 + h), 4, GF.woodD);
+  gfRR(x0 + 40, y0 + h, 14, 1300 - (y0 + h), 4, GF.woodD); gfRR(x0 + w - 56, y0 + h, 14, 1300 - (y0 + h), 4, GF.woodD);
   gfRR(x0 - 16, y0 - 16, w + 32, h + 50, 12, GF.wood);
   gfRR(x0, y0, w, h, 6, GF.cream);
   gfRR(x0 - 16, y0 + h + 4, w + 32, 22, 6, GF.woodD);
