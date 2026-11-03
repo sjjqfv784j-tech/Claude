@@ -1,1 +1,6 @@
 references/
+pieces/*/*/frames/
+pieces/*/*/renders/
+pieces/compilation/out/
+pieces/compilation/look*.png
+pieces/compilation/fix.png

@@ -1,0 +1,7 @@
+index.html: 1080x1920, 48 frames @ 24fps (2.0000s)
+  24/48 frames  69ms/frame
+  48/48 frames  60ms/frame
+frames 0..47 written in 2.9s
+audio.wav written (0.38 MB) in 1.9s
+stems written: stem-music.wav, stem-sfx.wav in 3.9s
+wrote /home/user/Claude/pieces/compilation/math/renders/final.mp4

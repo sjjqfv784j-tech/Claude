@@ -1,0 +1,22 @@
+{
+  "name": "compilation-crosshatch",
+  "title": "Compilation: crosshatch",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "bpm": 120,
+    "duration": 2,
+    "frames": 48
+  },
+  "storyFormat": "F7 variation reel (one 2s shot)",
+  "style": "crosshatch",
+  "review": {
+    "safe": {
+      "top": 240,
+      "bottom": 420,
+      "right": 140
+    },
+    "refs": {}
+  }
+}

@@ -1,0 +1,7 @@
+index.html: 1080x1920, 48 frames @ 24fps (2.0000s)
+  24/48 frames  70ms/frame
+  48/48 frames  59ms/frame
+frames 0..47 written in 2.8s
+audio.wav written (0.38 MB) in 1.7s
+stems written: stem-music.wav, stem-sfx.wav in 3.9s
+wrote /home/user/Claude/pieces/compilation/isometric/renders/final.mp4

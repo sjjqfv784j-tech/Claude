@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketchbook demo</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1d1a17; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  SKETCHBOOK DEMO — 9:16, 6.0s @ 120 BPM, 24fps. A puzzled doodle gets an idea: a lightbulb is pencilled in,
+//  inked and scribbled yellow; the bulb becomes the sun over a sketched hill, and the hero waves from the top.
+//  Proves the style kit renders, morphs and stays deterministic.
+//  Build: node <skill>/tools/build.mjs <skill>/styles/sketchbook/demo
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = 2.0;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Ink Free", "Segoe Print", "Bradley Hand", "Comic Sans MS", "Chalkboard SE", cursive';
+const CX = 500;
+
+const ERA_LIST = [[-1.3, 2, () => sceneCompile()]];
+const SHOTS = [
+  ['sketchbook', 0, 0.0, 2.0, 'sketchbook'],
+];
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'morph-chain',
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: [],
+  morphs: [],
+  cues: { draw: 0.0, ink: 0.45, fill: 0.6, pop: 1.0 },
+  acts: [
+    { name: 'sketchbook', role: 'build', t0: 0.0, t1: 2.0 },
+  ],
+  board: [
+    { t: 1.5, title: 'sketchbook', sound: 'a pluck', next: 'the next style' },
+  ],
+  narration: [],
+};
+window.TIMELINE = TIMELINE;

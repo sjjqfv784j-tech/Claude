@@ -1,0 +1,7 @@
+index.html: 1080x1920, 48 frames @ 24fps (2.0000s)
+  24/48 frames  836ms/frame
+  48/48 frames  552ms/frame
+frames 0..47 written in 26.5s
+audio.wav written (0.38 MB) in 0.5s
+stems written: stem-music.wav, stem-sfx.wav in 1.0s
+wrote /home/user/Claude/pieces/compilation/riso/renders/final.mp4
