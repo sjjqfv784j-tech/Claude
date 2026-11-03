@@ -1,0 +1,97 @@
+{
+ "lead": 0.4,
+ "tail": 1.0,
+ "lines": [
+  {
+   "id": "l1",
+   "text": "Tout le monde parle de Grok Bot. C'est quoi exactement ?",
+   "after": 0.25,
+   "file": "l1.mp3",
+   "who": "claude"
+  },
+  {
+   "id": "l2",
+   "text": "Un collègue IA. Tu lui donnes une tâche, il la fait.",
+   "after": 0.2,
+   "file": "l2.mp3",
+   "who": "grok"
+  },
+  {
+   "id": "l3",
+   "text": "Comme n'importe quelle IA, non ?",
+   "after": 0.2,
+   "file": "l3.mp3",
+   "who": "claude"
+  },
+  {
+   "id": "l4",
+   "text": "Non. Une IA classique répond. Lui agit : il se connecte à tes outils.",
+   "after": 0.2,
+   "file": "l4.mp3",
+   "who": "grok"
+  },
+  {
+   "id": "l5",
+   "text": "Et il tourne où ?",
+   "after": 0.2,
+   "file": "l5.mp3",
+   "who": "claude"
+  },
+  {
+   "id": "l6",
+   "text": "Sur son propre ordinateur, dans le cloud. Il peut donc travailler même quand le tien est éteint.",
+   "after": 0.2,
+   "file": "l6.mp3",
+   "who": "grok"
+  },
+  {
+   "id": "l7",
+   "text": "Et il sait faire quoi ?",
+   "after": 0.2,
+   "file": "l7.mp3",
+   "who": "claude"
+  },
+  {
+   "id": "l8",
+   "text": "Support client, gestion de comptes. Tu lui montres une fois, il apprend et le refait tout seul.",
+   "after": 0.2,
+   "file": "l8.mp3",
+   "who": "grok"
+  },
+  {
+   "id": "l9",
+   "text": "Tu peux même créer une équipe de plusieurs bots qui tournent en parallèle.",
+   "after": 0.25,
+   "file": "l9.mp3",
+   "who": "grok"
+  },
+  {
+   "id": "l10",
+   "text": "Et si je le laisse tourner la nuit ?",
+   "after": 0.2,
+   "file": "l10.mp3",
+   "who": "claude"
+  },
+  {
+   "id": "l11",
+   "text": "Il te demande ton accord quand c'est nécessaire.",
+   "after": 0.25,
+   "file": "l11.mp3",
+   "who": "grok"
+  },
+  {
+   "id": "l12",
+   "text": "Donc plus besoin de moi ?",
+   "after": 0.2,
+   "file": "l12.mp3",
+   "who": "claude"
+  },
+  {
+   "id": "l13",
+   "text": "Si, pour valider. Enregistre la vidéo.",
+   "after": 0.2,
+   "file": "l13.mp3",
+   "who": "grok"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "grok-bot",
+  "title": "Grok Bot, c'est quoi ?",
+  "format": { "width": 1080, "height": 1920, "fps": 24, "bpm": 120, "duration": 35.5, "frames": 852 },
+  "storyFormat": "F3 catalogue (a question answered by stacked answers), voice-led hard cuts",
+  "style": "grok-flat",
+  "formats": ["9:16"],
+  "review": { "safe": { "top": 240, "bottom": 420, "right": 140 }, "refs": {} },
+  "voice": { "file": "voice/voice.wav", "music": -12 }
+}

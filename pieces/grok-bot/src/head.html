@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot, c'est quoi ?</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0f0d22; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// GROK BOT — 9:16, voice-led hard cuts, 24fps. The voice is the clock: each shot starts on a line (snapped to the 8th grid).
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = typeof VOICE !== 'undefined' ? Math.ceil(VOICE.duration * 4) / 4 : 35.5;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Poppins","Montserrat","Nunito Sans","DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif';
+const CX = 540;
+// who speaks each line: C = Claude, G = Grok Bot
+const SPK = { l1: 'C', l2: 'G', l3: 'C', l4: 'G', l5: 'C', l6: 'G', l7: 'C', l8: 'G', l9: 'G', l10: 'C', l11: 'G', l12: 'C', l13: 'G' };
+const VL = (id) => (typeof VOICE !== 'undefined' ? VOICE.lines.find((l) => l.id === id) : null);
+const snap8 = (t) => Math.round(t * 4) / 4;
+const lineT0 = (id, dflt) => { const l = VL(id); return l ? snap8(l.t0 - 0.05) : dflt; };
+const talking = (who) => { const l = typeof VOICE !== 'undefined' ? VOICE.lines.find((x) => TT >= x.t0 - 0.02 && TT < x.t1) : null; return !!l && SPK[l.id] === who; };
+
+// shots: [t0, scene]
+const SHOT_LIST = [
+  [0, 'room1'],
+  [lineT0('l2', 3.25), 'enter'],
+  [lineT0('l3', 6.0), 'duo'],
+  [lineT0('l4', 7.75), 'tools'],
+  [lineT0('l5', 11.25), 'cloud'],
+  [lineT0('l7', 17.0), 'cards'],
+  [lineT0('l9', 23.0), 'parallel'],
+  [lineT0('l10', 26.75), 'night'],
+  [lineT0('l12', 31.25), 'end'],
+];
+const SCENE = { room1: () => sceneRoom1(), enter: () => sceneEnter(), duo: () => sceneDuo(), tools: () => sceneTools(), cloud: () => sceneCloud(), cards: () => sceneCards(), parallel: () => sceneParallel(), night: () => sceneNight(), end: () => sceneEnd() };
+const ERA_LIST = SHOT_LIST.map(([t0, sc], i) => [t0, i + 1 < SHOT_LIST.length ? SHOT_LIST[i + 1][0] : DURATION, SCENE[sc]]);
+const SHOTS = SHOT_LIST.map(([t0, sc], i) => [sc, i, t0, ERA_LIST[i][1], sc]);
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'catalogue',
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: SHOT_LIST.slice(1).map(([t0]) => t0),
+  morphs: [],
+  cues: {},
+  acts: [
+    { name: '1 La question', role: 'build', t0: 0, t1: SHOT_LIST[3][0] },
+    { name: '2 Les outils', role: 'journey', t0: SHOT_LIST[3][0], t1: SHOT_LIST[6][0] },
+    { name: '3 L\'equipe', role: 'peak', t0: SHOT_LIST[6][0], t1: SHOT_LIST[7][0] },
+    { name: '4 La nuit', role: 'silence', t0: SHOT_LIST[7][0], t1: SHOT_LIST[8][0] },
+    { name: '5 La chute', role: 'gift', t0: SHOT_LIST[8][0], t1: DURATION },
+  ],
+  board: [
+    { t: 1.6, title: 'la question', sound: 'pad doux', next: 'Grok Bot entre' },
+    { t: SHOT_LIST[3][0] + 2.0, title: 'les outils', sound: 'tic par icone', next: 'le nuage' },
+    { t: SHOT_LIST[6][0] + 2.8, title: 'en parallele', sound: 'tic par ecran', next: 'la nuit' },
+  ],
+  narration: typeof VOICE !== 'undefined' ? VOICE.lines.map((l) => ({ id: l.id, t0: l.t0, t1: l.t1, text: l.text })) : [],
+};
+window.TIMELINE = TIMELINE;
