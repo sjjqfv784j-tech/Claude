@@ -1,0 +1,39 @@
+1
+00:00:00,300 --> 00:00:03,431
+Pixel, c'est quoi la différence entre Claude et Claude Code ?
+
+2
+00:00:03,931 --> 00:00:08,716
+Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais.
+
+3
+00:00:09,216 --> 00:00:14,873
+Claude, c'est une conversation. Tu poses une question, il te répond. Ensuite, c'est toi qui fais le travail.
+
+4
+00:00:15,473 --> 00:00:20,815
+Claude Code, lui, entre dans ton projet. Il lit tes fichiers, les modifie, et lance des commandes.
+
+5
+00:00:21,615 --> 00:00:26,898
+Il marche dans le terminal, ton éditeur de code, l'application de bureau, et le navigateur.
+
+6
+00:00:27,398 --> 00:00:33,590
+Exemple : une faute dans ton site. Claude t'explique quoi corriger. Claude Code ouvre le fichier, et la corrige.
+
+7
+00:00:34,490 --> 00:00:40,890
+Claude, c'est un ami qui te conseille au téléphone. Claude Code, c'est le même ami, qui vient travailler sur ton ordinateur.
+
+8
+00:00:42,290 --> 00:00:48,697
+Une idée, un texte, une question : Claude. Un projet à modifier : Claude Code. Tu peux aussi utiliser les deux.
+
+9
+00:00:49,697 --> 00:00:54,560
+Attention : Claude Code demande en général un abonnement payant, ou un compte Console.
+
+10
+00:00:55,360 --> 00:00:58,928
+Et toi, tu es plutôt téléphone, ou ordinateur ? A, ou B ?
