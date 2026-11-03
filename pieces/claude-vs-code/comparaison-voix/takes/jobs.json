@@ -1,0 +1,106 @@
+[
+ {
+  "n": "Léo Energetic",
+  "d": "jeune, confiant, réseaux sociaux",
+  "kind": "PIXEL (narrateur)",
+  "k": 1,
+  "f": "narr1",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Noé",
+  "d": "jeune, dynamique, réseaux sociaux",
+  "kind": "PIXEL (narrateur)",
+  "k": 2,
+  "f": "narr2",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Louis",
+  "d": "jeune, décontracté",
+  "kind": "PIXEL (narrateur)",
+  "k": 3,
+  "f": "narr3",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Kevin",
+  "d": "jeune, parisien, chill",
+  "kind": "PIXEL (narrateur)",
+  "k": 4,
+  "f": "narr4",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Jeunot",
+  "d": "jeune, décontracté",
+  "kind": "PIXEL (narrateur)",
+  "k": 5,
+  "f": "narr5",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Tenko",
+  "d": "jeune, calme, histoires",
+  "kind": "PIXEL (narrateur)",
+  "k": 6,
+  "f": "narr6",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Maxime",
+  "d": "jeune, calme, conversation",
+  "kind": "PIXEL (narrateur)",
+  "k": 7,
+  "f": "narr7",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Sami",
+  "d": "adulte, agréable, narration",
+  "kind": "PIXEL (narrateur)",
+  "k": 8,
+  "f": "narr8",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Léo Pro",
+  "d": "adulte, décontracté, narration",
+  "kind": "PIXEL (narrateur)",
+  "k": 9,
+  "f": "narr9",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Marcel",
+  "d": "adulte, doux",
+  "kind": "PIXEL (narrateur)",
+  "k": 10,
+  "f": "narr10",
+  "text": "Bonne question. Si tu copies, tu colles, tu recopies… c'est peut-être le mauvais."
+ },
+ {
+  "n": "Victoire",
+  "d": "féminine, jeune, calme",
+  "kind": "LA QUESTION",
+  "k": "Q1",
+  "f": "ask1",
+  "text": "Pixel, c'est quoi la différence entre Claude et Claude Code ?"
+ },
+ {
+  "n": "Chicadi",
+  "d": "féminine, ado, agréable",
+  "kind": "LA QUESTION",
+  "k": "Q2",
+  "f": "ask2",
+  "text": "Pixel, c'est quoi la différence entre Claude et Claude Code ?"
+ },
+ {
+  "n": "Maxime",
+  "d": "masculin, jeune, calme",
+  "kind": "LA QUESTION",
+  "k": "Q3",
+  "f": "ask3",
+  "text": "Pixel, c'est quoi la différence entre Claude et Claude Code ?"
+ }
+]
