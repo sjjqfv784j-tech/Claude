@@ -10,7 +10,7 @@ const GF = {
   woodD: '#8d7650', gray: '#a7a4a8', grayL: '#cfcad0', violet: '#3a3366', pink: '#d9606a', book: ['#d97c8c', '#e3b93c', '#4a3d6e', '#d9a27c', '#7fd6c0'],
 };
 const GF_FONT = '"Poppins","Montserrat","Nunito Sans","DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif';
-const GF_KEYS = ['GROK', 'BOT', 'IA', 'AGIT', 'OUTILS', 'CLOUD', 'ÉTEINT', 'ORDINATEUR', 'SUPPORT', 'COMPTES', 'FOIS', 'ÉQUIPE', 'PARALLÈLE', 'NUIT', 'ACCORD', 'VALIDER', 'VIDÉO'];
+const GF_KEYS = ['GROK', 'BOT', 'COLLÈGUE', 'TÂCHE', 'EXACTEMENT', 'CONNECTE', 'APPREND', 'SEUL', 'BESOIN', 'IA', 'AGIT', 'OUTILS', 'CLOUD', 'ÉTEINT', 'ORDINATEUR', 'SUPPORT', 'COMPTES', 'FOIS', 'ÉQUIPE', 'PARALLÈLE', 'NUIT', 'ACCORD', 'VALIDER', 'VIDÉO'];
 
 function gfFillStroke(fill, line, lw) {
   if (fill) { ctx.fillStyle = fill; ctx.fill(); }
@@ -32,9 +32,23 @@ const gfBlink = (key = 0) => (B + key * 11) % 38 < 2;
 // ---------------------------------------------------------------------
 //  the room: night wall, floor, string lights, window with moon, curtain, shelf, plant, book stack
 // ---------------------------------------------------------------------
+const GF_DY = 110;
+function gfLights() {
+  // string lights
+  ctx.save(); ctx.beginPath(); for (let i = 0; i <= 10; i++) { const x = 40 + i * 100, y = 82 + Math.sin(i * 0.9) * 8; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.lineWidth = 4; ctx.strokeStyle = '#2f2a55'; ctx.stroke(); ctx.restore();
+  const LC = ['#f3e7c9', '#7fd6c0', '#f08a80'];
+  for (let i = 0; i < 10; i++) {
+    const x = 90 + i * 100, y = 100 + Math.sin(i * 0.9) * 8, on = (B + i * 3) % 16 < 11;
+    gfEl(x, y, 31, 31, '#3a3563'); ctx.save(); ctx.globalAlpha = on ? 1 : 0.55; gfEl(x, y, 20, 20, LC[i % 3]); ctx.restore();
+  }
+}
 function gfRoom(o = {}) {
   fillAll(GF.night);
+  gfLights();
+  ctx.translate(0, GF_DY);
   ctx.fillStyle = GF.floor; ctx.fillRect(-10, 1092, W + 20, H);
+  for (let i = 0; i < 6; i++) { ctx.fillStyle = GF.night2; ctx.fillRect(-10, 1180 + i * 120 + i * i * 8, W + 20, 4); }
+  gfEl(540, 1560, 700, 190, GF.rug); gfEl(540, 1560, 600, 150, '#2a2450'); gfEl(540, 1560, 470, 110, GF.rug);
   ctx.fillStyle = GF.base; ctx.fillRect(-10, 1074, W + 20, 18);
   gfEl(540, 1330, 560, 90, GF.rug);
   gfEl(80, 1290, 130, 28, GF.rug);
@@ -63,13 +77,6 @@ function gfRoom(o = {}) {
   // book stack and mug
   gfRR(196, 1204, 222, 26, 4, '#e8e6ea'); gfRR(186, 1230, 242, 28, 4, GF.grayL); gfRR(200, 1258, 214, 26, 4, '#e8e6ea');
   gfRR(278, 1146, 70, 58, 8, '#e0766a'); gfEl(356, 1176, 20, 18, null, '#e0766a', 9);
-  // string lights
-  ctx.save(); ctx.beginPath(); for (let i = 0; i <= 10; i++) { const x = 40 + i * 100, y = 82 + Math.sin(i * 0.9) * 8; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.lineWidth = 4; ctx.strokeStyle = '#2f2a55'; ctx.stroke(); ctx.restore();
-  const LC = ['#f3e7c9', '#7fd6c0', '#f08a80'];
-  for (let i = 0; i < 10; i++) {
-    const x = 90 + i * 100, y = 100 + Math.sin(i * 0.9) * 8, on = (B + i * 3) % 16 < 11;
-    gfEl(x, y, 31, 31, '#3a3563'); ctx.save(); ctx.globalAlpha = on ? 1 : 0.55; gfEl(x, y, 20, 20, LC[i % 3]); ctx.restore();
-  }
 }
 
 // ---------------------------------------------------------------------
@@ -138,13 +145,16 @@ function gfPointer(from, to, k = 1) {
 //  whiteboard on legs, with its lamp pole. The cream sheet is board-local x 108..972, y 330..830
 // ---------------------------------------------------------------------
 const GFB = { x: 108, y: 330, w: 864, h: 500 };
-function gfBoard(k = 1) {
-  gfLine(730, 850, 730, 1260, GF.violet, 10); gfEl(730, 1262, 62, 12, GF.violet);
-  gfRR(150, 830, 16, 460, 4, GF.woodD); gfRR(914, 830, 16, 460, 4, GF.woodD);
-  gfRR(GFB.x - 20, GFB.y - 20, GFB.w + 40, GFB.h + 62, 12, GF.wood);
-  gfRR(GFB.x, GFB.y, GFB.w, GFB.h, 6, GF.cream);
-  gfRR(GFB.x - 20, GFB.y + GFB.h + 4, GFB.w + 40, 26, 6, GF.woodD);
+const GFS = { k: 0.78, tx: 222, ty: 188 };                        // board-local -> world: x*k+tx, y*k+ty
+const gfBW = (x, y) => [x * GFS.k + GFS.tx, y * GFS.k + GFS.ty];
+function gfBoard() {
+  const [x0, y0] = gfBW(GFB.x, GFB.y), w = GFB.w * GFS.k, h = GFB.h * GFS.k;
+  gfRR(x0 + 40, y0 + h, 14, 1390 - (y0 + h), 4, GF.woodD); gfRR(x0 + w - 56, y0 + h, 14, 1390 - (y0 + h), 4, GF.woodD);
+  gfRR(x0 - 16, y0 - 16, w + 32, h + 50, 12, GF.wood);
+  gfRR(x0, y0, w, h, 6, GF.cream);
+  gfRR(x0 - 16, y0 + h + 4, w + 32, 22, 6, GF.woodD);
 }
+function gfBoardIn(fn) { ctx.save(); ctx.translate(GFS.tx, GFS.ty); ctx.scale(GFS.k, GFS.k); fn(); ctx.restore(); }
 function gfBoardIcon(cx, cy, size, kind, k = 1) {
   if (k <= 0) return;
   ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k);
@@ -174,33 +184,45 @@ function gfCloud(cx, cy, s, k = 1) {
 }
 
 // ---------------------------------------------------------------------
-//  captions: a rounded cream card, word groups follow the voice, key words in red. Drawn after the camera (DEFER).
+//  captions: a rounded cream card, one natural phrase at a time, switched on the voice's own word times,
+//  key words in red. Drawn after the camera (DEFER). GF_PHR = word counts per phrase, per line.
 // ---------------------------------------------------------------------
-function gfChunks(words) {
+const GF_PHR = { l1: [3, 4, 3], l2: [3, 3, 2, 3], l3: [3, 2], l4: [1, 4, 2, 3, 2], l5: [4], l6: [4, 3, 3, 2, 3, 2], l7: [5], l8: [2, 3, 3, 2, 2, 3, 2], l9: [4, 2, 3, 2, 2], l10: [4, 4], l11: [3, 2, 3], l12: [2, 3], l13: [3, 3] };
+const gfKept = (w) => w.toLowerCase().replace(/[^a-z0-9]/g, '').length > 0;
+const GF_CACHE = {};
+function gfPhrases(L) {
+  if (GF_CACHE[L.id]) return GF_CACHE[L.id];
+  const toks = L.text.split(/\s+/), disp = [], pend = [];
+  toks.forEach((t) => {
+    if (gfKept(t)) { disp.push(pend.concat([t]).join(' ')); pend.length = 0; }
+    else if (/[a-zA-ZÀ-ÿ]/.test(t)) pend.push(t);
+    else if (disp.length) disp[disp.length - 1] += ' ' + t;
+  });
+  const counts = GF_PHR[L.id] || [disp.length];
   const out = []; let i = 0;
-  while (i < words.length) { let j = i, len = 0; while (j < words.length && j - i < 4 && len + words[j].w.length + (j > i) <= 26) { len += words[j].w.length + (j > i); j++; if (/[.,?:!]$/.test(words[j - 1].w)) break; } if (j === i) j = i + 1; out.push(words.slice(i, j)); i = j; }
-  return out;
+  counts.forEach((n) => { const ws = []; for (let k = 0; k < n && i < disp.length; k++, i++) ws.push({ w: disp[i], t0: L.words[Math.min(i, L.words.length - 1)].t0 }); if (ws.length) out.push(ws); });
+  return (GF_CACHE[L.id] = out);
 }
 function gfSplit(ws) {
   if (ws.length === 1) return [ws];
   const txt = (a) => a.map((w) => w.w).join(' ').length;
-  if (txt(ws) <= 15) return [ws];
+  if (txt(ws) <= 17) return [ws];
   let best = null; for (let k = 1; k < ws.length; k++) { const m = Math.max(txt(ws.slice(0, k)), txt(ws.slice(k))); if (!best || m < best[0]) best = [m, k]; }
   return [ws.slice(0, best[1]), ws.slice(best[1])];
 }
 function gfCaptionNow() {
   if (typeof VOICE === 'undefined') return null;
-  const L = VOICE.lines.find((l) => TT >= l.t0 - 0.02 && TT < l.t1 + 0.3); if (!L) return null;
-  let cur = null; for (const ch of gfChunks(L.words)) if (TT >= ch[0].t0 - 0.02) cur = ch;
+  const L = VOICE.lines.find((l) => TT >= l.t0 - 0.03 && TT < l.t1 + 0.3); if (!L) return null;
+  let cur = null; for (const ph of gfPhrases(L)) if (TT >= ph[0].t0 - 0.03) cur = ph;
   return cur;
 }
 function gfCaption(textOverride) {
   const draw = () => {
     const ch = textOverride ? [{ w: textOverride }] : gfCaptionNow(); if (!ch) return;
-    const rows = textOverride ? [ch] : gfSplit(ch), size = 66;
+    const rows = gfSplit(ch), size = 66;
     ctx.save(); ctx.font = `800 ${size}px ${GF_FONT}`;
     const meas = rows.map((r) => ctx.measureText(r.map((w) => w.w.toUpperCase()).join(' ')).width), wmax = Math.max(...meas);
-    const k = Math.min(1, 800 / (wmax + 90)), cw = (wmax + 90) * k, rh = 84 * k, chh = rows.length * rh + 44 * k, cy = 1490 - chh;
+    const k = Math.min(1, 860 / (wmax + 90)), cw = (wmax + 90) * k, rh = 84 * k, chh = rows.length * rh + 44 * k, cy = 1490 - chh;
     gfRR(540 - cw / 2, cy, cw, chh, 34 * k, GF.cream);
     rows.forEach((r, ri) => {
       let x = 540 - meas[ri] * k / 2; const y = cy + 22 * k + rh * (ri + 0.5);
@@ -213,10 +235,10 @@ function gfCaption(textOverride) {
   };
   if (DEFER) DEFER.push(draw); else draw();
 }
-function gfTitle(a, b, lt = 0) {
+function gfTitle(a, b, lt = 0, y = 330) {
   const k = popS(E0 + lt);
   if (k <= 0) return;
-  ctx.save(); ctx.translate(540, 440); ctx.scale(k, k);
+  ctx.save(); ctx.translate(540, y); ctx.scale(k, k);
   ctx.font = `800 74px ${GF_FONT}`; const w = Math.max(ctx.measureText(a).width, ctx.measureText(b).width) + 80;
   gfRR(-w / 2, -110, w, 220, 34, GF.cream); gfText(a, 0, -36, 74, GF.red); gfText(b, 0, 40, 74, GF.ink); ctx.restore();
 }
