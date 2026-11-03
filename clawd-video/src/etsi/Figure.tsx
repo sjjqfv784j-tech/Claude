@@ -96,7 +96,7 @@ export const Figure: React.FC<{
         ) : null}
         {/* cou + tête */}
         <rect x="-10" y="-358" width="20" height="18" fill={skin} />
-        <g transform="translate(0 -398)">
+        <g transform={`translate(0 ${-398 - (sam ? talk * 5 : 0)}) rotate(${sam ? Math.sin(talk * 3) * 2 : 0})`}>
           <circle r="50" fill={skin} />
           <path d="M -50 -6 Q -46 -62 4 -58 Q 48 -56 50 -8 Q 36 -34 4 -34 Q -30 -34 -50 -6 Z" fill={hair} />
           {[-1, 1].map((e) => (
@@ -112,7 +112,7 @@ export const Figure: React.FC<{
               <path d="M 8 -20 L 34 -14" stroke="#3A2A22" strokeWidth="7" strokeLinecap="round" />
             </g>
           ) : null}
-          {talk > 0.08 ? (
+          {talk > 0.08 && !sam ? (
             <ellipse cx="0" cy="34" rx="10" ry={3 + talk * 10} fill="#5a2a2a" />
           ) : pose.happy ? (
             <path d="M -14 28 Q 0 42 14 28" fill="none" stroke={sam ? '#f2e6d8' : '#7a2e2e'} strokeWidth="4.5" strokeLinecap="round" />
