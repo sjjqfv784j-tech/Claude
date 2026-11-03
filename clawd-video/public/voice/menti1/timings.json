@@ -1,0 +1,528 @@
+{
+  "segments": [
+    {
+      "audio": "voice/menti1/seg-0.mp3",
+      "duration": 3.709388,
+      "words": [
+        {
+          "text": "Ton",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "text": "IA",
+          "start": 0.325,
+          "end": 0.464
+        },
+        {
+          "text": "vient",
+          "start": 0.522,
+          "end": 0.72
+        },
+        {
+          "text": "de",
+          "start": 0.743,
+          "end": 0.789
+        },
+        {
+          "text": "m'inventer",
+          "start": 0.836,
+          "end": 1.3
+        },
+        {
+          "text": "un",
+          "start": 1.347,
+          "end": 1.405
+        },
+        {
+          "text": "film.",
+          "start": 1.486,
+          "end": 1.916
+        },
+        {
+          "text": "Et",
+          "start": 2.299,
+          "end": 2.415
+        },
+        {
+          "text": "elle",
+          "start": 2.438,
+          "end": 2.577
+        },
+        {
+          "text": "était",
+          "start": 2.601,
+          "end": 2.798
+        },
+        {
+          "text": "sûre",
+          "start": 2.844,
+          "end": 3.1
+        },
+        {
+          "text": "d'elle.",
+          "start": 3.123,
+          "end": 3.669
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-1.mp3",
+      "duration": 3.291429,
+      "words": [
+        {
+          "text": "Je",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "text": "lui",
+          "start": 0.209,
+          "end": 0.302
+        },
+        {
+          "text": "demande",
+          "start": 0.36,
+          "end": 0.639
+        },
+        {
+          "text": "de",
+          "start": 0.662,
+          "end": 0.731
+        },
+        {
+          "text": "résumer",
+          "start": 0.789,
+          "end": 1.254
+        },
+        {
+          "text": ":",
+          "start": 1.3,
+          "end": 1.347
+        },
+        {
+          "text": "La",
+          "start": 1.521,
+          "end": 1.625
+        },
+        {
+          "text": "Lune",
+          "start": 1.683,
+          "end": 1.916
+        },
+        {
+          "text": "de",
+          "start": 1.95,
+          "end": 2.032
+        },
+        {
+          "text": "Tonton",
+          "start": 2.09,
+          "end": 2.415
+        },
+        {
+          "text": "Pierre.",
+          "start": 2.485,
+          "end": 3.251
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-2.mp3",
+      "duration": 2.742857,
+      "words": [
+        {
+          "text": "Sauf",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "text": "que",
+          "start": 0.279,
+          "end": 0.36
+        },
+        {
+          "text": "j'ai",
+          "start": 0.395,
+          "end": 0.522
+        },
+        {
+          "text": "inventé",
+          "start": 0.546,
+          "end": 0.894
+        },
+        {
+          "text": "ce",
+          "start": 0.952,
+          "end": 1.045
+        },
+        {
+          "text": "titre",
+          "start": 1.103,
+          "end": 1.37
+        },
+        {
+          "text": "il",
+          "start": 1.393,
+          "end": 1.44
+        },
+        {
+          "text": "y",
+          "start": 1.486,
+          "end": 1.509
+        },
+        {
+          "text": "a",
+          "start": 1.544,
+          "end": 1.567
+        },
+        {
+          "text": "dix",
+          "start": 1.637,
+          "end": 1.823
+        },
+        {
+          "text": "secondes.",
+          "start": 1.846,
+          "end": 2.694
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-3.mp3",
+      "duration": 3.578776,
+      "words": [
+        {
+          "text": "Elle",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "text": "répond",
+          "start": 0.221,
+          "end": 0.557
+        },
+        {
+          "text": "sans",
+          "start": 0.604,
+          "end": 0.778
+        },
+        {
+          "text": "hésiter",
+          "start": 0.824,
+          "end": 1.254
+        },
+        {
+          "text": ":",
+          "start": 1.335,
+          "end": 1.37
+        },
+        {
+          "text": "une",
+          "start": 1.579,
+          "end": 1.8
+        },
+        {
+          "text": "année,",
+          "start": 1.823,
+          "end": 2.183
+        },
+        {
+          "text": "un",
+          "start": 2.229,
+          "end": 2.334
+        },
+        {
+          "text": "réalisateur…",
+          "start": 2.38,
+          "end": 3.529
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-4.mp3",
+      "duration": 2.586122,
+      "words": [
+        {
+          "text": "…une",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "text": "intrigue,",
+          "start": 0.348,
+          "end": 0.906
+        },
+        {
+          "text": "même",
+          "start": 1.115,
+          "end": 1.324
+        },
+        {
+          "text": "une",
+          "start": 1.347,
+          "end": 1.428
+        },
+        {
+          "text": "note",
+          "start": 1.451,
+          "end": 1.66
+        },
+        {
+          "text": "sur",
+          "start": 1.683,
+          "end": 1.869
+        },
+        {
+          "text": "cinq.",
+          "start": 1.927,
+          "end": 2.554
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-5.mp3",
+      "duration": 2.638367,
+      "words": [
+        {
+          "text": "Tout",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "text": "est",
+          "start": 0.325,
+          "end": 0.395
+        },
+        {
+          "text": "faux.",
+          "start": 0.441,
+          "end": 0.813
+        },
+        {
+          "text": "Ce",
+          "start": 1.022,
+          "end": 1.184
+        },
+        {
+          "text": "film",
+          "start": 1.231,
+          "end": 1.451
+        },
+        {
+          "text": "n'existe",
+          "start": 1.498,
+          "end": 1.997
+        },
+        {
+          "text": "pas.",
+          "start": 2.067,
+          "end": 2.601
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-6.mp3",
+      "duration": 4.780408,
+      "words": [
+        {
+          "text": "Pourquoi",
+          "start": 0,
+          "end": 0.43
+        },
+        {
+          "text": "?",
+          "start": 0.499,
+          "end": 0.557
+        },
+        {
+          "text": "Une",
+          "start": 0.882,
+          "end": 1.091
+        },
+        {
+          "text": "IA",
+          "start": 1.115,
+          "end": 1.254
+        },
+        {
+          "text": "ne",
+          "start": 1.3,
+          "end": 1.382
+        },
+        {
+          "text": "cherche",
+          "start": 1.428,
+          "end": 1.683
+        },
+        {
+          "text": "pas.",
+          "start": 1.718,
+          "end": 2.009
+        },
+        {
+          "text": "Elle",
+          "start": 2.287,
+          "end": 2.473
+        },
+        {
+          "text": "devine",
+          "start": 2.508,
+          "end": 2.833
+        },
+        {
+          "text": "la",
+          "start": 2.856,
+          "end": 2.937
+        },
+        {
+          "text": "suite,",
+          "start": 3.007,
+          "end": 3.495
+        },
+        {
+          "text": "mot",
+          "start": 3.669,
+          "end": 3.889
+        },
+        {
+          "text": "après",
+          "start": 3.936,
+          "end": 4.214
+        },
+        {
+          "text": "mot.",
+          "start": 4.238,
+          "end": 4.737
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-7.mp3",
+      "duration": 2.45551,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "text": "si",
+          "start": 0.197,
+          "end": 0.313
+        },
+        {
+          "text": "elle",
+          "start": 0.372,
+          "end": 0.476
+        },
+        {
+          "text": "faisait",
+          "start": 0.511,
+          "end": 0.824
+        },
+        {
+          "text": "pareil…",
+          "start": 0.859,
+          "end": 1.347
+        },
+        {
+          "text": "avec",
+          "start": 1.382,
+          "end": 1.672
+        },
+        {
+          "text": "ta",
+          "start": 1.741,
+          "end": 1.834
+        },
+        {
+          "text": "vie",
+          "start": 1.892,
+          "end": 2.078
+        },
+        {
+          "text": "?",
+          "start": 2.125,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "audio": "voice/menti1/seg-8.mp3",
+      "duration": 4.597551,
+      "words": [
+        {
+          "text": "Partie",
+          "start": 0,
+          "end": 0.418
+        },
+        {
+          "text": "deux",
+          "start": 0.464,
+          "end": 0.604
+        },
+        {
+          "text": "demain.",
+          "start": 0.65,
+          "end": 1.068
+        },
+        {
+          "text": "Dis-moi",
+          "start": 1.451,
+          "end": 1.823
+        },
+        {
+          "text": ":",
+          "start": 1.892,
+          "end": 1.927
+        },
+        {
+          "text": "tu",
+          "start": 2.078,
+          "end": 2.194
+        },
+        {
+          "text": "lui",
+          "start": 2.241,
+          "end": 2.322
+        },
+        {
+          "text": "fais",
+          "start": 2.368,
+          "end": 2.496
+        },
+        {
+          "text": "confiance",
+          "start": 2.519,
+          "end": 3.193
+        },
+        {
+          "text": "?",
+          "start": 3.216,
+          "end": 3.239
+        },
+        {
+          "text": "Oui,",
+          "start": 3.483,
+          "end": 3.773
+        },
+        {
+          "text": "ou",
+          "start": 3.855,
+          "end": 3.959
+        },
+        {
+          "text": "non",
+          "start": 4.029,
+          "end": 4.18
+        },
+        {
+          "text": "?",
+          "start": 4.272,
+          "end": 4.551
+        }
+      ]
+    }
+  ]
+}

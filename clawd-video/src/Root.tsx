@@ -3,6 +3,7 @@ import { Composition } from 'remotion';
 import { ClawdVideo } from './Video';
 import { StoryVideo, STORY } from './story/StoryVideo';
 import { EtSiVideo, buildEtSi, etsiFrames } from './etsi/EtSiVideoV2';
+import { MentiVideo, buildMenti, mentiFrames } from './menti/MentiVideo';
 
 const StoryVideo3D: React.FC<VideoProps> = (p) => <StoryVideo {...p} three />;
 import { SEGMENTS } from './script';
@@ -63,6 +64,20 @@ export const Root: React.FC = () => (
         const voice = await loadVoice('voice/etsi', 15);
         const timeline = buildEtSi(voice as never);
         return { durationInFrames: etsiFrames(timeline), props: { timeline } };
+      }}
+    />
+    <Composition
+      id="Menti1"
+      component={MentiVideo}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={300}
+      defaultProps={{ timeline: buildMenti(null) }}
+      calculateMetadata={async () => {
+        const voice = await loadVoice('voice/menti1', 9);
+        const timeline = buildMenti(voice as never);
+        return { durationInFrames: mentiFrames(timeline), props: { timeline } };
       }}
     />
   </>

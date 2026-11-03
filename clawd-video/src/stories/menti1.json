@@ -1,0 +1,15 @@
+{
+  "title": "Ton IA t'a déjà menti ? (partie 1/3)",
+  "voices": { "n": "YV28ox2c5Cuh5rim0LrW" },
+  "segments": [
+    { "speaker": "n", "scene": "hook", "text": "Ton IA vient de m'inventer un film. Et elle était sûre d'elle.", "highlight": ["IA", "inventer", "film.", "sûre"], "duration": 4 },
+    { "speaker": "n", "scene": "ask", "text": "Je lui demande de résumer : La Lune de Tonton Pierre.", "highlight": ["résumer", "Tonton", "Pierre."], "duration": 4 },
+    { "speaker": "n", "scene": "invent", "text": "Sauf que j'ai inventé ce titre il y a dix secondes.", "highlight": ["inventé", "dix", "secondes."], "duration": 3 },
+    { "speaker": "n", "scene": "answerA", "text": "Elle répond sans hésiter : une année, un réalisateur…", "highlight": ["sans", "hésiter", "année,"], "duration": 3 },
+    { "speaker": "n", "scene": "answerB", "text": "…une intrigue, même une note sur cinq.", "highlight": ["intrigue,", "note", "cinq."], "duration": 3 },
+    { "speaker": "n", "scene": "fake", "text": "Tout est faux. Ce film n'existe pas.", "highlight": ["faux.", "n'existe", "pas."], "duration": 3 },
+    { "speaker": "n", "scene": "why", "text": "Pourquoi ? Une IA ne cherche pas. Elle devine la suite, mot après mot.", "highlight": ["ne", "cherche", "devine", "suite,"], "duration": 5 },
+    { "speaker": "n", "scene": "cliff", "text": "Et si elle faisait pareil… avec ta vie ?", "highlight": ["pareil…", "vie"], "duration": 3 },
+    { "speaker": "n", "scene": "question", "text": "Partie deux demain. Dis-moi : tu lui fais confiance ? Oui, ou non ?", "highlight": ["Partie", "demain.", "confiance", "Oui,", "non"], "duration": 5 }
+  ]
+}
