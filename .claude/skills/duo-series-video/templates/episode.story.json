@@ -1,0 +1,12 @@
+{
+  "title": "Sam & Pixel #1 : TITRE DE L'ÉPISODE",
+  "voices": { "s": "YV28ox2c5Cuh5rim0LrW", "c": "O31r762Gb3WFygrEOGh0" },
+  "timing": { "lead": 0.05, "gaps": [0.12, 0.12, 0.12, 0.3, 0], "loop": 0.7, "captions": "box", "music_duck": [] },
+  "segments": [
+    { "speaker": "s", "scene": "hook", "text": "ACCROCHE : le résultat ou le chiffre qui choque, dès la première seconde.", "highlight": ["chiffre"], "duration": 3, "sfx": [{ "t": 0.02, "type": "thump" }] },
+    { "speaker": "c", "scene": "link", "text": "RÉPLIQUE 2 : l'IA répond avec son aplomb habituel.", "highlight": ["aplomb"], "duration": 3, "sfx": [{ "t": 0.3, "type": "ding" }] },
+    { "speaker": "s", "scene": "watch", "text": "RÉPLIQUE 3 : le détail qui change tout.", "highlight": ["détail"], "duration": 3, "sfx": [{ "t": 0.2, "type": "tick", "n": 20 }] },
+    { "speaker": "c", "scene": "build", "text": "CHUTE : la réponse « sans pitié » qui fait rire.", "highlight": ["chute"], "duration": 4, "sfx": [{ "t": 0.6, "type": "chime" }] },
+    { "speaker": "s", "scene": "question", "text": "Partie deux demain. Et toi, tu en penses quoi ? Oui, ou non ?", "highlight": ["Partie", "demain."], "duration": 4, "sfx": [{ "t": 0.15, "type": "chime" }] }
+  ]
+}
