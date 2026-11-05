@@ -1,0 +1,34 @@
+{
+  "name": "xsearcher-pub",
+  "title": "X.GPT / xsearcher.cc \u2014 pub",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "bpm": 120,
+    "duration": 20.0,
+    "frames": 480
+  },
+  "storyFormat": "beat-cut ad (hold, ask, catalogue, rush, silence, payoff)",
+  "style": "xred",
+  "review": {
+    "safe": {
+      "top": 240,
+      "bottom": 420,
+      "right": 140
+    },
+    "refs": {},
+    "textIgnore": [
+      [
+        6.0,
+        9.4,
+        "the model chips scroll as a marquee: they cross the frame edge on purpose, and merge (overlap) into the X.GPT card at 8.4-9.0s"
+      ],
+      [
+        9.0,
+        11.0,
+        "the chips are fully merged and faded out (alpha 0) behind the X.GPT card"
+      ]
+    ]
+  }
+}

@@ -4,3 +4,8 @@ pieces/*/*/renders/
 pieces/compilation/out/
 pieces/compilation/look*.png
 pieces/compilation/fix.png
+pieces/xsearcher/frames/
+pieces/xsearcher/renders/
+pieces/xsearcher/review/
+pieces/xsearcher/look.png
+pieces/xsearcher/export.log

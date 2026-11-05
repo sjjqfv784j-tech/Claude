@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X.GPT — pub</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #050405; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  X.GPT / xsearcher.cc — 9:16, 20.0s @ 120 BPM, 24fps, style xred. Hard cuts on the beat grid.
+//  hold (dot) -> ask (typed question, three cards) -> models (chips merge into one space) -> rush (words on
+//  8ths then 16ths) -> voila -> one second of silence -> the payoff (loudest hit) and the site.
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = 20.0;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif';
+const CX = 470;
+
+const SHOT_LIST = [
+  [0.0,   'dot'],
+  [2.5,   'ask'],
+  [6.0,   'models'],
+  [11.0,  'w0'], [11.5, 'w1'], [12.0, 'w2'],
+  [12.5,  'w3'], [12.625, 'w4'], [12.75, 'w5'], [12.875, 'w6'],
+  [13.0,  'voila'],
+  [14.0,  'silence'],
+  [15.0,  'payoff'],
+];
+const RUSH_WORDS = ['et si…', 'et si…', 'un script', 'une image', 'du code', 'une idée', 'et si…'];
+const SCENE = (n) => (n.startsWith('w') ? () => sceneWord(+n.slice(1)) : { dot: () => sceneDot(), ask: () => sceneAsk(), models: () => sceneModels(), voila: () => sceneVoila(), silence: () => sceneSilence(), payoff: () => scenePayoff() }[n]);
+const ERA_LIST = SHOT_LIST.map(([t0, n], i) => [t0, i + 1 < SHOT_LIST.length ? SHOT_LIST[i + 1][0] : DURATION, SCENE(n)]);
+const SHOTS = SHOT_LIST.map(([t0, n], i) => [n, i, t0, ERA_LIST[i][1], n]);
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'beat-cut',
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: SHOT_LIST.slice(1).map(([t0]) => t0),
+  fastFrom: 12.5, fastTo: 13.0,
+  morphs: [],
+  cues: { dot: 0.4, type: 2.8, c1: 4.0, c2: 4.5, c3: 5.0, merge: 8.4, card: 8.9, shot: 9.7, hit: 15.0, lock: 16.4, url: 17.4, btn: 18.2 },
+  acts: [
+    { name: '1 Idée',     role: 'build',   t0: 0.0,  t1: 6.0 },
+    { name: '2 Modèles',  role: 'journey', t0: 6.0,  t1: 11.0 },
+    { name: '3 Rush',     role: 'peak',    t0: 11.0, t1: 13.0 },
+    { name: '4 Voilà',    role: 'journey', t0: 13.0, t1: 14.0 },
+    { name: '5 Silence',  role: 'silence', t0: 14.0, t1: 15.0 },
+    { name: '6 Le site',  role: 'gift',    t0: 15.0, t1: 20.0 },
+  ],
+  board: [
+    { t: 1.8,  title: 'une idée', sound: 'silence, a tick, a pluck', next: 'ask' },
+    { t: 5.4,  title: 'la question et les trois cartes', sound: 'a pluck per card', next: 'models' },
+    { t: 9.9,  title: 'plusieurs modèles, un seul espace', sound: 'a riser into a chime', next: 'rush' },
+    { t: 12.8, title: 'le rush', sound: 'a hit on every cut', next: 'voilà' },
+    { t: 13.5, title: 'voilà', sound: 'a small chime, then it stops', next: 'silence' },
+    { t: 17.6, title: 'tout pour la créer', sound: 'the loudest hit, then a flat chord', next: 'loops' },
+  ],
+  narration: [],
+};
+window.TIMELINE = TIMELINE;
