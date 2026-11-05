@@ -9,3 +9,8 @@ pieces/xsearcher/renders/
 pieces/xsearcher/review/
 pieces/xsearcher/look.png
 pieces/xsearcher/export.log
+remotion-xgpt/node_modules/
+remotion-xgpt/out/stills/
+remotion-xgpt/out/*.png
+remotion-xgpt/out/pub.mp4
+remotion-xgpt/npm.log
