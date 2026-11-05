@@ -1,0 +1,10 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1600,height:900},deviceScaleFactor:2});
+await p.goto('https://xsearcher.cc/chatt',{waitUntil:'networkidle'});await p.waitForTimeout(2500);
+const r=await p.evaluate(()=>{const out=[];document.querySelectorAll('body *').forEach(e=>{const t=(e.innerText||e.textContent||'').trim();const h=e.getBoundingClientRect().height;
+if((/^Salut/.test(t)||/^Pose ta question, écris/.test(t)||/^Tes discussions appara/.test(t))&&h<260&&h>0){e.style.visibility='hidden';out.push(e.tagName+'.'+e.className+':'+t.slice(0,20))}});
+const st=document.createElement('style');st.textContent='::placeholder{color:transparent!important;opacity:0!important}';document.head.appendChild(st);
+document.querySelectorAll('textarea,input,[contenteditable]').forEach(e=>e.setAttribute('placeholder',''));
+document.querySelectorAll('[data-placeholder]').forEach(e=>e.setAttribute('data-placeholder',''));
+return out.slice(0,12)});
+console.log(r);await p.waitForTimeout(500);await p.screenshot({path:'assets/gpt_clean.png'});await b.close()})();
