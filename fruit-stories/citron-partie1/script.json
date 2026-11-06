@@ -1,37 +1,208 @@
 {
-  "title": "Partie 1 : LE VOL DE L'HORLOGE 🍋⏰",
-  "hashtags": "#ia #citron #fruitstory #histoirefruit #pourtoi",
-  "style": "rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16",
-  "characters": {
-    "LEO": {"name": "LÉO", "look": "tête de citron jaune vif, tablier en cuir d'horloger, loupe d'horloger relevée sur le front, regard honnête", "voice": "jeune garçon, voix claire"},
-    "NOIX": {"name": "NOIX", "look": "tête de noix ridée, cardigan marron, petites lunettes rondes, mains tremblantes, vieux grand-père", "voice": "vieil homme, voix douce et fatiguée"},
-    "ARTICHAUT": {"name": "ARTICHAUT", "look": "tête d'artichaut vert, costume bordeaux, bagues dorées, sourire mielleux", "voice": "voix grave, lente, mielleuse"},
-    "NARRATEUR": {"name": "NARRATEUR", "look": "", "voice": "voix posée de conteur"}
+ "title": "Partie 1 : LE VOL DE L'HORLOGE 🍌⏰",
+ "hashtags": "#ia #banane #pomme #fruitstory #histoirefruit #pourtoi",
+ "style": "rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16",
+ "characters": {
+  "LEO": {
+   "name": "LÉO",
+   "look": "tête de banane jaune vif, tablier en cuir d'horloger, loupe d'horloger relevée sur le front, regard honnête",
+   "voice": "jeune garçon, voix claire"
   },
-  "plans": [
-    {"setting": "atelier d'horlogerie de nuit, bougies, immense horloge dorée terminée", "action": "Léo radieux devant l'horloge", "who": ["LEO"], "motion": "Léo lève les bras, étincelles dorées, caméra qui avance lentement",
-     "lines": [["LEO", "Grand-père, ton horloge est finie ! Demain, elle gagne !"]]},
-    {"setting": "même atelier, ombres chaudes", "action": "gros plan de Noix, un doigt sur les lèvres, regard inquiet vers la porte", "who": ["NOIX"], "motion": "il jette un œil vers la porte, léger zoom",
-     "lines": [["NOIX", "Mon petit Léo, ne la montre à personne avant l'heure."]]},
-    {"setting": "couloir sombre derrière la porte entrouverte", "action": "gros plan d'Artichaut qui écoute, sourire cruel, bague qui brille", "who": ["ARTICHAUT"], "motion": "travelling avant lent sur son sourire",
-     "lines": [["NARRATEUR", "Mais le patron écoutait derrière la porte."], ["ARTICHAUT", "Ce vieux fou croit qu'elle est à lui. Pas pour longtemps."]]},
-    {"setting": "atelier, lumière du matin", "action": "Artichaut désigne l'horloge, Léo surpris", "who": ["ARTICHAUT", "LEO"], "motion": "Artichaut claque des doigts, Léo recule",
-     "lines": [["ARTICHAUT", "Léo, porte l'horloge à ma voiture. Ordre du patron."]]},
-    {"setting": "atelier", "action": "gros plan de Léo choqué, poings serrés", "who": ["LEO"], "motion": "Léo recule d'un pas, respiration saccadée",
-     "lines": [["LEO", "Mais patron, elle appartient à mon grand-père !"]]},
-    {"setting": "atelier, bureau en bois", "action": "Artichaut brandit un stylo doré au-dessus d'un contrat posé sur l'horloge", "who": ["ARTICHAUT"], "motion": "il signe d'un geste large",
-     "lines": [["ARTICHAUT", "Elle appartient à celui qui signe. Et j'ai le stylo."]]},
-    {"setting": "porte de l'atelier", "action": "Noix bouleversé, Artichaut le pousse vers la porte", "who": ["NOIX", "ARTICHAUT"], "motion": "Noix chancelle, Artichaut pointe la sortie",
-     "lines": [["NOIX", "Artichaut, tu es mon élève depuis trente ans…"], ["ARTICHAUT", "Et tu es vieux depuis trente ans. Dehors !"]]},
-    {"setting": "grande salle de concours, foule en costume, projecteurs", "action": "Artichaut sur scène devant l'horloge dorée", "who": ["ARTICHAUT"], "motion": "plan large, les projecteurs balaient la salle",
-     "lines": [["ARTICHAUT", "Mesdames et messieurs, voici mon chef-d'œuvre !"]]},
-    {"setting": "foule de la salle de concours", "action": "gros plan de Léo dans la foule, larmes aux yeux", "who": ["LEO"], "motion": "Léo avance vers la scène",
-     "lines": [["LEO", "Non… c'est la sienne !"]]},
-    {"setting": "scène du concours", "action": "Artichaut furieux, doigt pointé, deux gardes-poires attrapent Léo", "who": ["ARTICHAUT", "LEO"], "motion": "les gardes saisissent Léo par les bras",
-     "lines": [["ARTICHAUT", "Qui ose m'accuser ? Gardes, sortez ce gamin !"]]},
-    {"setting": "couloir de la salle, lumière faible", "action": "Noix épuisé appuyé au mur, main sur le cœur, regard tendre", "who": ["NOIX"], "motion": "il murmure, léger zoom",
-     "lines": [["NOIX", "Léo… regarde sous le cadran."]]},
-    {"setting": "coulisses, horloge dorée", "action": "gros plan macro d'une gravure sous le cadran, Léo penché dessus", "who": ["LEO"], "motion": "zoom lent sur la gravure, fin de plan net à la fin de la phrase",
-     "lines": [["LEO", "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si Artichaut ose la voler… »"]]}
-  ]
+  "NOIX": {
+   "name": "PAPY POMME",
+   "look": "tête de pomme verte ridée, cardigan marron, petites lunettes rondes, mains tremblantes, vieux grand-père",
+   "voice": "vieil homme, voix douce et fatiguée"
+  },
+  "ARTICHAUT": {
+   "name": "GALA",
+   "look": "tête de pomme rouge brillante, costume bordeaux, bagues dorées, sourire mielleux",
+   "voice": "voix grave, lente, mielleuse"
+  },
+  "NARRATEUR": {
+   "name": "NARRATEUR",
+   "look": "",
+   "voice": "voix posée de conteur"
+  }
+ },
+ "plans": [
+  {
+   "setting": "atelier d'horlogerie de nuit, bougies, immense horloge dorée terminée",
+   "action": "Léo radieux devant l'horloge",
+   "who": [
+    "LEO"
+   ],
+   "motion": "Léo lève les bras, étincelles dorées, caméra qui avance lentement",
+   "lines": [
+    [
+     "LEO",
+     "Grand-père, ton horloge est finie ! Demain, elle gagne !"
+    ]
+   ]
+  },
+  {
+   "setting": "même atelier, ombres chaudes",
+   "action": "gros plan de Papy Pomme, un doigt sur les lèvres, regard inquiet vers la porte",
+   "who": [
+    "NOIX"
+   ],
+   "motion": "il jette un œil vers la porte, léger zoom",
+   "lines": [
+    [
+     "NOIX",
+     "Mon petit Léo, ne la montre à personne avant l'heure."
+    ]
+   ]
+  },
+  {
+   "setting": "couloir sombre derrière la porte entrouverte",
+   "action": "gros plan d'Gala qui écoute, sourire cruel, bague qui brille",
+   "who": [
+    "ARTICHAUT"
+   ],
+   "motion": "travelling avant lent sur son sourire",
+   "lines": [
+    [
+     "NARRATEUR",
+     "Mais le patron écoutait derrière la porte."
+    ],
+    [
+     "ARTICHAUT",
+     "Ce vieux fou croit qu'elle est à lui. Pas pour longtemps."
+    ]
+   ]
+  },
+  {
+   "setting": "atelier, lumière du matin",
+   "action": "Gala désigne l'horloge, Léo surpris",
+   "who": [
+    "ARTICHAUT",
+    "LEO"
+   ],
+   "motion": "Gala claque des doigts, Léo recule",
+   "lines": [
+    [
+     "ARTICHAUT",
+     "Léo, porte l'horloge à ma voiture. Ordre du patron."
+    ]
+   ]
+  },
+  {
+   "setting": "atelier",
+   "action": "gros plan de Léo choqué, poings serrés",
+   "who": [
+    "LEO"
+   ],
+   "motion": "Léo recule d'un pas, respiration saccadée",
+   "lines": [
+    [
+     "LEO",
+     "Mais patron, elle appartient à mon grand-père !"
+    ]
+   ]
+  },
+  {
+   "setting": "atelier, bureau en bois",
+   "action": "Gala brandit un stylo doré au-dessus d'un contrat posé sur l'horloge",
+   "who": [
+    "ARTICHAUT"
+   ],
+   "motion": "il signe d'un geste large",
+   "lines": [
+    [
+     "ARTICHAUT",
+     "Elle appartient à celui qui signe. Et j'ai le stylo."
+    ]
+   ]
+  },
+  {
+   "setting": "porte de l'atelier",
+   "action": "Papy Pomme bouleversé, Gala le pousse vers la porte",
+   "who": [
+    "NOIX",
+    "ARTICHAUT"
+   ],
+   "motion": "Papy Pomme chancelle, Gala pointe la sortie",
+   "lines": [
+    [
+     "NOIX",
+     "Gala, tu es mon élève depuis trente ans…"
+    ],
+    [
+     "ARTICHAUT",
+     "Et tu es vieux depuis trente ans. Dehors !"
+    ]
+   ]
+  },
+  {
+   "setting": "grande salle de concours, foule en costume, projecteurs",
+   "action": "Gala sur scène devant l'horloge dorée",
+   "who": [
+    "ARTICHAUT"
+   ],
+   "motion": "plan large, les projecteurs balaient la salle",
+   "lines": [
+    [
+     "ARTICHAUT",
+     "Mesdames et messieurs, voici mon chef-d'œuvre !"
+    ]
+   ]
+  },
+  {
+   "setting": "foule de la salle de concours",
+   "action": "gros plan de Léo dans la foule, larmes aux yeux",
+   "who": [
+    "LEO"
+   ],
+   "motion": "Léo avance vers la scène",
+   "lines": [
+    [
+     "LEO",
+     "Non… c'est la sienne !"
+    ]
+   ]
+  },
+  {
+   "setting": "scène du concours",
+   "action": "Gala furieux, doigt pointé, deux gardes-poires attrapent Léo",
+   "who": [
+    "ARTICHAUT",
+    "LEO"
+   ],
+   "motion": "les gardes saisissent Léo par les bras",
+   "lines": [
+    [
+     "ARTICHAUT",
+     "Qui ose m'accuser ? Gardes, sortez ce gamin !"
+    ]
+   ]
+  },
+  {
+   "setting": "couloir de la salle, lumière faible",
+   "action": "Papy Pomme épuisé appuyé au mur, main sur le cœur, regard tendre",
+   "who": [
+    "NOIX"
+   ],
+   "motion": "il murmure, léger zoom",
+   "lines": [
+    [
+     "NOIX",
+     "Léo… regarde sous le cadran."
+    ]
+   ]
+  },
+  {
+   "setting": "coulisses, horloge dorée",
+   "action": "gros plan macro d'une gravure sous le cadran, Léo penché dessus",
+   "who": [
+    "LEO"
+   ],
+   "motion": "zoom lent sur la gravure, fin de plan net à la fin de la phrase",
+   "lines": [
+    [
+     "LEO",
+     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si Gala ose la voler… »"
+    ]
+   ]
+  }
+ ]
 }
