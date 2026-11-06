@@ -36,8 +36,8 @@ Style commun : rendu 3D film d'animation, éclairage cinématographique chaud, p
 ## Plan 07
 **Image** : rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16. PAPY POMME : tête de pomme verte ridée, cardigan marron, petites lunettes rondes, mains tremblantes, vieux grand-père; LA GRENADE : tête de grenade rouge à couronne, costume noir, cravate rouge, sourire cruel. Décor : porte de l'atelier. Action : Papy Pomme bouleversé, la Grenade le pousse vers la porte.
 **Vidéo (image → vidéo, 4 à 6 s)** : Papy Pomme chancelle, la Grenade pointe la sortie.
-**Voix 07_1** (vieil homme, voix douce et fatiguée) — PAPY POMME : « la Grenade, tu es mon élève depuis trente ans… »
-**Voix 07_2** (voix grave, lente, mielleuse) — LA GRENADE : « Et tu es vieux depuis trente ans. Dehors ! »
+**Voix 07_1** (vieil homme, voix douce et fatiguée) — PAPY POMME : « Grenade, tu es mon élève depuis trente ans… »
+**Voix 07_2** (voix grave, lente, mielleuse) — LA GRENADE : « Et tu es vieux depuis trente ans. Sors d'ici ! »
 
 ## Plan 08
 **Image** : rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16. LA GRENADE : tête de grenade rouge à couronne, costume noir, cravate rouge, sourire cruel. Décor : grande salle de concours, foule en costume, projecteurs. Action : la Grenade sur scène devant l'horloge dorée.
