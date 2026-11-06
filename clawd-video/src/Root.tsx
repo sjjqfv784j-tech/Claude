@@ -9,6 +9,8 @@ import { ClaudeVideo, buildClaude, claudeFrames } from './claude/ClaudeVideo';
 const StoryVideo3D: React.FC<VideoProps> = (p) => <StoryVideo {...p} three />;
 import { SEGMENTS } from './script';
 import { FPS, buildTimeline, loadVoice, totalFrames, type VideoProps } from './timing';
+import { FruitStoryVideo, buildFruitTimeline, fruitFrames, type FruitProps } from './fruit/FruitStoryVideo';
+import { FRUIT_STORIES } from './fruit/registry';
 import { SamPixel1Video, buildSamPixel1, samPixel1Frames } from './sam-pixel-1/SamPixel1Video';
 
 export const Root: React.FC = () => (
@@ -110,5 +112,22 @@ export const Root: React.FC = () => (
         return { durationInFrames: samPixel1Frames(timeline), props: { timeline } };
       }}
     />
+    {Object.entries(FRUIT_STORIES).map(([id, story]) => (
+      <Composition
+        key={id}
+        id={`Fruit-${id}`}
+        component={FruitStoryVideo}
+        width={1080}
+        height={1920}
+        fps={FPS}
+        durationInFrames={300}
+        defaultProps={{ story, timeline: buildFruitTimeline(story, null) } as FruitProps}
+        calculateMetadata={async () => {
+          const voice = await loadVoice(`voice/fruit-${id}`, story.segments.length);
+          const timeline = buildFruitTimeline(story, voice as never);
+          return { durationInFrames: fruitFrames(story, timeline), props: { story, timeline } };
+        }}
+      />
+    ))}
   </>
 );

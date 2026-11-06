@@ -1,0 +1,579 @@
+{
+  "segments": [
+    {
+      "audio": "voice/fruit-fraise/seg-0.mp3",
+      "duration": 4.675918,
+      "words": [
+        {
+          "text": "Fraise",
+          "start": 0,
+          "end": 0.488
+        },
+        {
+          "text": "rentre",
+          "start": 0.546,
+          "end": 0.859
+        },
+        {
+          "text": "plus",
+          "start": 0.917,
+          "end": 1.115
+        },
+        {
+          "text": "tôt",
+          "start": 1.149,
+          "end": 1.3
+        },
+        {
+          "text": "du",
+          "start": 1.324,
+          "end": 1.405
+        },
+        {
+          "text": "travail…",
+          "start": 1.44,
+          "end": 2.09
+        },
+        {
+          "text": "et",
+          "start": 2.473,
+          "end": 2.589
+        },
+        {
+          "text": "elle",
+          "start": 2.624,
+          "end": 2.752
+        },
+        {
+          "text": "entend",
+          "start": 2.775,
+          "end": 3.065
+        },
+        {
+          "text": "un",
+          "start": 3.1,
+          "end": 3.204
+        },
+        {
+          "text": "rire",
+          "start": 3.251,
+          "end": 3.529
+        },
+        {
+          "text": "dans",
+          "start": 3.553,
+          "end": 3.68
+        },
+        {
+          "text": "la",
+          "start": 3.704,
+          "end": 3.762
+        },
+        {
+          "text": "cuisine.",
+          "start": 3.82,
+          "end": 4.644
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-1.mp3",
+      "duration": 2.45551,
+      "words": [
+        {
+          "text": "Bruno,",
+          "start": 0,
+          "end": 0.511
+        },
+        {
+          "text": "ta",
+          "start": 0.627,
+          "end": 0.743
+        },
+        {
+          "text": "femme",
+          "start": 0.813,
+          "end": 0.998
+        },
+        {
+          "text": "ne",
+          "start": 1.022,
+          "end": 1.08
+        },
+        {
+          "text": "se",
+          "start": 1.126,
+          "end": 1.207
+        },
+        {
+          "text": "doute",
+          "start": 1.242,
+          "end": 1.405
+        },
+        {
+          "text": "vraiment",
+          "start": 1.428,
+          "end": 1.753
+        },
+        {
+          "text": "de",
+          "start": 1.776,
+          "end": 1.834
+        },
+        {
+          "text": "rien",
+          "start": 1.869,
+          "end": 2.067
+        },
+        {
+          "text": "?",
+          "start": 2.136,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-2.mp3",
+      "duration": 3.474286,
+      "words": [
+        {
+          "text": "Fraise",
+          "start": 0,
+          "end": 0.453
+        },
+        {
+          "text": "?",
+          "start": 0.522,
+          "end": 0.557
+        },
+        {
+          "text": "Elle",
+          "start": 1.161,
+          "end": 1.382
+        },
+        {
+          "text": "est",
+          "start": 1.405,
+          "end": 1.474
+        },
+        {
+          "text": "bien",
+          "start": 1.521,
+          "end": 1.811
+        },
+        {
+          "text": "trop",
+          "start": 1.869,
+          "end": 2.067
+        },
+        {
+          "text": "naïve",
+          "start": 2.113,
+          "end": 2.415
+        },
+        {
+          "text": "pour",
+          "start": 2.438,
+          "end": 2.554
+        },
+        {
+          "text": "comprendre.",
+          "start": 2.589,
+          "end": 3.437
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-3.mp3",
+      "duration": 1.906939,
+      "words": [
+        {
+          "text": "Trop",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "text": "naïve…",
+          "start": 0.279,
+          "end": 0.848
+        },
+        {
+          "text": "vraiment",
+          "start": 1.091,
+          "end": 1.486
+        },
+        {
+          "text": "?",
+          "start": 1.533,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-4.mp3",
+      "duration": 3.056327,
+      "words": [
+        {
+          "text": "Chérie",
+          "start": 0,
+          "end": 0.383
+        },
+        {
+          "text": "!",
+          "start": 0.406,
+          "end": 0.43
+        },
+        {
+          "text": "Attends,",
+          "start": 0.58,
+          "end": 1.022
+        },
+        {
+          "text": "ce",
+          "start": 1.149,
+          "end": 1.242
+        },
+        {
+          "text": "n'est",
+          "start": 1.3,
+          "end": 1.428
+        },
+        {
+          "text": "pas",
+          "start": 1.463,
+          "end": 1.602
+        },
+        {
+          "text": "du",
+          "start": 1.649,
+          "end": 1.8
+        },
+        {
+          "text": "tout",
+          "start": 1.869,
+          "end": 2.032
+        },
+        {
+          "text": "ce",
+          "start": 2.055,
+          "end": 2.101
+        },
+        {
+          "text": "que",
+          "start": 2.125,
+          "end": 2.218
+        },
+        {
+          "text": "tu",
+          "start": 2.252,
+          "end": 2.357
+        },
+        {
+          "text": "crois",
+          "start": 2.403,
+          "end": 2.624
+        },
+        {
+          "text": "!",
+          "start": 2.694,
+          "end": 3.019
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-5.mp3",
+      "duration": 3.343673,
+      "words": [
+        {
+          "text": "Je",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "text": "crois",
+          "start": 0.197,
+          "end": 0.36
+        },
+        {
+          "text": "que",
+          "start": 0.395,
+          "end": 0.476
+        },
+        {
+          "text": "tu",
+          "start": 0.511,
+          "end": 0.604
+        },
+        {
+          "text": "manges",
+          "start": 0.65,
+          "end": 0.871
+        },
+        {
+          "text": "mon",
+          "start": 0.894,
+          "end": 0.975
+        },
+        {
+          "text": "gâteau",
+          "start": 1.022,
+          "end": 1.265
+        },
+        {
+          "text": "d'anniversaire.",
+          "start": 1.3,
+          "end": 2.113
+        },
+        {
+          "text": "Avec",
+          "start": 2.438,
+          "end": 2.728
+        },
+        {
+          "text": "elle.",
+          "start": 2.821,
+          "end": 3.297
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-6.mp3",
+      "duration": 2.742857,
+      "words": [
+        {
+          "text": "Attends…",
+          "start": 0,
+          "end": 0.441
+        },
+        {
+          "text": "tu",
+          "start": 0.882,
+          "end": 0.975
+        },
+        {
+          "text": "m'avais",
+          "start": 1.022,
+          "end": 1.231
+        },
+        {
+          "text": "dit",
+          "start": 1.254,
+          "end": 1.358
+        },
+        {
+          "text": "que",
+          "start": 1.382,
+          "end": 1.451
+        },
+        {
+          "text": "la",
+          "start": 1.486,
+          "end": 1.544
+        },
+        {
+          "text": "maison",
+          "start": 1.591,
+          "end": 1.788
+        },
+        {
+          "text": "était",
+          "start": 1.823,
+          "end": 1.997
+        },
+        {
+          "text": "à",
+          "start": 2.055,
+          "end": 2.078
+        },
+        {
+          "text": "toi",
+          "start": 2.113,
+          "end": 2.276
+        },
+        {
+          "text": "!",
+          "start": 2.392,
+          "end": 2.694
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-7.mp3",
+      "duration": 3.94449,
+      "words": [
+        {
+          "text": "La",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "text": "maison",
+          "start": 0.197,
+          "end": 0.43
+        },
+        {
+          "text": "est",
+          "start": 0.464,
+          "end": 0.534
+        },
+        {
+          "text": "à",
+          "start": 0.592,
+          "end": 0.615
+        },
+        {
+          "text": "mon",
+          "start": 0.673,
+          "end": 0.801
+        },
+        {
+          "text": "nom.",
+          "start": 0.836,
+          "end": 1.103
+        },
+        {
+          "text": "La",
+          "start": 1.347,
+          "end": 1.44
+        },
+        {
+          "text": "voiture",
+          "start": 1.486,
+          "end": 1.823
+        },
+        {
+          "text": "aussi.",
+          "start": 1.846,
+          "end": 2.299
+        },
+        {
+          "text": "Et",
+          "start": 2.624,
+          "end": 2.74
+        },
+        {
+          "text": "le",
+          "start": 2.775,
+          "end": 2.844
+        },
+        {
+          "text": "compte",
+          "start": 2.891,
+          "end": 3.088
+        },
+        {
+          "text": "en",
+          "start": 3.111,
+          "end": 3.158
+        },
+        {
+          "text": "banque.",
+          "start": 3.204,
+          "end": 3.901
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-8.mp3",
+      "duration": 4.022857,
+      "words": [
+        {
+          "text": "Le",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "text": "soir",
+          "start": 0.221,
+          "end": 0.464
+        },
+        {
+          "text": "même,",
+          "start": 0.511,
+          "end": 0.882
+        },
+        {
+          "text": "Bruno",
+          "start": 1.126,
+          "end": 1.463
+        },
+        {
+          "text": "dormait",
+          "start": 1.521,
+          "end": 1.811
+        },
+        {
+          "text": "seul…",
+          "start": 1.858,
+          "end": 2.241
+        },
+        {
+          "text": "dans",
+          "start": 2.45,
+          "end": 2.624
+        },
+        {
+          "text": "une",
+          "start": 2.694,
+          "end": 2.775
+        },
+        {
+          "text": "cagette",
+          "start": 2.798,
+          "end": 3.135
+        },
+        {
+          "text": "du",
+          "start": 3.158,
+          "end": 3.216
+        },
+        {
+          "text": "marché.",
+          "start": 3.262,
+          "end": 3.994
+        }
+      ]
+    },
+    {
+      "audio": "voice/fruit-fraise/seg-9.mp3",
+      "duration": 2.272653,
+      "words": [
+        {
+          "text": "Et",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "text": "toi…",
+          "start": 0.197,
+          "end": 0.65
+        },
+        {
+          "text": "tu",
+          "start": 0.929,
+          "end": 1.057
+        },
+        {
+          "text": "lui",
+          "start": 1.103,
+          "end": 1.219
+        },
+        {
+          "text": "aurais",
+          "start": 1.242,
+          "end": 1.44
+        },
+        {
+          "text": "pardonné",
+          "start": 1.463,
+          "end": 1.927
+        },
+        {
+          "text": "?",
+          "start": 1.997,
+          "end": 2.229
+        }
+      ]
+    }
+  ]
+}

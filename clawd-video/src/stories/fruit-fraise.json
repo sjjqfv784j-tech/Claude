@@ -1,0 +1,283 @@
+{
+  "title": "Elle rentre plus tôt… et découvre tout 🍓💔 | Drame de fruits #1",
+  "series": "DRAME DE FRUITS · ÉPISODE 1",
+  "ending": "TU LUI AURAIS PARDONNÉ ?",
+  "caption": "Il pensait qu'elle était trop naïve… 🍓🍌🍑 Et toi, tu lui aurais pardonné ? #histoiredefruits #fruitdrama #storytime #animation #ia",
+  "voices": {
+    "n": "YV28ox2c5Cuh5rim0LrW",
+    "f": "XB0fDUnXU5powFXDhCwa",
+    "b": "O31r762Gb3WFygrEOGh0",
+    "p": "cgSgspJ2msm6clMCkdW9"
+  },
+  "cast": {
+    "f": {
+      "name": "Fraise",
+      "fruit": "strawberry",
+      "acc": [
+        "bow",
+        "earrings"
+      ]
+    },
+    "b": {
+      "name": "Bruno",
+      "fruit": "banana",
+      "acc": [
+        "tie"
+      ]
+    },
+    "p": {
+      "name": "Pêche",
+      "fruit": "peach",
+      "acc": [
+        "lashes",
+        "necklace"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "speaker": "n",
+      "bg": "street",
+      "focus": "f",
+      "show": [
+        {
+          "id": "f",
+          "x": 540,
+          "emo": "happy",
+          "enter": "left"
+        }
+      ],
+      "fx": [
+        "hook"
+      ],
+      "hook": "ELLE RENTRE PLUS TÔT…",
+      "text": "Fraise rentre plus tôt du travail… et elle entend un rire dans la cuisine.",
+      "highlight": [
+        "Fraise",
+        "rire",
+        "cuisine."
+      ]
+    },
+    {
+      "speaker": "p",
+      "bg": "kitchen",
+      "focus": "p",
+      "show": [
+        {
+          "id": "b",
+          "x": 330,
+          "emo": "smug"
+        },
+        {
+          "id": "p",
+          "x": 750,
+          "emo": "happy"
+        }
+      ],
+      "fx": [
+        "hearts"
+      ],
+      "text": "Bruno, ta femme ne se doute vraiment de rien ?",
+      "highlight": [
+        "ta",
+        "femme",
+        "rien"
+      ]
+    },
+    {
+      "speaker": "b",
+      "bg": "kitchen",
+      "focus": "b",
+      "show": [
+        {
+          "id": "b",
+          "x": 330,
+          "emo": "smug"
+        },
+        {
+          "id": "p",
+          "x": 750,
+          "emo": "happy"
+        }
+      ],
+      "text": "Fraise ? Elle est bien trop naïve pour comprendre.",
+      "highlight": [
+        "naïve"
+      ]
+    },
+    {
+      "speaker": "f",
+      "bg": "kitchen",
+      "focus": "f",
+      "show": [
+        {
+          "id": "b",
+          "x": 190,
+          "emo": "shocked",
+          "scale": 0.9
+        },
+        {
+          "id": "f",
+          "x": 540,
+          "emo": "angry",
+          "enter": "pop",
+          "scale": 0.9
+        },
+        {
+          "id": "p",
+          "x": 890,
+          "emo": "shocked",
+          "scale": 0.9
+        }
+      ],
+      "fx": [
+        "shake",
+        "flash"
+      ],
+      "text": "Trop naïve… vraiment ?",
+      "highlight": [
+        "naïve…",
+        "vraiment"
+      ]
+    },
+    {
+      "speaker": "b",
+      "bg": "kitchen",
+      "focus": "b",
+      "show": [
+        {
+          "id": "b",
+          "x": 330,
+          "emo": "scared",
+          "sweat": true
+        },
+        {
+          "id": "f",
+          "x": 750,
+          "emo": "angry"
+        }
+      ],
+      "text": "Chérie ! Attends, ce n'est pas du tout ce que tu crois !",
+      "highlight": [
+        "Chérie",
+        "pas",
+        "crois"
+      ]
+    },
+    {
+      "speaker": "f",
+      "bg": "kitchen",
+      "focus": "f",
+      "show": [
+        {
+          "id": "b",
+          "x": 250,
+          "emo": "scared",
+          "sweat": true
+        },
+        {
+          "id": "f",
+          "x": 830,
+          "emo": "angry"
+        }
+      ],
+      "prop": "cake",
+      "text": "Je crois que tu manges mon gâteau d'anniversaire. Avec elle.",
+      "highlight": [
+        "gâteau",
+        "elle."
+      ]
+    },
+    {
+      "speaker": "p",
+      "bg": "kitchen",
+      "focus": "p",
+      "show": [
+        {
+          "id": "p",
+          "x": 330,
+          "emo": "angry"
+        },
+        {
+          "id": "b",
+          "x": 750,
+          "emo": "scared",
+          "sweat": true
+        }
+      ],
+      "text": "Attends… tu m'avais dit que la maison était à toi !",
+      "highlight": [
+        "maison",
+        "toi"
+      ]
+    },
+    {
+      "speaker": "f",
+      "bg": "kitchen",
+      "focus": "f",
+      "show": [
+        {
+          "id": "f",
+          "x": 540,
+          "emo": "smug",
+          "glasses": true
+        }
+      ],
+      "prop": "keys",
+      "fx": [
+        "zoom"
+      ],
+      "text": "La maison est à mon nom. La voiture aussi. Et le compte en banque.",
+      "highlight": [
+        "mon",
+        "nom.",
+        "voiture",
+        "compte"
+      ]
+    },
+    {
+      "speaker": "n",
+      "bg": "market",
+      "focus": "b",
+      "show": [
+        {
+          "id": "b",
+          "x": 540,
+          "emo": "sad",
+          "tears": true
+        }
+      ],
+      "fx": [
+        "rain"
+      ],
+      "text": "Le soir même, Bruno dormait seul… dans une cagette du marché.",
+      "highlight": [
+        "seul…",
+        "cagette"
+      ]
+    },
+    {
+      "speaker": "f",
+      "bg": "sunset",
+      "focus": "f",
+      "show": [
+        {
+          "id": "f",
+          "x": 540,
+          "emo": "wink",
+          "glasses": true,
+          "scale": 1.25
+        }
+      ],
+      "fx": [
+        "sparkles",
+        "question"
+      ],
+      "text": "Et toi… tu lui aurais pardonné ?",
+      "highlight": [
+        "toi…",
+        "pardonné"
+      ]
+    }
+  ]
+}
