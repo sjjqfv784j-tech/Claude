@@ -1,11 +1,11 @@
 {
  "title": "Partie 1 : LE VOL DE L'HORLOGE 🍌⏰",
- "hashtags": "#ia #banane #pomme #fruitstory #histoirefruit #pourtoi",
+ "hashtags": "#ia #banane #grenade #fruitstory #histoirefruit #pourtoi",
  "style": "rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16",
  "characters": {
   "LEO": {
    "name": "LÉO",
-   "look": "tête de banane jaune vif, tablier en cuir d'horloger, loupe d'horloger relevée sur le front, regard honnête",
+   "look": "tête de banane jaune tachetée, salopette en jean usée, casque de mineur avec lampe frontale, regard triste et honnête",
    "voice": "jeune garçon, voix claire"
   },
   "NOIX": {
@@ -14,8 +14,8 @@
    "voice": "vieil homme, voix douce et fatiguée"
   },
   "ARTICHAUT": {
-   "name": "GALA",
-   "look": "tête de pomme rouge brillante, costume bordeaux, bagues dorées, sourire mielleux",
+   "name": "LA GRENADE",
+   "look": "tête de grenade rouge à couronne, costume noir, cravate rouge, sourire cruel",
    "voice": "voix grave, lente, mielleuse"
   },
   "NARRATEUR": {
@@ -55,7 +55,7 @@
   },
   {
    "setting": "couloir sombre derrière la porte entrouverte",
-   "action": "gros plan d'Gala qui écoute, sourire cruel, bague qui brille",
+   "action": "gros plan d'la Grenade qui écoute, sourire cruel, bague qui brille",
    "who": [
     "ARTICHAUT"
    ],
@@ -73,12 +73,12 @@
   },
   {
    "setting": "atelier, lumière du matin",
-   "action": "Gala désigne l'horloge, Léo surpris",
+   "action": "la Grenade désigne l'horloge, Léo surpris",
    "who": [
     "ARTICHAUT",
     "LEO"
    ],
-   "motion": "Gala claque des doigts, Léo recule",
+   "motion": "la Grenade claque des doigts, Léo recule",
    "lines": [
     [
      "ARTICHAUT",
@@ -102,7 +102,7 @@
   },
   {
    "setting": "atelier, bureau en bois",
-   "action": "Gala brandit un stylo doré au-dessus d'un contrat posé sur l'horloge",
+   "action": "la Grenade brandit un stylo doré au-dessus d'un contrat posé sur l'horloge",
    "who": [
     "ARTICHAUT"
    ],
@@ -116,16 +116,16 @@
   },
   {
    "setting": "porte de l'atelier",
-   "action": "Papy Pomme bouleversé, Gala le pousse vers la porte",
+   "action": "Papy Pomme bouleversé, la Grenade le pousse vers la porte",
    "who": [
     "NOIX",
     "ARTICHAUT"
    ],
-   "motion": "Papy Pomme chancelle, Gala pointe la sortie",
+   "motion": "Papy Pomme chancelle, la Grenade pointe la sortie",
    "lines": [
     [
      "NOIX",
-     "Gala, tu es mon élève depuis trente ans…"
+     "la Grenade, tu es mon élève depuis trente ans…"
     ],
     [
      "ARTICHAUT",
@@ -135,7 +135,7 @@
   },
   {
    "setting": "grande salle de concours, foule en costume, projecteurs",
-   "action": "Gala sur scène devant l'horloge dorée",
+   "action": "la Grenade sur scène devant l'horloge dorée",
    "who": [
     "ARTICHAUT"
    ],
@@ -163,7 +163,7 @@
   },
   {
    "setting": "scène du concours",
-   "action": "Gala furieux, doigt pointé, deux gardes-poires attrapent Léo",
+   "action": "la Grenade furieux, doigt pointé, deux gardes-poires attrapent Léo",
    "who": [
     "ARTICHAUT",
     "LEO"
@@ -200,7 +200,7 @@
    "lines": [
     [
      "LEO",
-     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si Gala ose la voler… »"
+     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si la Grenade ose la voler… »"
     ]
    ]
   }

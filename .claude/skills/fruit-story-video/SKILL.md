@@ -15,7 +15,7 @@ description: Crée une mini-série TikTok verticale (9:16, ~60 s) de drames avec
 - **Titre** : `Partie N : TITRE EN MAJUSCULES 🍌⛏️` + `#ia #fruit #fruitstory #histoirefruit #pourtoi`.
 
 ## Règle de fond
-Tes propres personnages, ton propre monde, ton propre scénario. On reprend la **structure**, pas la banane, la grenade ni l'histoire d'un autre compte. Active « contenu généré par IA ».
+Distribution : tu peux reprendre les archétypes du compte (banane ouvrière en salopette et casque de mineur, grenade patron en costume noir, myrtille épouse en robe rouge) : des fruits à corps humain sont un genre, pas un personnage protégé. Le scénario est le tien. Le droit d'utiliser les designs exacts de ce compte n'est pas vérifié : on décrit les personnages, on ne copie pas ses images. Active « contenu généré par IA ».
 
 ## Anatomie du hit (60 s) : à reproduire en structure
 | Temps | Rôle | Exemple (hit) |
