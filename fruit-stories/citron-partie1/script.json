@@ -1,6 +1,6 @@
 {
  "title": "Partie 1 : LE VOL DE L'HORLOGE 🍌⏰",
- "hashtags": "#ia #banane #grenade #fruitstory #histoirefruit #pourtoi",
+ "hashtags": "#ia #banane #noixdecoco #fruitstory #histoirefruit #pourtoi",
  "style": "rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16",
  "characters": {
   "LEO": {
@@ -9,13 +9,13 @@
    "voice": "jeune garçon, voix claire"
   },
   "NOIX": {
-   "name": "PAPY POMME",
-   "look": "tête de pomme verte ridée, cardigan marron, petites lunettes rondes, mains tremblantes, vieux grand-père",
+   "name": "PAPY POIRE",
+   "look": "tête de poire verte ridée, cardigan marron, petites lunettes rondes, mains tremblantes, vieux grand-père",
    "voice": "vieil homme, voix douce et fatiguée"
   },
   "ARTICHAUT": {
-   "name": "LA GRENADE",
-   "look": "tête de grenade rouge à couronne, costume noir, cravate rouge, sourire cruel",
+   "name": "COCO",
+   "look": "tête de noix de coco à visage blanc et coque fibreuse brune, costume noir, cravate rouge, bagues dorées, sourire cruel",
    "voice": "voix grave, lente, mielleuse"
   },
   "NARRATEUR": {
@@ -41,7 +41,7 @@
   },
   {
    "setting": "même atelier, ombres chaudes",
-   "action": "gros plan de Papy Pomme, un doigt sur les lèvres, regard inquiet vers la porte",
+   "action": "gros plan de Papy Poire, un doigt sur les lèvres, regard inquiet vers la porte",
    "who": [
     "NOIX"
    ],
@@ -55,7 +55,7 @@
   },
   {
    "setting": "couloir sombre derrière la porte entrouverte",
-   "action": "gros plan d'la Grenade qui écoute, sourire cruel, bague qui brille",
+   "action": "gros plan d'Coco qui écoute, sourire cruel, bague qui brille",
    "who": [
     "ARTICHAUT"
    ],
@@ -73,12 +73,12 @@
   },
   {
    "setting": "atelier, lumière du matin",
-   "action": "la Grenade désigne l'horloge, Léo surpris",
+   "action": "Coco désigne l'horloge, Léo surpris",
    "who": [
     "ARTICHAUT",
     "LEO"
    ],
-   "motion": "la Grenade claque des doigts, Léo recule",
+   "motion": "Coco claque des doigts, Léo recule",
    "lines": [
     [
      "ARTICHAUT",
@@ -102,7 +102,7 @@
   },
   {
    "setting": "atelier, bureau en bois",
-   "action": "la Grenade brandit un stylo doré au-dessus d'un contrat posé sur l'horloge",
+   "action": "Coco brandit un stylo doré au-dessus d'un contrat posé sur l'horloge",
    "who": [
     "ARTICHAUT"
    ],
@@ -116,16 +116,16 @@
   },
   {
    "setting": "porte de l'atelier",
-   "action": "Papy Pomme bouleversé, la Grenade le pousse vers la porte",
+   "action": "Papy Poire bouleversé, Coco le pousse vers la porte",
    "who": [
     "NOIX",
     "ARTICHAUT"
    ],
-   "motion": "Papy Pomme chancelle, la Grenade pointe la sortie",
+   "motion": "Papy Poire chancelle, Coco pointe la sortie",
    "lines": [
     [
      "NOIX",
-     "Grenade, tu es mon élève depuis trente ans…"
+     "Coco, tu es mon élève depuis trente ans…"
     ],
     [
      "ARTICHAUT",
@@ -135,7 +135,7 @@
   },
   {
    "setting": "grande salle de concours, foule en costume, projecteurs",
-   "action": "la Grenade sur scène devant l'horloge dorée",
+   "action": "Coco sur scène devant l'horloge dorée",
    "who": [
     "ARTICHAUT"
    ],
@@ -163,7 +163,7 @@
   },
   {
    "setting": "scène du concours",
-   "action": "la Grenade furieux, doigt pointé, deux gardes-poires attrapent Léo",
+   "action": "Coco furieux, doigt pointé, deux gardes-poires attrapent Léo",
    "who": [
     "ARTICHAUT",
     "LEO"
@@ -178,7 +178,7 @@
   },
   {
    "setting": "couloir de la salle, lumière faible",
-   "action": "Papy Pomme épuisé appuyé au mur, main sur le cœur, regard tendre",
+   "action": "Papy Poire épuisé appuyé au mur, main sur le cœur, regard tendre",
    "who": [
     "NOIX"
    ],
@@ -200,7 +200,7 @@
    "lines": [
     [
      "LEO",
-     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si la Grenade ose la voler… »"
+     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si Coco ose la voler… »"
     ]
    ]
   }
