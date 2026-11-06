@@ -16,14 +16,18 @@
       "acc": [
         "bow",
         "earrings"
-      ]
+      ],
+      "who": "strawberry woman",
+      "look": "A woman whose head is a giant glossy realistic red strawberry fruit with yellow seeds and a green leafy crown on top. Big expressive cartoon eyes with long eyelashes, eyebrows and a smiling mouth are directly on the red strawberry skin, seeds all around the face. Human body with light skin arms, elegant red dress, small gold hoop earrings, in a cozy kitchen."
     },
     "b": {
       "name": "Bruno",
       "fruit": "banana",
       "acc": [
         "tie"
-      ]
+      ],
+      "who": "banana man",
+      "look": "A man whose head is a whole unpeeled yellow banana standing upright, brown stem at the top. Big expressive cartoon eyes, eyebrows and a smug grin directly on the yellow banana peel. Human body: white shirt with rolled sleeves and blue tie, yellow hands, in a cozy kitchen."
     },
     "p": {
       "name": "Pêche",
@@ -31,7 +35,9 @@
       "acc": [
         "lashes",
         "necklace"
-      ]
+      ],
+      "who": "peach woman",
+      "look": "A woman whose head is a giant realistic fuzzy peach fruit (orange and pink skin, vertical crease, green leaf on top). Big expressive cartoon eyes with eyelashes and a smiling mouth directly on the peach. Human body, pink satin dress, pearl necklace, in a cozy kitchen."
     }
   },
   "segments": [
@@ -56,7 +62,11 @@
         "Fraise",
         "rire",
         "cuisine."
-      ]
+      ],
+      "refs": [
+        "f"
+      ],
+      "shot": "The strawberry woman walks happily on a sidewalk toward the front door of her pretty suburban house at golden hour sunset, holding a handbag, then turns her head surprised as if she hears laughter from inside. Full body, wide shot."
     },
     {
       "speaker": "p",
@@ -82,7 +92,12 @@
         "ta",
         "femme",
         "rien"
-      ]
+      ],
+      "refs": [
+        "b",
+        "p"
+      ],
+      "shot": "The banana man and the peach woman stand close together in a cozy kitchen at night, flirting, laughing, the banana has his arm around the peach."
     },
     {
       "speaker": "b",
@@ -103,7 +118,12 @@
       "text": "Fraise ? Elle est bien trop naïve pour comprendre.",
       "highlight": [
         "naïve"
-      ]
+      ],
+      "refs": [
+        "b",
+        "p"
+      ],
+      "shot": "Medium close-up in a cozy kitchen at night: the banana man leans on the kitchen counter with an arrogant smug smirk and half-closed eyes, the peach woman giggles next to him."
     },
     {
       "speaker": "f",
@@ -138,7 +158,13 @@
       "highlight": [
         "naïve…",
         "vraiment"
-      ]
+      ],
+      "refs": [
+        "f",
+        "b",
+        "p"
+      ],
+      "shot": "Exactly three characters, no duplicates. Medium-wide shot in the kitchen at night: on the left, the strawberry woman stands in the doorway, furious, fists clenched, angry eyebrows. On the right, side by side, the single banana man and the single peach woman look at her, totally shocked, mouths wide open. Dramatic lighting."
     },
     {
       "speaker": "b",
@@ -162,7 +188,12 @@
         "Chérie",
         "pas",
         "crois"
-      ]
+      ],
+      "refs": [
+        "b",
+        "f"
+      ],
+      "shot": "The banana man panics, sweating, both hands raised defensively, nervous forced smile, while the strawberry woman glares at him with arms crossed, furious. Cozy kitchen at night."
     },
     {
       "speaker": "f",
@@ -186,7 +217,12 @@
       "highlight": [
         "gâteau",
         "elle."
-      ]
+      ],
+      "refs": [
+        "f",
+        "b"
+      ],
+      "shot": "The strawberry woman furiously points at a half-eaten pink birthday cake with candles on the kitchen table; the banana man holds a fork with cake crumbs on his mouth, guilty. Cozy kitchen at night."
     },
     {
       "speaker": "p",
@@ -209,7 +245,12 @@
       "highlight": [
         "maison",
         "toi"
-      ]
+      ],
+      "refs": [
+        "p",
+        "b"
+      ],
+      "shot": "The peach woman, angry and outraged, points her finger at the banana man's face; the banana man shrinks back, scared. Cozy kitchen at night."
     },
     {
       "speaker": "f",
@@ -233,7 +274,11 @@
         "nom.",
         "voiture",
         "compte"
-      ]
+      ],
+      "refs": [
+        "f"
+      ],
+      "shot": "Close-up: the strawberry woman wearing black sunglasses, confident triumphant smirk, dangling a set of house keys and car keys in front of the camera. Cozy kitchen at night."
     },
     {
       "speaker": "n",
@@ -254,7 +299,11 @@
       "highlight": [
         "seul…",
         "cagette"
-      ]
+      ],
+      "refs": [
+        "b"
+      ],
+      "shot": "The banana man sits alone, sad, crying with tears, inside a wooden fruit crate at an empty outdoor market at night, under the rain, street lamp light, wet ground, melancholic."
     },
     {
       "speaker": "f",
@@ -277,7 +326,11 @@
       "highlight": [
         "toi…",
         "pardonné"
-      ]
+      ],
+      "refs": [
+        "f"
+      ],
+      "shot": "Close-up portrait of the strawberry woman smiling confidently at the camera with sunglasses pushed on top of her head, golden sunset sky with city skyline behind her, she winks."
     }
   ]
 }

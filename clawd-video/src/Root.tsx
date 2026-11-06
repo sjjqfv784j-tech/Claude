@@ -11,6 +11,7 @@ import { SEGMENTS } from './script';
 import { FPS, buildTimeline, loadVoice, totalFrames, type VideoProps } from './timing';
 import { FruitStoryVideo, buildFruitTimeline, fruitFrames, type FruitProps } from './fruit/FruitStoryVideo';
 import { FRUIT_STORIES } from './fruit/registry';
+import { Fruit3DVideo, type Fruit3DProps } from './fruit/Fruit3DVideo';
 import { SamPixel1Video, buildSamPixel1, samPixel1Frames } from './sam-pixel-1/SamPixel1Video';
 
 export const Root: React.FC = () => (
@@ -129,5 +130,22 @@ export const Root: React.FC = () => (
         }}
       />
     ))}
-  </>
+      {Object.entries(FRUIT_STORIES).map(([id, story]) => (
+      <Composition
+        key={`3d-${id}`}
+        id={`Fruit3D-${id}`}
+        component={Fruit3DVideo}
+        width={1080}
+        height={1920}
+        fps={FPS}
+        durationInFrames={300}
+        defaultProps={{ id, story, timeline: buildFruitTimeline(story, null) } as Fruit3DProps}
+        calculateMetadata={async () => {
+          const voice = await loadVoice(`voice/fruit-${id}`, story.segments.length);
+          const timeline = buildFruitTimeline(story, voice as never);
+          return { durationInFrames: fruitFrames(story, timeline), props: { id, story, timeline } };
+        }}
+      />
+    ))}
+</>
 );

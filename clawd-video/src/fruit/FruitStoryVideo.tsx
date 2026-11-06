@@ -62,7 +62,7 @@ const groupWords = (words: Word[]) => {
   return out;
 };
 
-const Captions: React.FC<{ words: Word[]; highlight: string[]; t: number; color: string; name: string | null }> = ({ words, highlight, t, color, name }) => {
+export const Captions: React.FC<{ words: Word[]; highlight: string[]; t: number; color: string; name: string | null }> = ({ words, highlight, t, color, name }) => {
   const { fps } = useVideoConfig();
   const groups = groupWords(words);
   const hl = new Set(highlight.map(norm));
@@ -87,7 +87,7 @@ const Captions: React.FC<{ words: Word[]; highlight: string[]; t: number; color:
   );
 };
 
-const CAST_COLOR: Record<FruitKind, string> = { strawberry: '#ff6f86', banana: '#ffd84a', peach: '#ffab8a', apple: '#ff6a6a', orange: '#ffb04a', lemon: '#fff06a', grape: '#c48ae8', kiwi: '#a6d86a' };
+export const CAST_COLOR: Record<FruitKind, string> = { strawberry: '#ff6f86', banana: '#ffd84a', peach: '#ffab8a', apple: '#ff6a6a', orange: '#ffb04a', lemon: '#fff06a', grape: '#c48ae8', kiwi: '#a6d86a' };
 
 // amplitude de la voix -> ouverture de la bouche
 const useMouth = (audio: string | null, frame: number, active: boolean) => {
@@ -183,7 +183,7 @@ const Scene: React.FC<{ story: FruitStory; seg: FruitSeg; timed: FruitTimed; off
   );
 };
 
-const Banner: React.FC<{ text: string; t: number; top: number; color: string; dark?: boolean }> = ({ text, t, top, color, dark }) => {
+export const Banner: React.FC<{ text: string; t: number; top: number; color: string; dark?: boolean }> = ({ text, t, top, color, dark }) => {
   const { fps } = useVideoConfig();
   if (t < 0) return null;
   const p = spring({ frame: Math.round(t * fps), fps, config: { damping: 10, stiffness: 200 } });

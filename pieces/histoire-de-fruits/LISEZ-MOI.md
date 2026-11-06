@@ -75,5 +75,30 @@ Pour voir l'épisode en direct pendant que tu le modifies : `cd clawd-video && n
 - Une fin sur une question au public (`question`) pour faire réagir en commentaire.
 - Des répliques courtes (une idée par réplique) et 3 personnages au maximum.
 
+## Version 3D (même style que le site)
+
+Exemple : `fruit-fraise-3d-final.mp4`. Les images sont générées par l'IA **Flux Klein**, avec la clé gratuite Pollinations (enter.pollinations.ai). Cette clé est enregistrée dans l'environnement.
+
+Dans le JSON, on ajoute :
+- pour chaque personnage : `"who"` (ex. `"strawberry woman"`) et `"look"`, qui donne son apparence en anglais ;
+- pour chaque réplique : `"refs"`, la liste des personnages visibles, et `"shot"`, qui décrit la scène en anglais.
+
+L'outil crée d'abord une image de référence par personnage, puis chaque plan à partir de ces références. Les personnages restent ainsi identiques d'un plan à l'autre.
+
+```bash
+python3 tools/fruit3d_images.py fraise
+```
+```bash
+cd clawd-video && npx remotion render src/index.ts Fruit3D-fraise out/fruit3d-fraise-raw.mp4
+```
+```bash
+python3 tools/make_audio_fruit.py fraise clawd-video/out/fruit3d-fraise-raw.mp4 pieces/histoire-de-fruits/fruit-fraise-3d-final.mp4
+```
+Pour refaire un plan raté, par exemple le n° 3 : `python3 tools/fruit3d_images.py fraise 3`.
+
+**Coût** : le compte gratuit Pollinations donne environ 0,25 « pollen » par jour. Une image coûte environ 0,005 et une image avec références environ 0,01. Ça fait environ 2 épisodes par jour gratuitement.
+
+**Limite** : sur le site payant, les personnages bougent (vidéo IA). Ici, les images sont animées par des mouvements de caméra, des zooms, des tremblements et des flashs. Les modèles « image → vidéo » sont tous payants, y compris chez Pollinations.
+
 ## Différence avec le site payant
 Le site payant génère des images « 3D réalistes » avec une IA d'images. Ici, les personnages sont des dessins vectoriels animés (style dessin animé). C'est gratuit et illimité, et les personnages restent identiques d'un épisode à l'autre. Pour un rendu 3D réaliste, il faudrait un générateur d'images ou de vidéos IA, qui sont presque tous payants.
