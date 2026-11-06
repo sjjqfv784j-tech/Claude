@@ -35,7 +35,8 @@
    "lines": [
     [
      "LEO",
-     "Grand-père, ton horloge est finie ! Demain, elle gagne !"
+     "Grand-père, ton horloge est finie ! Demain, elle gagne !",
+     "[excited]"
     ]
    ]
   },
@@ -49,7 +50,8 @@
    "lines": [
     [
      "NOIX",
-     "Mon petit Léo, ne la montre à personne avant l'heure."
+     "Mon petit Léo, ne la montre à personne avant l'heure.",
+     "[whispers]"
     ]
    ]
   },
@@ -63,11 +65,13 @@
    "lines": [
     [
      "NARRATEUR",
-     "Mais le patron écoutait derrière la porte."
+     "Mais le patron écoutait derrière la porte.",
+     "[ominous]"
     ],
     [
      "ARTICHAUT",
-     "Ce vieux fou croit qu'elle est à lui. Pas pour longtemps."
+     "Ce vieux fou croit qu'elle est à lui. Pas pour longtemps.",
+     "[mischievously][chuckles]"
     ]
    ]
   },
@@ -82,7 +86,8 @@
    "lines": [
     [
      "ARTICHAUT",
-     "Léo, porte l'horloge à ma voiture. Ordre du patron."
+     "Léo, porte l'horloge à ma voiture. Ordre du patron.",
+     "[smug]"
     ]
    ]
   },
@@ -96,7 +101,8 @@
    "lines": [
     [
      "LEO",
-     "Mais patron, elle appartient à mon grand-père !"
+     "Mais patron, elle appartient à mon grand-père !",
+     "[shocked]"
     ]
    ]
   },
@@ -110,7 +116,8 @@
    "lines": [
     [
      "ARTICHAUT",
-     "Elle appartient à celui qui signe. Et j'ai le stylo."
+     "Elle appartient à celui qui signe. Et j'ai le stylo.",
+     "[sarcastic]"
     ]
    ]
   },
@@ -125,11 +132,13 @@
    "lines": [
     [
      "NOIX",
-     "Coco, tu es mon élève depuis trente ans…"
+     "Coco, tu es mon élève depuis trente ans…",
+     "[sad]"
     ],
     [
      "ARTICHAUT",
-     "Et tu es vieux depuis trente ans. Sors d'ici !"
+     "Et tu es vieux depuis trente ans. Sors d'ici !",
+     "[angry][coldly]"
     ]
    ]
   },
@@ -143,7 +152,8 @@
    "lines": [
     [
      "ARTICHAUT",
-     "Mesdames et messieurs, voici mon chef-d'œuvre !"
+     "Mesdames et messieurs, voici mon chef-d'œuvre !",
+     "[proud][excited]"
     ]
    ]
   },
@@ -157,7 +167,8 @@
    "lines": [
     [
      "LEO",
-     "Non… c'est la sienne !"
+     "Non… c'est la sienne !",
+     "[crying]"
     ]
    ]
   },
@@ -172,7 +183,8 @@
    "lines": [
     [
      "ARTICHAUT",
-     "Qui ose m'accuser ? Gardes, sortez ce gamin !"
+     "Qui ose m'accuser ? Gardes, sortez ce gamin !",
+     "[angry][shouting]"
     ]
    ]
   },
@@ -186,7 +198,8 @@
    "lines": [
     [
      "NOIX",
-     "Léo… regarde sous le cadran."
+     "Léo… regarde sous le cadran.",
+     "[whispers][weakly]"
     ]
    ]
   },
@@ -200,7 +213,8 @@
    "lines": [
     [
      "LEO",
-     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si Coco ose la voler… »"
+     "Il y a une gravure. Elle dit : « Pour Léo, mon héritier. Et si Coco ose la voler… »",
+     "[softly][emotional]"
     ]
    ]
   }

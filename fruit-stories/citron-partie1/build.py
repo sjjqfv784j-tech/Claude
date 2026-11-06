@@ -29,7 +29,7 @@ def prompts():
     for n, p in enumerate(S["plans"], 1):
         looks = "; ".join(f"{S['characters'][w]['name']} : {S['characters'][w]['look']}" for w in p["who"])
         out += [f"## Plan {n:02d}", f"**Image** : {S['style']}. {looks}. Décor : {p['setting']}. Action : {p['action']}.", f"**Vidéo (image → vidéo, 4 à 6 s)** : {p['motion']}."]
-        for k, (who, text) in enumerate(p["lines"], 1):
+        for k, (who, text, *_) in enumerate(p["lines"], 1):
             out.append(f"**Voix {n:02d}_{k}** ({S['characters'][who]['voice']}) — {S['characters'][who]['name']} : « {text} »")
         out.append("")
     out += ["## Publication", f"Titre : {S['title']}", f"Hashtags : {S['hashtags']}", "Activer « contenu généré par IA ». Annoncer la Partie 2 seulement si elle est prête."]
@@ -39,11 +39,33 @@ def ass_time(t):
     h, m, s = int(t // 3600), int(t % 3600 // 60), t % 60
     return f"{h}:{m:02d}:{s:05.2f}"
 
-def build(outfile):
+def timeline():
+    """timeline.json : durée de chaque plan, position des répliques et enveloppe de volume (pour synchroniser les bouches)."""
+    import numpy as np
+    out = []; t0 = 0.0
+    for n, p in enumerate(S["plans"], 1):
+        ls, pos = [], 0.2
+        for k, l in enumerate(p["lines"], 1):
+            who, text = l[0], l[1]
+            v = find([f"voice/{n:02d}_{k}.mp3", f"voice/{n:02d}_{k}.wav"])
+            d = dur(v) if v else max(1.2, len(text.split()) / 2.8); env = []
+            if v:
+                raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(v), "-f", "f32le", "-ac", "1", "-ar", "16000", "-"], capture_output=True).stdout
+                a = np.frombuffer(raw, dtype=np.float32); hop = 16000 // FPS
+                r = np.array([np.sqrt(np.mean(a[i:i + hop] ** 2)) for i in range(0, len(a) - hop + 1, hop)])
+                e = np.clip(r / (np.percentile(r, 90) + 1e-9), 0, 1); e = np.convolve(e, [0.25, 0.5, 0.25], "same")
+                env = [round(float(x) ** 0.8, 3) if x > 0.12 else 0.0 for x in e]
+            ls.append({"who": who, "start": pos, "dur": d, "env": env}); pos += d + 0.3
+        d_plan = max(3.5, sum(x["dur"] for x in ls) + 0.3 * len(ls) + 0.4)
+        out.append({"start": t0, "dur": d_plan, "lines": ls}); t0 += d_plan
+    (D / "timeline.json").write_text(json.dumps({"fps": FPS, "total": t0, "plans": out}))
+    return t0
+
+def build(outfile, frames=None):
     tmp = Path(tempfile.mkdtemp(prefix="fruit_")); segs, auds, events, t0 = [], [], [], 0.0
     for n, p in enumerate(S["plans"], 1):
         vf, lines = [], []
-        for k, (who, text) in enumerate(p["lines"], 1):
+        for k, (who, text, *_) in enumerate(p["lines"], 1):
             v = find([f"voice/{n:02d}_{k}.mp3", f"voice/{n:02d}_{k}.wav"])
             d = dur(v) if v else max(1.2, len(text.split()) / 2.8)
             lines.append((who, text, v, d))
@@ -70,6 +92,8 @@ def build(outfile):
         # vidéo du plan
         seg = tmp / f"s{n:02d}.mp4"; fade = f"fade=t=in:st=0:d=0.25,fade=t=out:st={d_plan-0.25:.2f}:d=0.25,format=yuv420p"
         clip, img = find([f"clips/{n:02d}.mp4"]), find([f"images/{n:02d}.png", f"images/{n:02d}.jpg"])
+        if frames:
+            segs.append(None); t0 += d_plan; continue
         if clip:
             run("ffmpeg", "-y", "-stream_loop", -1, "-i", clip, "-t", d_plan, "-an", "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},{fade}", "-c:v", "libx264", "-crf", 18, seg)
         elif img:
@@ -79,7 +103,7 @@ def build(outfile):
             tf = tmp / f"t{n:02d}.txt"; tf.write_text(f"PLAN {n:02d}\n\n" + "\n".join(textwrap.wrap(p["setting"], 26)) + "\n\n" + "\n".join(textwrap.wrap(p["action"], 26)))
             run("ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=0x20182a:s={W}x{H}:r={FPS}:d={d_plan}", "-vf", f"drawtext=fontfile={FONT}:textfile={tf}:fontcolor=0xE8D9B0:fontsize=54:line_spacing=14:x=(w-text_w)/2:y=(h-text_h)/2-250,{fade}", "-c:v", "libx264", "-crf", 20, seg)
         segs.append(seg); t0 += d_plan
-    lst = tmp / "v.txt"; lst.write_text("".join(f"file '{s}'\n" for s in segs))
+    lst = tmp / "v.txt"; lst.write_text("".join(f"file '{s}'\n" for s in segs if s))
     alst = tmp / "a.txt"; alst.write_text("".join(f"file '{a}'\n" for a in auds))
     ass = tmp / "sub.ass"
     ass.write_text("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\n\n[V4+ Styles]\n"
@@ -87,7 +111,7 @@ def build(outfile):
         "Style: W,DejaVu Sans,96,&H00FFFFFF,&H00000000,&H00000000,1,7,0,2,60,60,430\n\n[Events]\nFormat: Layer,Start,End,Style,Text\n"
         + "".join(f"Dialogue: 0,{ass_time(a)},{ass_time(b)},W,{w.upper()}\n" for a, b, w in events))
     music = find(["music/music.mp3"])
-    cmd = ["ffmpeg", "-y", "-f", "concat", "-safe", 0, "-i", lst, "-f", "concat", "-safe", 0, "-i", alst]
+    cmd = ["ffmpeg", "-y"] + (["-framerate", FPS, "-i", frames + "/%05d.jpg"] if frames else ["-f", "concat", "-safe", 0, "-i", lst]) + ["-f", "concat", "-safe", 0, "-i", alst]
     if music:
         cmd += ["-stream_loop", -1, "-i", music]
         af = "[1:a][2:a]amix=inputs=2:weights=1 0.18:duration=first:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=7[a]"
@@ -98,4 +122,9 @@ def build(outfile):
 
 if __name__ == "__main__":
     a = sys.argv[1:] or ["build"]
-    prompts() if a[0] == "prompts" else build(a[1] if len(a) > 1 else str(D / "out" / "partie1.mp4"))
+    if a[0] == "prompts": prompts()
+    elif a[0] == "timeline": print(round(timeline(), 2), "s")
+    elif a[0] == "anim":  # rendu animé : node render_anim.js écrit frames/NNNNN.jpg
+        timeline(); subprocess.run(["node", str(D / "render_anim.js")], check=True)
+        build(a[1] if len(a) > 1 else str(D / "out" / "partie1_anim.mp4"), frames=str(D / "frames"))
+    else: build(a[1] if len(a) > 1 else str(D / "out" / "partie1.mp4"))

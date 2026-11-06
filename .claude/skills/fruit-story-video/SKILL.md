@@ -47,8 +47,21 @@ E) l'idée des Parties 2 et 3 en 2 lignes.
 - **Bible** (à recoller dans CHAQUE prompt image) : une phrase par personnage, ex. « [OUVRIER] : tête de pêche, salopette en jean usée, regard fatigué ». Style commun : *rendu 3D film d'animation, éclairage cinématographique chaud, peau de fruit détaillée, expressions exagérées, vertical 9:16*.
 - **Image** : `style + personnages (bible) + décor + action + émotion + cadrage` (large pour poser le décor, gros plan pour les émotions). Génère d'abord l'image, puis anime.
 - **Vidéo (image → vidéo)** : 1 mouvement, ex. « la pêche baisse les yeux et serre l'enveloppe », caméra lente, 4 à 6 s.
-- **Voix** : une voix distincte par personnage (grave pour le patron, douce pour l'épouse, enfant pour le fils), ton joué, pas lu. Génère réplique par réplique, puis assemble.
+- **Voix** : voir « 2 bis » (voix sur mesure, v3, balises de jeu, plusieurs prises).
 - **Sous-titres mot par mot** calés sur la voix (CapCut « sous-titres auto », style gras blanc + contour, bas de l'écran).
+
+## 2 bis. Voix : pourquoi elles sonnaient mal, et la méthode qui marche
+Les premières voix étaient mauvaises parce que : voix génériques anglophones prises au hasard, modèle sans direction de jeu, une seule prise lue sans contrôle, et aucune écoute possible de ma part.
+1. **Une voix française sur mesure par personnage** (ElevenLabs *Voice Design*, `eleven_ttv_v3`) : décrire l'âge, le sexe, le ton, « français natif, accent naturel, studio propre ». Garder la prise la plus lisible. Script : `design_voices.py`.
+2. **Modèle `eleven_v3` + direction de jeu** devant chaque réplique : `[excited]`, `[whispers]`, `[sad]`, `[angry]`, `[crying]`, `[sarcastic]`… (le tag n'apparaît pas dans les sous-titres).
+3. **Plusieurs prises + contrôle** : `voices.py --best 4` génère 4 prises, transcrit chacune et garde la plus fidèle au texte (détecte un mot mal prononcé, comme « horloge » dit « neurologie »). Les chiffres écrits en toutes lettres.
+4. **Rien d'autre dans le son** : pas de musique, pas de bruitages, pas de « soundboard » ; seulement les voix, normalisées à −15 LUFS. La musique se met dans TikTok, pas dans le fichier.
+5. **Toujours écouter avant de publier** : je ne peux pas écouter, seulement mesurer.
+
+## 2 ter. Animation (pas d'images fixes)
+- Chaque plan doit bouger : **bouche synchronisée sur la voix**, clignements, respiration, gestes quand le personnage parle, caméra qui avance ou dérive, accessoires animés.
+- Avec un générateur image → vidéo : un mouvement par plan + lip-sync de la réplique.
+- Sans générateur (rendu en code) : `python3 fruit-stories/citron-partie1/build.py anim` ouvre la bouche selon le volume réel de la voix (`timeline.json`), puis assemble les images, la voix et les sous-titres.
 
 ## 3. Montage et publication
 1. Assembler plans et voix (CapCut ou ffmpeg), fondus de 0,3 s entre décors.
@@ -63,4 +76,4 @@ E) l'idée des Parties 2 et 3 en 2 lignes.
 - La fin laisse une question ouverte (suspens) ou une morale en une phrase.
 
 ## Limites honnêtes
-Je n'ai pas pu écouter les voix : les dialogues viennent d'une transcription automatique (noms et mots parfois faux). Les outils exacts du compte (image, vidéo, voix) ne sont pas connus : choisis les tiens. Les vues viennent des statistiques publiques, sur 11 vidéos seulement.
+Je n'ai pas pu écouter les voix : elles sont validées par transcription (lisibilité), pas à l'oreille. Les outils exacts du compte (image, vidéo, voix) ne sont pas connus : choisis les tiens. Les vues viennent des statistiques publiques, sur 11 vidéos seulement.
