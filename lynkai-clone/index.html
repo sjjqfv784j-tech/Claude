@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050304">
+  <meta name="color-scheme" content="dark">
+  <title>Lynk AI — Studio & Desktop IDE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ÉCRAN D'AUTHENTIFICATION -->
+  <div id="auth-screen" class="auth-screen">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="brand-icon"><i data-lucide="sparkles"></i></div>
+        <h2>Lynk AI Studio</h2>
+      </div>
+      <p class="auth-subtitle">Connecte-toi pour accéder à l'IDE et profiter de tes <strong>80 crédits gratuits</strong>.</p>
+
+      <div class="auth-providers" aria-label="Connexion avec un fournisseur">
+        <button type="button" class="provider-btn" id="google-auth-btn"><span class="google-mark">G</span> Continuer avec Google</button>
+        <button type="button" class="provider-btn" id="github-auth-btn"><i data-lucide="github"></i> Continuer avec GitHub</button>
+      </div>
+      <div class="auth-divider"><span>ou avec ton e-mail</span></div>
+
+      <div class="auth-tabs">
+        <button type="button" id="tab-login" class="auth-tab active">Connexion</button>
+        <button type="button" id="tab-signup" class="auth-tab">Inscription</button>
+      </div>
+
+      <form id="auth-form" class="auth-form">
+        <div class="form-group">
+          <label for="auth-email">Adresse e-mail</label>
+          <input type="email" id="auth-email" placeholder="exemple@mail.com" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="auth-password">Mot de passe</label>
+          <input type="password" id="auth-password" placeholder="6 caractères minimum" minlength="6" autocomplete="current-password" required>
+        </div>
+
+        <div id="auth-feedback" class="auth-feedback" style="display:none;"></div>
+
+        <div class="form-group checkbox-group" hidden>
+          <label class="checkbox-label">
+            <input type="checkbox" id="auth-terms" required>
+            <span>J'ai 18 ans ou plus et j'ai lu et accepté les <a href="https://www.info.gouv.fr/upload/media/mixed/0001/16/6b3da849c71ae9cb6edb52afc509c90679152424.pdf" onclick="openTermsModal(event)">Conditions Générales d'Utilisation (CGU)</a>.</span>
+          </label>
+        </div>
+
+        <button type="submit" id="auth-submit-btn" class="auth-submit-btn">
+          Se connecter
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- APPLICATION PRINCIPALE -->
+  <div class="app" id="main-app" style="display: none;">
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon"><i data-lucide="sparkles"></i></div>
+          <span>Lynk AI</span>
+        </div>
+        <button id="close-sidebar-btn" class="icon-btn mobile-only" title="Fermer">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-nav-group">
+        <button id="nav-home" class="sidebar-nav-item active">
+          <i data-lucide="home"></i>
+          <span>Accueil & Tarifs</span>
+        </button>
+        <button id="nav-workspace" class="sidebar-nav-item">
+          <i data-lucide="cpu"></i>
+          <span>Espace IA / Code</span>
+        </button>
+      </div>
+
+      <button id="new-chat" class="new-chat">
+        <i data-lucide="plus"></i>
+        <span>Nouvelle conversation</span>
+      </button>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Historique</div>
+        <div id="history-list" class="history-list"></div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="account-box">
+          <div class="credits-row">
+            <span class="credits-label"><i data-lucide="coins"></i> Crédits</span>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span id="plan-badge" class="plan-tag">GRATUIT</span>
+              <span id="credits-badge" class="credits-count">80 / 80</span>
+            </div>
+          </div>
+          <div class="credits-bar-bg">
+            <div id="credits-bar-fill" class="credits-bar-fill" style="width: 100%;"></div>
+          </div>
+          <div class="user-email-row">
+            <span id="user-email-display" class="user-email-text">...</span>
+            <button id="logout-btn" class="logout-btn" title="Se déconnecter">
+              <i data-lucide="log-out"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="sidebar-actions">
+          <button id="export-chat-btn" class="footer-btn" title="Exporter en Markdown">
+            <i data-lucide="download"></i> Exporter
+          </button>
+          <button id="clear-history-btn" class="footer-btn danger" title="Tout effacer">
+            <i data-lucide="trash-2"></i> Vider
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+      <!-- VUE 1 : ACCUEIL & TARIFS -->
+      <section id="view-home" class="home-view">
+        <div class="home-container">
+          <div class="home-hero">
+            <div class="hero-copy">
+              <div class="badge-pill">
+                <i data-lucide="rocket"></i> Lynk AI Studio & Roblox IDE v2.0
+              </div>
+              <h1>Développe, génère et code sans compromis</h1>
+              <p>
+                Un assistant de niveau professionnel pour le web, le développement logiciel et le scripting avancé sur Roblox Studio. Choisis ton plan ci-dessous ou lance directement l'éditeur.
+              </p>
+              <button onclick="switchTab('workspace')" class="btn-primary-glow">
+                Lancer l'Espace IA / Code →
+              </button>
+            </div>
+
+            <div class="code-window" aria-hidden="true">
+              <div class="cw-bar"><b></b><b></b><b></b><span>Leaderstats.server.luau</span></div>
+              <pre><span class="ln" style="--i:0"><span class="k">local</span> Players = game:<span class="f">GetService</span>(<span class="s">"Players"</span>)</span>
+<span class="ln" style="--i:1"> </span>
+<span class="ln" style="--i:2">Players.PlayerAdded:<span class="f">Connect</span>(<span class="k">function</span>(player)</span>
+<span class="ln" style="--i:3">  <span class="k">local</span> stats = Instance.<span class="f">new</span>(<span class="s">"Folder"</span>)</span>
+<span class="ln" style="--i:4">  stats.Name = <span class="s">"leaderstats"</span></span>
+<span class="ln" style="--i:5">  stats.Parent = player</span>
+<span class="ln" style="--i:6"> </span>
+<span class="ln" style="--i:7">  <span class="k">local</span> coins = Instance.<span class="f">new</span>(<span class="s">"IntValue"</span>)</span>
+<span class="ln" style="--i:8">  coins.Name = <span class="s">"Coins"</span></span>
+<span class="ln" style="--i:9">  coins.Parent = stats</span>
+<span class="ln cur" style="--i:10"><span class="k">end</span>)</span></pre>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+
+            <!-- Gratuit -->
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Gratuit</h3>
+                <span class="pricing-badge">Découverte</span>
+              </div>
+              <div class="pricing-price">0 € <span class="period">/ mois</span></div>
+              <p class="pricing-desc">Idéal pour tester l'assistant au quotidien.</p>
+              <ul class="pricing-features">
+                <li><i data-lucide="check"></i> <strong>80 crédits</strong> par jour</li>
+                <li><i data-lucide="check"></i> Accès Web & Plugin Roblox Studio</li>
+                <li><i data-lucide="check"></i> Tous les modèles IA & Personas</li>
+              </ul>
+              <button onclick="switchTab('workspace')" class="pricing-btn secondary">Commencer</button>
+            </div>
+
+            <!-- Pro -->
+            <div class="pricing-card popular">
+              <div class="popular-tag">POPULAIRE</div>
+              <div class="pricing-header">
+                <h3 class="t-pro">Pro</h3>
+                <span class="pricing-badge pro">Créateur</span>
+              </div>
+              <div class="pricing-price">Non disponible</div>
+              <p class="pricing-desc">Cette offre n'est actuellement pas disponible.</p>
+              <ul class="pricing-features">
+                <li><i data-lucide="x"></i> Offre indisponible</li>
+              </ul>
+              <button class="pricing-btn primary" disabled>Non disponible</button>
+            </div>
+
+            <!-- Ultra -->
+            <div class="pricing-card ultra">
+              <div class="pricing-header">
+                <h3 class="t-ultra">Ultra</h3>
+                <span class="pricing-badge ultra">Premium</span>
+              </div>
+              <div class="pricing-price">Non disponible</div>
+              <p class="pricing-desc">Cette offre n'est actuellement pas disponible.</p>
+              <ul class="pricing-features">
+                <li><i data-lucide="x"></i> Offre indisponible</li>
+              </ul>
+              <button class="pricing-btn ultra-glow" disabled>Non disponible</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- VUE 2 : ESPACE DE TRAVAIL / CHAT & IDE -->
+      <section id="view-workspace" class="workspace-view hidden">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button id="menu-btn" class="icon-btn mobile-only" title="Menu">
+              <i data-lucide="menu"></i>
+            </button>
+            <div class="persona-selector">
+              <i data-lucide="bot" class="persona-icon"></i>
+              <select id="persona-select" title="Mode de l'assistant">
+                <option value="general">Assistant Polyvalent</option>
+                <option value="code">Développeur Senior</option>
+                <option value="roblox">Expert Roblox Studio (Luau)</option>
+                <option value="cyber">Expert Cybersécurité</option>
+                <option value="teacher">Professeur & Pédagogue</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <div class="temp-control" title="Créativité de l'IA">
+              <i data-lucide="flame"></i>
+              <input type="range" id="temp-slider" min="0" max="1" step="0.1" value="0.7">
+              <span id="temp-value">0.7</span>
+            </div>
+
+            <div class="persona-selector">
+              <i data-lucide="cpu" class="persona-icon"></i>
+              <select id="model-select" title="Modèle d'IA">
+                <option value="gemini">Gemini 3.5 Flash Lite</option>
+                <option value="groq-llama">Qwen3 / Llama (Groq)</option>
+                <option value="openrouter-free">Auto-Free (OpenRouter)</option>
+              </select>
+            </div>
+          </div>
+        </header>
+
+        <section class="chat-container" id="chat">
+          <div class="welcome" id="welcome">
+            <div class="welcome-icon"><i data-lucide="cpu"></i></div>
+            <h1>Bienvenue dans Lynk AI Workspace</h1>
+            <p>
+              Sans compromis. Pose ta question, génère, code, explore.
+            </p>
+
+            <div class="suggestions">
+              <button class="suggestion" data-prompt="Tu es un expert Roblox Luau. Crée un script complet de système de monnaie (Leaderstats) sécurisé.">
+                <div class="sug-icon"><i data-lucide="gamepad-2"></i></div>
+                <div class="sug-text">
+                  <strong>Roblox Studio</strong>
+                  <span>Créer un système de Leaderstats</span>
+                </div>
+              </button>
+
+              <button class="suggestion" data-prompt="Écris un script Python propre et commenté pour analyser les logs d'un serveur web.">
+                <div class="sug-icon"><i data-lucide="code-2"></i></div>
+                <div class="sug-text">
+                  <strong>Script Python</strong>
+                  <span>Analyser les logs d'un serveur</span>
+                </div>
+              </button>
+
+              <button class="suggestion" data-prompt="Quelles sont les meilleures pratiques pour sécuriser une API Node.js / Express contre les attaques courantes ?">
+                <div class="sug-icon"><i data-lucide="shield-check"></i></div>
+                <div class="sug-text">
+                  <strong>Cybersécurité</strong>
+                  <span>Sécuriser une API Node.js / Express</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div id="messages" class="messages"></div>
+        </section>
+
+        <footer class="input-area">
+          <div class="input-wrapper">
+            <form id="chat-form" class="input-box">
+              <textarea
+                id="user-input"
+                placeholder="Écris ton message ou décris ton script..."
+                rows="1"
+              ></textarea>
+              <div id="image-preview-list" class="image-preview-list" aria-live="polite"></div>
+              <div class="input-actions">
+                <div class="input-tools">
+                  <label for="image-input" class="attach-image-btn" title="Ajouter des images"><i data-lucide="image-plus"></i><span>Image</span></label>
+                  <input id="image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden>
+                  <span id="char-count" class="char-count">0 / 10000</span>
+                </div>
+                <button type="submit" id="send-btn" title="Envoyer">
+                  <i data-lucide="arrow-up"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <p class="disclaimer">
+            Lynk AI — Interface Desktop Studio & Roblox Plugin Sync.
+          </p>
+        </footer>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="toast" class="toast">Notification</div>
+
+  <!-- Halo rouge qui suit la souris sur les cartes -->
+  <script>
+    document.addEventListener('pointermove', function (e) {
+      var card = e.target.closest && e.target.closest('.pricing-card, .suggestion');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
